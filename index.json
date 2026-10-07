@@ -11,6 +11,15 @@
       "sha256": "26bcc387bff34da46a70bba1b88bef32535157fc5c56043bd4982d04dda3cec0"
     },
     {
+      "id": "friendly-wording",
+      "name": "Friendly wording",
+      "version": "1.0.0",
+      "author": "Messages AI",
+      "description": "Simpler, friendlier English words on Home: Auto-reply, Ask me first, Send right away.",
+      "file": "modules/friendly-wording.mamod",
+      "sha256": "1f8061efe51df8a64b727a181b37ddc9839959f3679acd0d8b8e861bc3cb16a9"
+    },
+    {
       "id": "more-apps",
       "name": "More messaging apps",
       "version": "1.0.0",
@@ -27,6 +36,15 @@
       "description": "Keeps private chats private: no talk about work, and a chat that turns urgent is handed to you.",
       "file": "modules/no-work-talk.mamod",
       "sha256": "a3f1be882c088d0d0e650e6fa8595172a787f063445040df39a34a81d497488c"
+    },
+    {
+      "id": "ocean-theme",
+      "name": "Ocean",
+      "version": "1.0.0",
+      "author": "Messages AI",
+      "description": "A calm blue colour theme for light and dark mode.",
+      "file": "modules/ocean-theme.mamod",
+      "sha256": "4205832b5016ca631a6a252b14aa16c22ab577dcfef0b45e9e799f05c6e07f53"
     }
   ]
 }

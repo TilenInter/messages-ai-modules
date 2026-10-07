@@ -4,6 +4,7 @@
   python tools/modules/mamod.py pack <folder> <out.mamod> [--key private.pem]
   python tools/modules/mamod.py verify <file.mamod>
   python tools/modules/mamod.py index <modules-folder> <index.json>
+  python tools/modules/mamod.py strings-template <strings.xml> <lang> <out.json>   texts to translate (English as a start)
 
 A module folder contains module.json and, optionally, script.js. Packing checks the format, signs
 "messages-ai-module-v1\\n<sha256 module.json>\\n<sha256 script.js>\\n" and writes a reproducible ZIP.
@@ -99,6 +100,32 @@ def verify(path, quiet=False):
     return m
 
 
+# Besedila, ki jih modul ne sme spremeniti (enako kot ModuleUi.LOCKED_TEXT v aplikaciji).
+LOCKED_TEXT = ("disclosure_", "auto_consent", "terms_", "account_privacy", "account_delete", "account_required", "protect_", "modules_",
+               "wipe_", "report_", "signin_privacy", "signin_terms", "send_changed", "mydata_", "oss_", "backup_", "privacy")
+
+
+def strings_template(strings_xml, lang, out):
+    """English texts of the app as a starting point for a translation module (locked texts left out)."""
+    import xml.etree.ElementTree as ET
+
+    def unescape(text):
+        text = text or ""
+        if len(text) >= 2 and text[0] == text[-1] == '"':
+            text = text[1:-1]
+        return text.replace("\\'", "'").replace('\\"', '"').replace("\\n", "\n").replace("\\@", "@").replace("\\?", "?").replace("\\\\", "\\")
+
+    texts = {}
+    for e in ET.parse(strings_xml).getroot().findall("string"):
+        name = e.get("name")
+        if e.get("translatable") == "false" or name.startswith(LOCKED_TEXT):
+            continue
+        texts[name] = unescape("".join(e.itertext()))
+    data = {"languages": {lang: "Language name in that language"}, "strings": {lang: texts}}
+    Path(out).write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"{len(texts)} texts -> {out} (translate the values, keep the keys and placeholders like %1$s)")
+
+
 def index(folder, out):
     folder = Path(folder)
     entries = []
@@ -124,5 +151,7 @@ if __name__ == "__main__":
         verify(a[1])
     elif a[0] == "index":
         index(a[1], a[2])
+    elif a[0] == "strings-template":
+        strings_template(a[1], a[2], a[3])
     else:
         print(__doc__)

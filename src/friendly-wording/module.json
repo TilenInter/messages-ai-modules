@@ -1,0 +1,18 @@
+{
+  "format": 1,
+  "id": "friendly-wording",
+  "name": "Friendly wording",
+  "version": "1.0.0",
+  "author": "Messages AI",
+  "license": "CC0-1.0",
+  "description": "Simpler, friendlier English words on Home: Auto-reply, Ask me first, Send right away.",
+  "minAppVersion": 38,
+  "strings": {
+    "en": {
+      "home_master": "Auto-reply",
+      "design_review_first": "Ask me first",
+      "home_seg_send": "Send right away",
+      "home_tagline": "Your words, a little faster."
+    }
+  }
+}

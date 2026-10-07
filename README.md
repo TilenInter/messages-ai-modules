@@ -18,11 +18,32 @@ In the app: **Settings → Modules → Community modules**, pick one and confirm
 | `topics` | Conversation topics added to the user's list. |
 | `interventionPhrases` | Words that make the app hand the chat over to the user. |
 | `apps` | Messaging apps added to **Apps**: `package`, `name`, `mode` (`NOTIFICATION` or `SCREEN`), `tip`. Built-in apps can't be replaced. |
+| `strings` | Texts of the app by language: `{"en": {"home_master": "Auto-reply"}, "fr": {...}}`. Replace texts in an existing language or translate the app into a new one (since app 0.29.0). |
+| `languages` | Names of new languages, in that language: `{"fr": "Français"}`. The language appears in **Settings → Languages → App language**. |
+| `theme` | Colours for light and dark mode: `{"name": "Ocean", "light": {"ios_bg": "#EEF4FA"}, "dark": {...}}` (since app 0.29.0). |
 | `script.js` | Optional hooks, see below. |
 
 ## What a module can never change
 
 Terms and the user's consents; automatic sending and who it replies to; the one-time AI note and the reply length limit; protected AI processing; AI providers and keys; how long chats are kept; diagnostics; SMS; sending limits; safety hand-offs; the user's own description and notes about people. Protective rules (`rule_no_personal`, `rule_no_money`, `rule_no_links`, `rule_no_promises`, `rule_no_insults`, `review_replies`) can only be switched **on**. Locked settings in a module are ignored, and the app tells the user before installing.
+
+Texts about consents, privacy, terms, data export, reports and modules themselves (keys starting with `disclosure_`, `auto_consent`, `terms_`, `account_privacy`, `account_delete`, `account_required`, `protect_`, `modules_`, `wipe_`, `report_`, `signin_privacy`, `signin_terms`, `send_changed`, `mydata_`, `oss_`, `backup_`, `privacy`) can't be changed: in a new language they stay in English so they are always accurate. A text whose placeholders (`%1$s`, `%2$d` …) differ from the original is ignored.
+
+## Translations
+
+Export every text of the app as a starting point, translate the values and keep the keys and placeholders:
+
+```sh
+python tools/mamod.py strings-template <messages-ai>/app/src/main/res/values/strings.xml fr src/french/strings.json
+```
+
+Put the result's `languages` and `strings` into your `module.json`. [`templates/strings-en.json`](templates/strings-en.json) holds the English texts of the current app version. Texts you don't translate stay in English.
+
+## Colour themes
+
+Themeable colours: `ios_bg` (screen), `ios_card` (cards), `ios_card_pressed`, `ios_label` (text), `ios_secondary`, `ios_tertiary`, `ios_separator`, `ios_fill`, `card_stroke`, `action_fill` and `action_text` (main buttons), `switch_active`, `switch_inactive`, `nav_active` (selected tab), `icon_ink`, `chevron`, `segment_track`, `trust_text`, and the accents `ios_blue`, `ios_green`, `ios_red`, `ios_orange`, `ios_yellow`, `ios_purple`, `ios_indigo`, `ios_teal`, `ios_pink`, `ios_gray`. The Google sign-in button keeps Google's colours.
+
+A theme is used only if text stays readable (WCAG contrast): `ios_label` on `ios_bg` and `ios_card` at least 4.5:1, `action_text` on `action_fill` 4.5:1, `ios_secondary`, `nav_active` and `icon_ink` on `ios_card` 3:1. Otherwise the app ignores the theme for that mode. The floating panel keeps its own dark colours.
 
 ## Script hooks (`script.js`)
 

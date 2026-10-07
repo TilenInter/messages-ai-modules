@@ -1,0 +1,50 @@
+{
+  "format": 1,
+  "id": "ocean-theme",
+  "name": "Ocean",
+  "version": "1.0.0",
+  "author": "Messages AI",
+  "license": "CC0-1.0",
+  "description": "A calm blue colour theme for light and dark mode.",
+  "minAppVersion": 38,
+  "theme": {
+    "name": "Ocean",
+    "light": {
+      "ios_bg": "#EEF4FA",
+      "ios_card": "#FFFFFF",
+      "ios_card_pressed": "#E4EDF7",
+      "ios_label": "#0B1B2B",
+      "ios_secondary": "#56677A",
+      "ios_tertiary": "#9AA8B8",
+      "ios_separator": "#DCE6F1",
+      "ios_fill": "#E3ECF6",
+      "segment_track": "#E1EAF4",
+      "nav_active": "#0057B8",
+      "switch_active": "#1E7BE0",
+      "icon_ink": "#0B2545",
+      "action_fill": "#0B2545",
+      "action_text": "#FFFFFF",
+      "chevron": "#93A3B5",
+      "trust_text": "#2E4157"
+    },
+    "dark": {
+      "ios_bg": "#06121F",
+      "ios_card": "#0E1E30",
+      "ios_card_pressed": "#16283C",
+      "ios_label": "#EAF2FB",
+      "ios_secondary": "#9FB2C7",
+      "ios_tertiary": "#6D8197",
+      "ios_separator": "#1E3247",
+      "ios_fill": "#16283C",
+      "segment_track": "#16283C",
+      "card_stroke": "#1E3247",
+      "nav_active": "#6CB4FF",
+      "switch_active": "#3D9BFF",
+      "icon_ink": "#D7E6F5",
+      "action_fill": "#D7E6F5",
+      "action_text": "#06121F",
+      "chevron": "#5F7790",
+      "trust_text": "#C3D4E6"
+    }
+  }
+}
