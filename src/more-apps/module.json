@@ -1,0 +1,30 @@
+{
+  "format": 1,
+  "id": "more-apps",
+  "name": "More messaging apps",
+  "version": "1.0.0",
+  "author": "Messages AI",
+  "license": "CC0-1.0",
+  "description": "Adds Threema, Element and Session to Apps. They reply through the notification's Reply button.",
+  "minAppVersion": 37,
+  "apps": [
+    {
+      "package": "ch.threema.app",
+      "name": "Threema",
+      "mode": "NOTIFICATION",
+      "tip": "Replying from the notification works."
+    },
+    {
+      "package": "im.vector.app",
+      "name": "Element",
+      "mode": "NOTIFICATION",
+      "tip": "Replying from the notification works."
+    },
+    {
+      "package": "network.loki.messenger",
+      "name": "Session",
+      "mode": "NOTIFICATION",
+      "tip": "Replying from the notification works."
+    }
+  ]
+}

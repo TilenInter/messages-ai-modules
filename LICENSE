@@ -1,0 +1,5 @@
+Documentation and tools in this repository: CC0 1.0 Universal (public domain dedication),
+https://creativecommons.org/publicdomain/zero/1.0/
+
+Each module states its own licence in its module.json ("license"). The example modules
+casual-short, no-work-talk and more-apps are CC0-1.0.

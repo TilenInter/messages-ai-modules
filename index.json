@@ -1,0 +1,32 @@
+{
+  "format": 1,
+  "modules": [
+    {
+      "id": "casual-short",
+      "name": "Casual & short",
+      "version": "1.0.0",
+      "author": "Messages AI",
+      "description": "Short, relaxed replies like quick texts between friends: very short messages, emoji now and then, no full stop at the end of a one-line reply.",
+      "file": "modules/casual-short.mamod",
+      "sha256": "26bcc387bff34da46a70bba1b88bef32535157fc5c56043bd4982d04dda3cec0"
+    },
+    {
+      "id": "more-apps",
+      "name": "More messaging apps",
+      "version": "1.0.0",
+      "author": "Messages AI",
+      "description": "Adds Threema, Element and Session to Apps. They reply through the notification's Reply button.",
+      "file": "modules/more-apps.mamod",
+      "sha256": "618661797ea675bc47df8d4b8c9345b692a1e5d14e96f8869edae90141b4032a"
+    },
+    {
+      "id": "no-work-talk",
+      "name": "No work talk",
+      "version": "1.0.0",
+      "author": "Messages AI",
+      "description": "Keeps private chats private: no talk about work, and a chat that turns urgent is handed to you.",
+      "file": "modules/no-work-talk.mamod",
+      "sha256": "a3f1be882c088d0d0e650e6fa8595172a787f063445040df39a34a81d497488c"
+    }
+  ]
+}
