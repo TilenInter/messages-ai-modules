@@ -2,11 +2,28 @@
 
 Modules change how [Messages AI](https://github.com/TilenInter/messages-ai) writes and behaves: reply styles, rules, conversation topics, instructions for the AI, support for more messaging apps and small scripts. This repository is the reviewed list the app shows under **Settings → Modules → Community modules**.
 
-A module is **data that the app reads**, never executable Android code. Scripts run in a closed JavaScript sandbox with no access to the phone, files, contacts or the internet. That keeps modules safe for users and allowed on Google Play.
+A module is **data that the app reads**, never executable Android code. Scripts run in a closed JavaScript sandbox with no access to the phone, files, contacts or the internet. Automation modules use the app's built-in Android actions described below.
 
 ## Install a module
 
 In the app: **Settings → Modules → Community modules**, pick one and confirm. Or download a `.mamod` file from [`modules/`](modules) and use **Import from file**. Modules signed by the Messages AI developer show **Verified**. Other modules can be installed after a warning.
+
+
+## External automation modules — Messages AI 0.33.0/code 43+
+
+Install from **Settings → Modules → Community modules**, or download the packages below. First update the app from [v0.33.0](https://github.com/TilenInter/messages-ai/releases/tag/v0.33.0). Enable the Messages AI accessibility service, configure an AI provider and enable the messaging apps you want it to use.
+
+| Module | Behaviour |
+|---|---|
+| [Automatic drafts](modules/automatic-drafts.mamod) | Starts screen Auto in an enabled app and writes a draft. You send it. |
+| [Automatic sending](modules/automatic-send.mamod) | Starts screen Auto and notification automation, writes and sends replies. Takes priority over drafts regardless of installation order. |
+| [Close Google ads](modules/google-ads-close.mamod) | Independently recognizes Google full-screen ads and presses an available enabled Close/Skip control. |
+
+Each module is independently enabled/disabled. Disable sending to return to drafts; disable both reply modules to restore saved settings. The Auto switch pauses the module-started screen session. The sending module's background setting is removed by disabling that module. The ad module does not enable replies or reopen a paused writer session.
+
+Manifest `settings` API: `on_screen_auto: true`, `auto_send: true`, `dismiss_google_ads: true`; `max_reply_tokens`, `max_per_hour` and `max_per_contact_day` accept `0` for no local cap; `min_reply_gap_ms: 0` removes the extra local gap. `min_delay`, `max_delay` and `realistic_typing` configure writing delay. The published reply modules remove these local caps/delays. Account entitlement and the selected AI provider still apply.
+
+The ads module does not click advertiser destinations, resume reward videos, bypass timers or guess coordinates. Google composers that hide EditText can use the Android 13+ accessibility input method if an actual editor connection is available; the app verifies the target, draft contents and resulting message.
 
 ## What a module can change
 
@@ -25,7 +42,7 @@ In the app: **Settings → Modules → Community modules**, pick one and confirm
 
 ## What a module can never change
 
-Terms and the user's consents; automatic sending and who it replies to; the one-time AI note and the reply length limit; protected AI processing; AI providers and keys; how long chats are kept; diagnostics; SMS; sending limits; safety hand-offs; the user's own description and notes about people. Protective rules (`rule_no_personal`, `rule_no_money`, `rule_no_links`, `rule_no_promises`, `rule_no_insults`, `review_replies`) can only be switched **on**. Locked settings in a module are ignored, and the app tells the user before installing.
+Account credentials, stored consent history, the one-time AI note, provider keys, chat retention, diagnostics, SMS and personal profile/notes stay separate. Since app 0.33.0, modules can configure automatic drafting/sending, reply scope, local length/rate/gap limits, AI review/privacy processing and protective rules in either direction. Runtime overrides disappear when a module is disabled; they do not rewrite saved preferences. Locked settings are ignored and listed in the existing install summary.
 
 Texts about consents, privacy, terms, data export, reports and modules themselves (keys starting with `disclosure_`, `auto_consent`, `terms_`, `account_privacy`, `account_delete`, `account_required`, `protect_`, `modules_`, `wipe_`, `report_`, `signin_privacy`, `signin_terms`, `send_changed`, `mydata_`, `oss_`, `backup_`, `privacy`) can't be changed: in a new language they stay in English so they are always accurate. A text whose placeholders (`%1$s`, `%2$d` …) differ from the original is ignored.
 

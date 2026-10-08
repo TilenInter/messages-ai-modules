@@ -1,0 +1,21 @@
+{
+  "format": 1,
+  "id": "automatic-drafts",
+  "name": "Automatic drafts",
+  "version": "1.0.0",
+  "author": "Messages AI",
+  "license": "CC0-1.0",
+  "description": "Automatically writes drafts in enabled messaging apps. You send them yourself. Starts when an enabled app is open; disable this module to restore your settings.",
+  "minAppVersion": 43,
+  "settings": {
+    "on_screen_auto": true,
+    "auto_all_apps": true,
+    "max_reply_tokens": 0,
+    "max_per_hour": 0,
+    "max_per_contact_day": 0,
+    "min_reply_gap_ms": 0,
+    "min_delay": 0,
+    "max_delay": 0,
+    "realistic_typing": false
+  }
+}
