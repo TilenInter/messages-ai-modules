@@ -2,6 +2,24 @@
   "format": 1,
   "modules": [
     {
+      "id": "automatic-drafts",
+      "name": "Automatic drafts",
+      "version": "1.0.0",
+      "author": "Messages AI",
+      "description": "Automatically writes drafts in enabled messaging apps. You send them yourself. Starts when an enabled app is open; disable this module to restore your settings.",
+      "file": "modules/automatic-drafts.mamod",
+      "sha256": "7fb033a30cde6388fb286c518ffba91c108a24726cc12d5030f21b75a5eab4f0"
+    },
+    {
+      "id": "automatic-send",
+      "name": "Automatic sending",
+      "version": "1.0.0",
+      "author": "Messages AI",
+      "description": "Automatically writes and sends replies in enabled messaging apps, including screen and notification replies. Takes priority over Automatic drafts. Disable this module to restore your settings.",
+      "file": "modules/automatic-send.mamod",
+      "sha256": "e862297ec1ea92051b0b9acb1da92dea49fa07a54f33a0ff4473094e8d6f4f02"
+    },
+    {
       "id": "casual-short",
       "name": "Casual & short",
       "version": "1.0.0",
@@ -18,6 +36,15 @@
       "description": "Simpler, friendlier English words on Home: Auto-reply, Ask me first, Send right away.",
       "file": "modules/friendly-wording.mamod",
       "sha256": "1f8061efe51df8a64b727a181b37ddc9839959f3679acd0d8b8e861bc3cb16a9"
+    },
+    {
+      "id": "google-ads-close",
+      "name": "Close Google ads",
+      "version": "1.0.0",
+      "author": "Messages AI",
+      "description": "Recognizes Google full-screen ads in other apps and presses an available Close or Skip control. Works independently of reply modules; does not press Install, advertiser links or reward-resume controls.",
+      "file": "modules/google-ads-close.mamod",
+      "sha256": "03bd7025f76374d16aed0abc4ea7f753be374b22cf7d4133a9a4e2ef4f789bf1"
     },
     {
       "id": "more-apps",

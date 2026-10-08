@@ -1,0 +1,23 @@
+{
+  "format": 1,
+  "id": "automatic-send",
+  "name": "Automatic sending",
+  "version": "1.0.0",
+  "author": "Messages AI",
+  "license": "CC0-1.0",
+  "description": "Automatically writes and sends replies in enabled messaging apps, including screen and notification replies. Takes priority over Automatic drafts. Disable this module to restore your settings.",
+  "minAppVersion": 43,
+  "settings": {
+    "on_screen_auto": true,
+    "auto_all_apps": true,
+    "max_reply_tokens": 0,
+    "max_per_hour": 0,
+    "max_per_contact_day": 0,
+    "auto_send": true,
+    "automation_enabled": true,
+    "min_reply_gap_ms": 0,
+    "min_delay": 0,
+    "max_delay": 0,
+    "realistic_typing": false
+  }
+}
