@@ -1,0 +1,129 @@
+{
+  "format": 1,
+  "id": "free-ai-auto",
+  "name": "Free AI (automatic)",
+  "version": "1.0.0",
+  "author": "Messages AI",
+  "license": "CC0-1.0",
+  "description": "Writes replies with free AI providers and switches to the next one automatically when one runs out of free quota, is rate-limited or does not answer. OVHcloud and Pollinations work without a key; Gemini, Groq, Mistral, OpenRouter, NVIDIA, GitHub Models, SambaNova, Cohere and LLM7 join once you add your own free key in AI models. Conversations are sent to these providers. Requires Messages AI 0.40.0 or newer.",
+  "homepage": "https://github.com/TilenInter/messages-ai-modules",
+  "minAppVersion": 50,
+  "settings": {
+    "free_ai": true
+  },
+  "freeAi": {
+    "routes": [
+      {
+        "name": "Google Gemini",
+        "baseUrl": "https://generativelanguage.googleapis.com/v1beta/openai",
+        "models": [
+          "gemini-2.5-flash",
+          "gemini-3-flash-preview",
+          "gemini-2.5-flash-lite"
+        ],
+        "key": true,
+        "keyUrl": "https://aistudio.google.com/apikey"
+      },
+      {
+        "name": "Groq",
+        "baseUrl": "https://api.groq.com/openai/v1",
+        "models": [
+          "openai/gpt-oss-120b",
+          "qwen/qwen3.6-27b",
+          "openai/gpt-oss-20b"
+        ],
+        "key": true,
+        "keyUrl": "https://console.groq.com/keys"
+      },
+      {
+        "name": "Mistral",
+        "baseUrl": "https://api.mistral.ai/v1",
+        "models": [
+          "mistral-small-latest",
+          "mistral-large-latest"
+        ],
+        "key": true,
+        "keyUrl": "https://console.mistral.ai/api-keys"
+      },
+      {
+        "name": "OpenRouter",
+        "baseUrl": "https://openrouter.ai/api/v1",
+        "models": [
+          "openrouter/free"
+        ],
+        "key": true,
+        "keyUrl": "https://openrouter.ai/keys"
+      },
+      {
+        "name": "NVIDIA",
+        "baseUrl": "https://integrate.api.nvidia.com/v1",
+        "models": [
+          "openai/gpt-oss-120b",
+          "google/gemma-4-31b-it"
+        ],
+        "key": true,
+        "keyUrl": "https://build.nvidia.com"
+      },
+      {
+        "name": "GitHub Models",
+        "baseUrl": "https://models.github.ai/inference",
+        "models": [
+          "openai/gpt-4.1-mini"
+        ],
+        "key": true,
+        "keyUrl": "https://github.com/settings/personal-access-tokens/new"
+      },
+      {
+        "name": "SambaNova",
+        "baseUrl": "https://api.sambanova.ai/v1",
+        "models": [
+          "Meta-Llama-3.3-70B-Instruct",
+          "gpt-oss-120b"
+        ],
+        "key": true,
+        "keyUrl": "https://cloud.sambanova.ai/apis"
+      },
+      {
+        "name": "Cohere",
+        "baseUrl": "https://api.cohere.com/compatibility/v1",
+        "models": [
+          "command-a-03-2025"
+        ],
+        "key": true,
+        "keyUrl": "https://dashboard.cohere.com/api-keys"
+      },
+      {
+        "name": "LLM7",
+        "baseUrl": "https://api.llm7.io/v1",
+        "models": [
+          "gpt-4.1-nano-2025-04-14",
+          "gpt-4o-mini-2024-07-18"
+        ],
+        "key": true,
+        "keyUrl": "https://token.llm7.io"
+      },
+      {
+        "name": "OVHcloud",
+        "baseUrl": "https://oai.endpoints.kepler.ai.cloud.ovh.net/v1",
+        "models": [
+          "gpt-oss-120b",
+          "Meta-Llama-3_3-70B-Instruct",
+          "Mistral-Small-3.2-24B-Instruct-2506"
+        ],
+        "key": false,
+        "keyUrl": "https://endpoints.ai.cloud.ovh.net"
+      },
+      {
+        "name": "Pollinations",
+        "baseUrl": "https://gen.pollinations.ai/v1",
+        "models": [
+          "openai",
+          "mistral",
+          "openai-fast"
+        ],
+        "key": false,
+        "keyUrl": "https://enter.pollinations.ai"
+      }
+    ]
+  }
+}

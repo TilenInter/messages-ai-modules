@@ -29,6 +29,15 @@
       "sha256": "26bcc387bff34da46a70bba1b88bef32535157fc5c56043bd4982d04dda3cec0"
     },
     {
+      "id": "free-ai-auto",
+      "name": "Free AI (automatic)",
+      "version": "1.0.0",
+      "author": "Messages AI",
+      "description": "Writes replies with free AI providers and switches to the next one automatically when one runs out of free quota, is rate-limited or does not answer. OVHcloud and Pollinations work without a key; Gemini, Groq, Mistral, OpenRouter, NVIDIA, GitHub Models, SambaNova, Cohere and LLM7 join once you add your own free key in AI models. Conversations are sent to these providers. Requires Messages AI 0.40.0 or newer.",
+      "file": "modules/free-ai-auto.mamod",
+      "sha256": "8823effc819b12d6ec4e01e184aa033b89c0a6a4dc2df545ae0283ffd4c364ab"
+    },
+    {
       "id": "friendly-wording",
       "name": "Friendly wording",
       "version": "1.0.0",
