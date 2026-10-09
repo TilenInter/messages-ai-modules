@@ -1,0 +1,14 @@
+{
+  "format": 1,
+  "id": "reply-suggestions",
+  "name": "Reply suggestions",
+  "version": "1.0.0",
+  "author": "Messages AI",
+  "license": "CC0-1.0",
+  "description": "Shows three suggested replies in bubbles above an open chat. Tap a bubble to send that reply, tap ↻ for three new ones, × hides them until you open another chat. New suggestions appear by themselves when a message arrives. In the Google Play version a tapped reply is typed into the text field and you send it. Uses your AI provider. Requires Messages AI 0.43.0 or newer.",
+  "homepage": "https://github.com/TilenInter/messages-ai-modules",
+  "minAppVersion": 53,
+  "settings": {
+    "reply_suggestions": true
+  }
+}

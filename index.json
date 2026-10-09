@@ -65,6 +65,15 @@
       "sha256": "618661797ea675bc47df8d4b8c9345b692a1e5d14e96f8869edae90141b4032a"
     },
     {
+      "id": "more-languages",
+      "name": "More reply languages",
+      "version": "1.0.0",
+      "author": "Messages AI",
+      "description": "Teaches the reply logic Finnish, Hungarian, Romanian and Swedish: the app then recognizes questions, requests, bad and good news, thanks and goodbyes in these languages and checks that a reply really answers them, like it does for the built-in languages. The words apply only to chats in that language. Also an example for authors who want to add their own language. Requires Messages AI 0.43.0 or newer.",
+      "file": "modules/more-languages.mamod",
+      "sha256": "d3ee0236271b9d7084e2af4c396bf118b89b162da8955684a7ac39b04a1b5868"
+    },
+    {
       "id": "no-ai-footer",
       "name": "No AI footer",
       "version": "1.0.0",
@@ -90,6 +99,15 @@
       "description": "A calm blue colour theme for light and dark mode.",
       "file": "modules/ocean-theme.mamod",
       "sha256": "4205832b5016ca631a6a252b14aa16c22ab577dcfef0b45e9e799f05c6e07f53"
+    },
+    {
+      "id": "reply-suggestions",
+      "name": "Reply suggestions",
+      "version": "1.0.0",
+      "author": "Messages AI",
+      "description": "Shows three suggested replies in bubbles above an open chat. Tap a bubble to send that reply, tap ↻ for three new ones, × hides them until you open another chat. New suggestions appear by themselves when a message arrives. In the Google Play version a tapped reply is typed into the text field and you send it. Uses your AI provider. Requires Messages AI 0.43.0 or newer.",
+      "file": "modules/reply-suggestions.mamod",
+      "sha256": "0c34dbbc6c7b3915816bca0ca8ca7f40e36904da5f07ca5497b673adc94f4870"
     }
   ]
 }
