@@ -8,6 +8,8 @@ A module is **data that the app reads**, never executable Android code. Scripts 
 
 In the app: **Settings → Modules → Community modules**, pick one and confirm. Or download a `.mamod` file from [`modules/`](modules) and use **Import from file**. Modules signed by the Messages AI developer show **Verified**. Other modules can be installed after a warning.
 
+**Write your own:** the [module author guide](GUIDE.md) ([slovensko](VODNIK.sl.md)) describes every section and setting. Community modules can use everything the official modules use – the signature only changes the warning before installing, never what a module may do.
+
 
 ## External automation modules — Messages AI 0.33.0/code 43+
 
@@ -67,6 +69,24 @@ Free plans have their own terms and some may use prompts to improve their models
 
 `free_ai: true` (or `"first"`) uses free routes before the owner's providers; `"backup"` uses them only after the owner's providers fail. `baseUrl` is an OpenAI-compatible HTTPS address without `/chat/completions`; only built-in known free-tier servers are accepted (`FreeAiCatalog.HOSTS` in the app), so a module can never send conversations to another server. `key: true` routes are skipped until the owner saves a key for a provider on the same server. Up to 60 routes.
 
+## Reply suggestions — Messages AI 0.43.0/code 53+
+
+[Reply suggestions](modules/reply-suggestions.mamod) shows three suggested replies in bubbles above an open chat. Tap a bubble to send that reply, tap **↻** for three new ones, **×** hides them until you open another chat. New suggestions are written by themselves when a message arrives. A reply is sent only if the chat and its last messages are still the same and the text field is empty; in the Google Play version it is typed into the field and you send it. Suggestions use your AI provider (or Free AI) and pass the same checks as every reply.
+
+Its only setting is `reply_suggestions: true`.
+
+## More reply languages — Messages AI 0.43.0/code 53+
+
+[More reply languages](modules/more-languages.mamod) teaches the reply logic Finnish, Hungarian, Romanian and Swedish: the app recognizes questions, requests, bad and good news, thanks and goodbyes in those languages and checks that a reply really answers them. The words apply only to chats in that language. Since 0.43.0 the app itself also understands French, Portuguese, Dutch, Polish, Czech, Slovak, Russian, Ukrainian, Serbian and Turkish, and treats a question mark in any script as a question.
+
+### `replyLogic` in `module.json`
+
+```json
+"replyLogic": { "fi": { "question": ["milloin"], "info": ["milloin", "missä"], "thanks": ["kiitos"], "goodbye": ["hyvää yötä"], "filler": ["joo"] } }
+```
+
+Categories: `question`, `info`, `howAreYou`, `confused`, `request`, `greeting`, `thanks`, `apology`, `bad`, `good`, `laugh`, `goodbye`, `filler`. Plain words or phrases (no regular expressions), case and accents ignored, whole words only; up to 2,000 words per module. See the [guide](GUIDE.md#6-reply-logic-for-any-language).
+
 ## What a module can change
 
 | Section in `module.json` | What it does |
@@ -81,11 +101,13 @@ Free plans have their own terms and some may use prompts to improve their models
 | `languages` | Names of new languages, in that language: `{"fr": "Français"}`. The language appears in **Settings → Languages → App language**. |
 | `theme` | Colours for light and dark mode: `{"name": "Ocean", "light": {"ios_bg": "#EEF4FA"}, "dark": {...}}` (since app 0.29.0). |
 | `freeAi` | Free AI routes tried in order with automatic switching, enabled by `"settings": {"free_ai": true}` (since app 0.40.0). Only known free-tier HTTPS servers; see [Free AI](#free-ai-automatic--messages-ai-0400code-50). |
+| `replyLogic` | Words that teach the reply logic another language, by ISO 639 code (since app 0.43.0). |
+| `settings.reply_suggestions` | Three suggested replies above an open chat; tap one to send it (since app 0.43.0). |
 | `script.js` | Optional hooks, see below. |
 
 ## What a module can never change
 
-Account credentials, stored consent and disclosure history, provider keys, chat retention, diagnostics, SMS and personal profile/notes stay separate. Since app 0.33.0, modules can configure automatic drafting/sending, reply scope, local length/rate/gap limits, AI review/privacy processing and protective rules in either direction. Since 0.39.0, `ai_reply_note: false` omits the automatic AI footer. Since 0.40.0, `free_ai` with `freeAi.routes` sends replies to the listed known free-tier AI servers with automatic switching; keys stay with the owner. Runtime overrides disappear when a module is disabled; they do not rewrite saved preferences. Locked settings are ignored and listed in the existing install summary.
+Account credentials, stored consent and disclosure history, provider keys, chat retention, diagnostics, SMS and personal profile/notes stay separate. Since app 0.33.0, modules can configure automatic drafting/sending, reply scope, local length/rate/gap limits, AI review/privacy processing and protective rules in either direction. Since 0.39.0, `ai_reply_note: false` omits the automatic AI footer. Since 0.40.0, `free_ai` with `freeAi.routes` sends replies to the listed known free-tier AI servers with automatic switching; keys stay with the owner. Since 0.43.0, `reply_suggestions: true` shows suggested replies that the owner sends with a tap, and `replyLogic` adds reply-logic words for any language. Runtime overrides disappear when a module is disabled; they do not rewrite saved preferences. Locked settings are ignored and listed in the existing install summary.
 
 Texts about consents, privacy, terms, data export, reports and modules themselves (keys starting with `disclosure_`, `auto_consent`, `terms_`, `account_privacy`, `account_delete`, `account_required`, `protect_`, `modules_`, `wipe_`, `report_`, `signin_privacy`, `signin_terms`, `send_changed`, `mydata_`, `oss_`, `backup_`, `privacy`) can't be changed: in a new language they stay in English so they are always accurate. A text whose placeholders (`%1$s`, `%2$d` …) differ from the original is ignored.
 
@@ -117,6 +139,7 @@ function onIncoming(event) {        // {app, contact, message, history: [{me, te
 }
 
 // Change the prompt before it goes to the AI (privacy masking still happens afterwards).
+// kind: REPLY, FORCED, OPENER, FOLLOW_UP or SUGGESTIONS (reply suggestions, since 0.43.0).
 function beforePrompt(prompt) {     // {system, user, app, contact, kind}
   return { system: prompt.system, user: prompt.user };
 }
@@ -129,6 +152,8 @@ function afterReply(reply) {        // {text, app, contact, language}
 ```
 
 ## Make a module
+
+The full reference is the [module author guide](GUIDE.md) ([slovensko](VODNIK.sl.md)). In short:
 
 1. Create a folder with `module.json` (and optionally `script.js`):
 

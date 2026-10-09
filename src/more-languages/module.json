@@ -1,0 +1,414 @@
+{
+  "format": 1,
+  "id": "more-languages",
+  "name": "More reply languages",
+  "version": "1.0.0",
+  "author": "Messages AI",
+  "license": "CC0-1.0",
+  "description": "Teaches the reply logic Finnish, Hungarian, Romanian and Swedish: the app then recognizes questions, requests, bad and good news, thanks and goodbyes in these languages and checks that a reply really answers them, like it does for the built-in languages. The words apply only to chats in that language. Also an example for authors who want to add their own language. Requires Messages AI 0.43.0 or newer.",
+  "homepage": "https://github.com/TilenInter/messages-ai-modules",
+  "minAppVersion": 53,
+  "replyLogic": {
+    "fi": {
+      "question": [
+        "milloin",
+        "missä",
+        "mihin",
+        "mistä",
+        "miksi",
+        "mitä",
+        "mikä",
+        "kuka",
+        "kenen",
+        "paljonko",
+        "kuinka",
+        "monelta",
+        "onko",
+        "oletko",
+        "tuletko",
+        "voitko"
+      ],
+      "info": [
+        "milloin",
+        "missä",
+        "mihin",
+        "mistä",
+        "miksi",
+        "kuka",
+        "kenen",
+        "paljonko",
+        "kuinka paljon",
+        "kuinka kauan",
+        "mihin aikaan",
+        "monelta"
+      ],
+      "howAreYou": [
+        "mitä kuuluu",
+        "miten menee",
+        "mites menee",
+        "kuinka voit",
+        "miten meni",
+        "miten päivä meni"
+      ],
+      "confused": [
+        "en ymmärrä",
+        "mitä tarkoitat",
+        "miten niin"
+      ],
+      "request": [
+        "voitko",
+        "voisitko",
+        "ole hyvä",
+        "lähetä",
+        "soita",
+        "kerro minulle"
+      ],
+      "greeting": [
+        "moi",
+        "moikka",
+        "terve",
+        "huomenta",
+        "hyvää huomenta",
+        "päivää",
+        "iltaa"
+      ],
+      "thanks": [
+        "kiitos",
+        "kiitti",
+        "kiitos paljon"
+      ],
+      "apology": [
+        "anteeksi",
+        "sori",
+        "pahoittelen"
+      ],
+      "bad": [
+        "olen sairas",
+        "olen kipeä",
+        "kuoli",
+        "surullinen",
+        "olen väsynyt",
+        "huono päivä",
+        "sairaalassa"
+      ],
+      "good": [
+        "onnistui",
+        "pääsin läpi",
+        "sain työpaikan",
+        "voitimme",
+        "menimme kihloihin"
+      ],
+      "goodbye": [
+        "hyvää yötä",
+        "öitä",
+        "nähdään",
+        "heippa",
+        "palataan"
+      ],
+      "filler": [
+        "joo",
+        "juu",
+        "okei",
+        "selvä",
+        "kiva",
+        "jep",
+        "ei"
+      ]
+    },
+    "hu": {
+      "question": [
+        "mikor",
+        "hol",
+        "hová",
+        "hova",
+        "honnan",
+        "miért",
+        "mennyi",
+        "hány",
+        "melyik",
+        "hogyan",
+        "ugye"
+      ],
+      "info": [
+        "mikor",
+        "hol",
+        "hová",
+        "hova",
+        "honnan",
+        "miért",
+        "mennyi",
+        "hány",
+        "melyik",
+        "hány órakor",
+        "mennyibe kerül"
+      ],
+      "howAreYou": [
+        "hogy vagy",
+        "mi újság",
+        "hogy ment",
+        "milyen volt",
+        "hogy telt"
+      ],
+      "confused": [
+        "nem értem",
+        "hogy érted",
+        "mire gondolsz"
+      ],
+      "request": [
+        "kérlek",
+        "légyszi",
+        "légy szíves",
+        "tudnál",
+        "küldd el",
+        "hívj fel",
+        "szólj"
+      ],
+      "greeting": [
+        "szia",
+        "sziasztok",
+        "helló",
+        "jó reggelt",
+        "jó napot",
+        "jó estét"
+      ],
+      "thanks": [
+        "köszönöm",
+        "köszi",
+        "kösz",
+        "köszönöm szépen"
+      ],
+      "apology": [
+        "bocsi",
+        "bocsánat",
+        "elnézést",
+        "sajnálom"
+      ],
+      "bad": [
+        "beteg vagyok",
+        "meghalt",
+        "szomorú vagyok",
+        "fáradt vagyok",
+        "rossz napom volt",
+        "kórházban"
+      ],
+      "good": [
+        "sikerült",
+        "átmentem",
+        "felvettek",
+        "nyertünk",
+        "eljegyeztek"
+      ],
+      "goodbye": [
+        "jó éjt",
+        "jó éjszakát",
+        "viszlát",
+        "majd beszélünk",
+        "később beszélünk"
+      ],
+      "filler": [
+        "oké",
+        "igen",
+        "persze",
+        "rendben",
+        "aha",
+        "szuper",
+        "nem"
+      ]
+    },
+    "ro": {
+      "question": [
+        "când",
+        "unde",
+        "de ce",
+        "cine",
+        "cât costă",
+        "cât timp",
+        "câți",
+        "câte",
+        "la ce oră",
+        "de unde"
+      ],
+      "info": [
+        "când",
+        "unde",
+        "de ce",
+        "cine",
+        "cât costă",
+        "cât timp",
+        "câți",
+        "câte",
+        "la ce oră",
+        "de unde"
+      ],
+      "howAreYou": [
+        "ce faci",
+        "ce mai faci",
+        "cum ești",
+        "cum a fost",
+        "cum merge"
+      ],
+      "confused": [
+        "nu înțeleg",
+        "ce vrei să spui",
+        "cum adică"
+      ],
+      "request": [
+        "te rog",
+        "poți să",
+        "ai putea",
+        "trimite-mi",
+        "sună-mă",
+        "spune-mi"
+      ],
+      "greeting": [
+        "salut",
+        "bună",
+        "bună ziua",
+        "bună dimineața",
+        "bună seara",
+        "neața"
+      ],
+      "thanks": [
+        "mersi",
+        "mulțumesc",
+        "mulțumesc frumos"
+      ],
+      "apology": [
+        "scuze",
+        "îmi pare rău",
+        "iartă-mă"
+      ],
+      "bad": [
+        "sunt bolnav",
+        "sunt bolnavă",
+        "a murit",
+        "sunt trist",
+        "sunt tristă",
+        "sunt obosit",
+        "sunt obosită",
+        "zi proastă",
+        "la spital"
+      ],
+      "good": [
+        "am reușit",
+        "am luat examenul",
+        "am primit jobul",
+        "am câștigat",
+        "ne-am logodit"
+      ],
+      "goodbye": [
+        "noapte bună",
+        "pa pa",
+        "la revedere",
+        "ne vedem",
+        "vorbim mai târziu",
+        "pe curând"
+      ],
+      "filler": [
+        "bine",
+        "sigur",
+        "mhm",
+        "clar",
+        "nu"
+      ]
+    },
+    "sv": {
+      "question": [
+        "när",
+        "var är",
+        "vart",
+        "varför",
+        "vem",
+        "hur mycket",
+        "hur många",
+        "vilken",
+        "vilket",
+        "vilka",
+        "hur dags",
+        "hur länge"
+      ],
+      "info": [
+        "när",
+        "var är",
+        "vart",
+        "varför",
+        "vem",
+        "hur mycket",
+        "hur många",
+        "vilken",
+        "vilket",
+        "vilka",
+        "hur dags",
+        "hur länge"
+      ],
+      "howAreYou": [
+        "hur mår du",
+        "hur är det",
+        "läget",
+        "hur har du det",
+        "hur var det",
+        "hur gick det"
+      ],
+      "confused": [
+        "jag förstår inte",
+        "vad menar du",
+        "hur menar du"
+      ],
+      "request": [
+        "snälla",
+        "kan du",
+        "skulle du kunna",
+        "skicka",
+        "ring mig",
+        "säg till"
+      ],
+      "greeting": [
+        "hej",
+        "hejsan",
+        "tjena",
+        "god morgon",
+        "god kväll",
+        "hallå"
+      ],
+      "thanks": [
+        "tack",
+        "tack så mycket",
+        "tusen tack"
+      ],
+      "apology": [
+        "förlåt",
+        "ursäkta",
+        "jag ber om ursäkt"
+      ],
+      "bad": [
+        "jag är sjuk",
+        "ledsen",
+        "jag är trött",
+        "jobbig dag",
+        "på sjukhus",
+        "gick bort"
+      ],
+      "good": [
+        "jag klarade",
+        "fick jobbet",
+        "vi vann",
+        "vi har förlovat oss",
+        "äntligen"
+      ],
+      "goodbye": [
+        "god natt",
+        "hej då",
+        "vi ses",
+        "sov gott"
+      ],
+      "filler": [
+        "nej",
+        "okej",
+        "bra",
+        "visst",
+        "absolut",
+        "japp"
+      ]
+    }
+  }
+}
