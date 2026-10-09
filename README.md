@@ -31,6 +31,42 @@ The ads module does not click advertiser destinations, resume reward videos, byp
 
 Its only setting is `ai_reply_note: false`. It does not enable automatic replies or sending, edit the reply body, or instruct the AI to deny its involvement. Disabling/removing it restores the default one-time note for conversations that have not received it. Saved disclosure timestamps are preserved; sending without the note does not record it as delivered. The module is signed with the developer key and requires app versionCode 49, so older apps refuse installation.
 
+## Free AI (automatic) — Messages AI 0.40.0/code 50+
+
+[Free AI (automatic)](modules/free-ai-auto.mamod) writes replies with free AI providers. The app tries them in the listed order and automatically switches to the next one when a provider runs out of free quota, is rate-limited, rejects the key, no longer has the model, fails or does not answer – like an [OmniRoute](https://github.com/diegosouzapw/OmniRoute) combo, but inside the app, without a server.
+
+| Order | Provider | Key | Models |
+|---|---|---|---|
+| 1 | Google Gemini | free key from [AI Studio](https://aistudio.google.com/apikey) | gemini-2.5-flash, gemini-3-flash-preview, gemini-2.5-flash-lite |
+| 2 | Groq | free key from [console.groq.com](https://console.groq.com/keys) | openai/gpt-oss-120b, qwen/qwen3.6-27b, openai/gpt-oss-20b |
+| 3 | Mistral | free key from [console.mistral.ai](https://console.mistral.ai/api-keys) | mistral-small-latest, mistral-large-latest |
+| 4 | OpenRouter | free key from [openrouter.ai](https://openrouter.ai/keys) | openrouter/free |
+| 5 | NVIDIA | free key from [build.nvidia.com](https://build.nvidia.com) | openai/gpt-oss-120b, google/gemma-4-31b-it |
+| 6 | GitHub Models | GitHub token with Models access | openai/gpt-4.1-mini |
+| 7 | SambaNova | free key from [cloud.sambanova.ai](https://cloud.sambanova.ai/apis) | Meta-Llama-3.3-70B-Instruct, gpt-oss-120b |
+| 8 | Cohere | trial key from [dashboard.cohere.com](https://dashboard.cohere.com/api-keys) | command-a-03-2025 |
+| 9 | LLM7 | free token from [token.llm7.io](https://token.llm7.io) | gpt-4.1-nano-2025-04-14, gpt-4o-mini-2024-07-18 |
+| 10 | OVHcloud AI Endpoints | none (anonymous, about 2 requests/min per model) | gpt-oss-120b, Meta-Llama-3_3-70B-Instruct, Mistral-Small-3.2-24B-Instruct-2506 |
+| 11 | Pollinations | none (anonymous, best effort) | openai, mistral, openai-fast |
+
+Without any key the module works through OVHcloud and Pollinations. Every free key you add in **AI models** (tap a provider marked *needs a free key*) adds more capacity in front of them. A key is only ever sent to the server it was entered for. **AI models** shows each provider's state: ready, resting (and for how long) or needs a free key.
+
+Switching rules: a rate limit rests that model for 1 minute (doubling up to 1 hour), used-up free quota for 1 hour (up to 12 hours), a rejected key or unreachable server rests the whole provider (12 hours / 30 seconds and up), a removed model rests for a day; the provider's `Retry-After` wins when given. A success resets the counter. One reply tries at most six models, two per provider, for at most two minutes. Your own providers are used only after every free route fails. Disable or remove the module to return to your own providers only.
+
+Free plans have their own terms and some may use prompts to improve their models; protected AI processing still masks numbers, codes and addresses before sending. Free model names change – the module is updated without an app release.
+
+### `freeAi` in `module.json`
+
+```json
+"settings": { "free_ai": true },
+"freeAi": { "routes": [
+  { "name": "Groq", "baseUrl": "https://api.groq.com/openai/v1", "models": ["openai/gpt-oss-120b"], "key": true, "keyUrl": "https://console.groq.com/keys" },
+  { "name": "OVHcloud", "baseUrl": "https://oai.endpoints.kepler.ai.cloud.ovh.net/v1", "model": "gpt-oss-120b", "key": false }
+] }
+```
+
+`free_ai: true` (or `"first"`) uses free routes before the owner's providers; `"backup"` uses them only after the owner's providers fail. `baseUrl` is an OpenAI-compatible HTTPS address without `/chat/completions`; only built-in known free-tier servers are accepted (`FreeAiCatalog.HOSTS` in the app), so a module can never send conversations to another server. `key: true` routes are skipped until the owner saves a key for a provider on the same server. Up to 60 routes.
+
 ## What a module can change
 
 | Section in `module.json` | What it does |
@@ -44,11 +80,12 @@ Its only setting is `ai_reply_note: false`. It does not enable automatic replies
 | `strings` | Texts of the app by language: `{"en": {"home_master": "Auto-reply"}, "fr": {...}}`. Replace texts in an existing language or translate the app into a new one (since app 0.29.0). |
 | `languages` | Names of new languages, in that language: `{"fr": "Français"}`. The language appears in **Settings → Languages → App language**. |
 | `theme` | Colours for light and dark mode: `{"name": "Ocean", "light": {"ios_bg": "#EEF4FA"}, "dark": {...}}` (since app 0.29.0). |
+| `freeAi` | Free AI routes tried in order with automatic switching, enabled by `"settings": {"free_ai": true}` (since app 0.40.0). Only known free-tier HTTPS servers; see [Free AI](#free-ai-automatic--messages-ai-0400code-50). |
 | `script.js` | Optional hooks, see below. |
 
 ## What a module can never change
 
-Account credentials, stored consent and disclosure history, provider keys, chat retention, diagnostics, SMS and personal profile/notes stay separate. Since app 0.33.0, modules can configure automatic drafting/sending, reply scope, local length/rate/gap limits, AI review/privacy processing and protective rules in either direction. Since 0.39.0, `ai_reply_note: false` omits the automatic AI footer. Runtime overrides disappear when a module is disabled; they do not rewrite saved preferences. Locked settings are ignored and listed in the existing install summary.
+Account credentials, stored consent and disclosure history, provider keys, chat retention, diagnostics, SMS and personal profile/notes stay separate. Since app 0.33.0, modules can configure automatic drafting/sending, reply scope, local length/rate/gap limits, AI review/privacy processing and protective rules in either direction. Since 0.39.0, `ai_reply_note: false` omits the automatic AI footer. Since 0.40.0, `free_ai` with `freeAi.routes` sends replies to the listed known free-tier AI servers with automatic switching; keys stay with the owner. Runtime overrides disappear when a module is disabled; they do not rewrite saved preferences. Locked settings are ignored and listed in the existing install summary.
 
 Texts about consents, privacy, terms, data export, reports and modules themselves (keys starting with `disclosure_`, `auto_consent`, `terms_`, `account_privacy`, `account_delete`, `account_required`, `protect_`, `modules_`, `wipe_`, `report_`, `signin_privacy`, `signin_terms`, `send_changed`, `mydata_`, `oss_`, `backup_`, `privacy`) can't be changed: in a new language they stay in English so they are always accurate. A text whose placeholders (`%1$s`, `%2$d` …) differ from the original is ignored.
 
