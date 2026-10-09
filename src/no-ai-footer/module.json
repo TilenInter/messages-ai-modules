@@ -1,0 +1,14 @@
+{
+  "format": 1,
+  "id": "no-ai-footer",
+  "name": "No AI footer",
+  "version": "1.0.0",
+  "author": "Messages AI",
+  "license": "CC0-1.0",
+  "description": "Omits the automatic AI-assistance footer from replies sent through notifications or an open chat. Requires Messages AI 0.39.0 or newer. Disable this module to restore the default footer for conversations that have not received it. Does not enable sending or change saved disclosure history.",
+  "homepage": "https://github.com/TilenInter/messages-ai-modules",
+  "minAppVersion": 49,
+  "settings": {
+    "ai_reply_note": false
+  }
+}

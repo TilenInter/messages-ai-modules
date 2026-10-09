@@ -25,6 +25,12 @@ Manifest `settings` API: `on_screen_auto: true`, `auto_send: true`, `dismiss_goo
 
 The ads module does not click advertiser destinations, resume reward videos, bypass timers or guess coordinates. Google composers that hide EditText can use the Android 13+ accessibility input method if an actual editor connection is available; the app verifies the target, draft contents and resulting message.
 
+## No AI footer — Messages AI 0.39.0/code 49+
+
+[No AI footer](modules/no-ai-footer.mamod) omits the automatic AI-assistance note from replies sent through notifications or an open conversation. Install it from **Settings → Modules → Community modules** after updating to [v0.39.0](https://github.com/TilenInter/messages-ai/releases/tag/v0.39.0).
+
+Its only setting is `ai_reply_note: false`. It does not enable automatic replies or sending, edit the reply body, or instruct the AI to deny its involvement. Disabling/removing it restores the default one-time note for conversations that have not received it. Saved disclosure timestamps are preserved; sending without the note does not record it as delivered. The module is signed with the developer key and requires app versionCode 49, so older apps refuse installation.
+
 ## What a module can change
 
 | Section in `module.json` | What it does |
@@ -42,7 +48,7 @@ The ads module does not click advertiser destinations, resume reward videos, byp
 
 ## What a module can never change
 
-Account credentials, stored consent history, the one-time AI note, provider keys, chat retention, diagnostics, SMS and personal profile/notes stay separate. Since app 0.33.0, modules can configure automatic drafting/sending, reply scope, local length/rate/gap limits, AI review/privacy processing and protective rules in either direction. Runtime overrides disappear when a module is disabled; they do not rewrite saved preferences. Locked settings are ignored and listed in the existing install summary.
+Account credentials, stored consent and disclosure history, provider keys, chat retention, diagnostics, SMS and personal profile/notes stay separate. Since app 0.33.0, modules can configure automatic drafting/sending, reply scope, local length/rate/gap limits, AI review/privacy processing and protective rules in either direction. Since 0.39.0, `ai_reply_note: false` omits the automatic AI footer. Runtime overrides disappear when a module is disabled; they do not rewrite saved preferences. Locked settings are ignored and listed in the existing install summary.
 
 Texts about consents, privacy, terms, data export, reports and modules themselves (keys starting with `disclosure_`, `auto_consent`, `terms_`, `account_privacy`, `account_delete`, `account_required`, `protect_`, `modules_`, `wipe_`, `report_`, `signin_privacy`, `signin_terms`, `send_changed`, `mydata_`, `oss_`, `backup_`, `privacy`) can't be changed: in a new language they stay in English so they are always accurate. A text whose placeholders (`%1$s`, `%2$d` …) differ from the original is ignored.
 

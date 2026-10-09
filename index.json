@@ -56,6 +56,15 @@
       "sha256": "618661797ea675bc47df8d4b8c9345b692a1e5d14e96f8869edae90141b4032a"
     },
     {
+      "id": "no-ai-footer",
+      "name": "No AI footer",
+      "version": "1.0.0",
+      "author": "Messages AI",
+      "description": "Omits the automatic AI-assistance footer from replies sent through notifications or an open chat. Requires Messages AI 0.39.0 or newer. Disable this module to restore the default footer for conversations that have not received it. Does not enable sending or change saved disclosure history.",
+      "file": "modules/no-ai-footer.mamod",
+      "sha256": "d287b815f0aa607fddd1173db3ec0a302c752d68c0697839de34a0cb1fcafb31"
+    },
+    {
       "id": "no-work-talk",
       "name": "No work talk",
       "version": "1.0.0",
