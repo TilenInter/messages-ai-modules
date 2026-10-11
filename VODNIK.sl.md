@@ -115,3 +115,5 @@ Te razdelke podrobno opisujeta [GUIDE.md](GUIDE.md) in [README.md](README.md). N
 3. Preizkusi v **Test Chat** – nikoli na resničnih ljudeh.
 4. **Dnevnik → 📋 Kopiraj podroben dnevnik** pokaže vrstice `module` (nameščeni moduli, napake skript).
 5. Odpri pull request s `src/<id>/` in `modules/<id>.mamod`. Pravila so v [README.md](README.md#submit-a-module): brez zavajanja (nikoli zanikati AI), brez zbiranja osebnih podatkov, nič nezakonitega ali škodljivega.
+
+Generator kataloga sam določi eno ali več vrst modula: `ai`, `automation`, `appearance` in `apps`. Po spremembi podpisanih paketov zaženi `python tools/mamod.py index modules index.json`; vrst v katalogu ne popravljaj ročno.

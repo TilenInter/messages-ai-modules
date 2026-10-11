@@ -126,14 +126,36 @@ def strings_template(strings_xml, lang, out):
     print(f"{len(texts)} texts -> {out} (translate the values, keep the keys and placeholders like %1$s)")
 
 
+AUTOMATION_SETTINGS = {"on_screen_auto", "auto_send", "send_mode", "dismiss_google_ads", "ai_reply_note", "automation_enabled"}
+
+
+def module_types(manifest, script=False):
+    """Stable catalog groups used by Messages AI's module browser; a module may be in more than one."""
+    settings = manifest.get("settings", {})
+    types = []
+    if (any(key not in AUTOMATION_SETTINGS for key in settings) or any(manifest.get(key) for key in
+            ("freeAi", "replyLogic", "prompt", "rules", "topics", "interventionPhrases")) or settings.get("reply_suggestions") is True):
+        types.append("ai")
+    if any(key in AUTOMATION_SETTINGS for key in settings):
+        types.append("automation")
+    if any(manifest.get(key) for key in ("strings", "languages", "theme")):
+        types.append("appearance")
+    if manifest.get("apps") or script:
+        types.append("apps")
+    return types
+
+
 def index(folder, out):
     folder = Path(folder)
     entries = []
     for f in sorted(folder.glob("*.mamod")):
         m = verify(f, quiet=True)
+        with zipfile.ZipFile(f) as z:
+            types = module_types(m, "script.js" in z.namelist())
         entries.append({
             "id": m["id"], "name": m["name"], "version": m.get("version", ""), "author": m.get("author", ""),
-            "description": m.get("description", ""), "file": f"modules/{f.name}", "sha256": sha(f.read_bytes()),
+            "description": m.get("description", ""), "types": types,
+            "file": f"modules/{f.name}", "sha256": sha(f.read_bytes()),
         })
     Path(out).write_text(json.dumps({"format": 1, "modules": entries}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"index: {len(entries)} module(s) -> {out}")

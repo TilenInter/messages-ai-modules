@@ -186,6 +186,8 @@ python tools/mamod.py verify modules/my-style.mamod
 
 Open a pull request that adds your source folder under `src/` and your packed module under `modules/`. Before a module is listed, it is reviewed, re-signed with the Messages AI key and added to `index.json`. By submitting you confirm that you have the rights to the content and that it may be published under the licence you state.
 
+The index generator assigns one or more browser types from the module's contents: `ai`, `automation`, `appearance` and `apps`. Run `python tools/mamod.py index modules index.json` after updating signed packages; do not hand-edit their types.
+
 Modules are not accepted if they:
 - break the law, Google Play's policies or the [Messages AI terms](https://messages-ai-77f66.web.app/terms.html);
 - try to deceive the people the user chats with, for example by denying that AI helps or impersonating someone;
