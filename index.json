@@ -7,6 +7,10 @@
       "version": "1.0.0",
       "author": "Messages AI",
       "description": "Automatically writes drafts in enabled messaging apps. You send them yourself. Starts when an enabled app is open; disable this module to restore your settings.",
+      "types": [
+        "ai",
+        "automation"
+      ],
       "file": "modules/automatic-drafts.mamod",
       "sha256": "7fb033a30cde6388fb286c518ffba91c108a24726cc12d5030f21b75a5eab4f0"
     },
@@ -16,6 +20,10 @@
       "version": "1.0.0",
       "author": "Messages AI",
       "description": "Automatically writes and sends replies in enabled messaging apps, including screen and notification replies. Takes priority over Automatic drafts. Disable this module to restore your settings.",
+      "types": [
+        "ai",
+        "automation"
+      ],
       "file": "modules/automatic-send.mamod",
       "sha256": "e862297ec1ea92051b0b9acb1da92dea49fa07a54f33a0ff4473094e8d6f4f02"
     },
@@ -25,6 +33,10 @@
       "version": "1.0.0",
       "author": "Messages AI",
       "description": "Short, relaxed replies like quick texts between friends: very short messages, emoji now and then, no full stop at the end of a one-line reply.",
+      "types": [
+        "ai",
+        "apps"
+      ],
       "file": "modules/casual-short.mamod",
       "sha256": "26bcc387bff34da46a70bba1b88bef32535157fc5c56043bd4982d04dda3cec0"
     },
@@ -34,6 +46,9 @@
       "version": "1.0.0",
       "author": "Messages AI",
       "description": "Writes replies with free AI providers and switches to the next one automatically when one runs out of free quota, is rate-limited or does not answer. OVHcloud and Pollinations work without a key; Gemini, Groq, Mistral, OpenRouter, NVIDIA, GitHub Models, SambaNova, Cohere and LLM7 join once you add your own free key in AI models. Conversations are sent to these providers. Requires Messages AI 0.40.0 or newer.",
+      "types": [
+        "ai"
+      ],
       "file": "modules/free-ai-auto.mamod",
       "sha256": "8ad56899d4484712d3dde8370f41f2812d3616104cb5c9190d7d05441a21e9a4"
     },
@@ -43,6 +58,9 @@
       "version": "1.0.0",
       "author": "Messages AI",
       "description": "Simpler, friendlier English words on Home: Auto-reply, Ask me first, Send right away.",
+      "types": [
+        "appearance"
+      ],
       "file": "modules/friendly-wording.mamod",
       "sha256": "1f8061efe51df8a64b727a181b37ddc9839959f3679acd0d8b8e861bc3cb16a9"
     },
@@ -52,6 +70,9 @@
       "version": "1.0.0",
       "author": "Messages AI",
       "description": "Recognizes Google full-screen ads in other apps and presses an available Close or Skip control. Works independently of reply modules; does not press Install, advertiser links or reward-resume controls.",
+      "types": [
+        "automation"
+      ],
       "file": "modules/google-ads-close.mamod",
       "sha256": "03bd7025f76374d16aed0abc4ea7f753be374b22cf7d4133a9a4e2ef4f789bf1"
     },
@@ -61,6 +82,9 @@
       "version": "1.0.0",
       "author": "Messages AI",
       "description": "Adds Threema, Element and Session to Apps. They reply through the notification's Reply button.",
+      "types": [
+        "apps"
+      ],
       "file": "modules/more-apps.mamod",
       "sha256": "618661797ea675bc47df8d4b8c9345b692a1e5d14e96f8869edae90141b4032a"
     },
@@ -70,6 +94,9 @@
       "version": "1.0.0",
       "author": "Messages AI",
       "description": "Teaches the reply logic Finnish, Hungarian, Romanian and Swedish: the app then recognizes questions, requests, bad and good news, thanks and goodbyes in these languages and checks that a reply really answers them, like it does for the built-in languages. The words apply only to chats in that language. Also an example for authors who want to add their own language. Requires Messages AI 0.43.0 or newer.",
+      "types": [
+        "ai"
+      ],
       "file": "modules/more-languages.mamod",
       "sha256": "d3ee0236271b9d7084e2af4c396bf118b89b162da8955684a7ac39b04a1b5868"
     },
@@ -79,6 +106,9 @@
       "version": "1.0.0",
       "author": "Messages AI",
       "description": "Omits the automatic AI-assistance footer from replies sent through notifications or an open chat. Requires Messages AI 0.39.0 or newer. Disable this module to restore the default footer for conversations that have not received it. Does not enable sending or change saved disclosure history.",
+      "types": [
+        "automation"
+      ],
       "file": "modules/no-ai-footer.mamod",
       "sha256": "d287b815f0aa607fddd1173db3ec0a302c752d68c0697839de34a0cb1fcafb31"
     },
@@ -88,6 +118,10 @@
       "version": "1.0.0",
       "author": "Messages AI",
       "description": "Keeps private chats private: no talk about work, and a chat that turns urgent is handed to you.",
+      "types": [
+        "ai",
+        "apps"
+      ],
       "file": "modules/no-work-talk.mamod",
       "sha256": "a3f1be882c088d0d0e650e6fa8595172a787f063445040df39a34a81d497488c"
     },
@@ -97,6 +131,9 @@
       "version": "1.0.0",
       "author": "Messages AI",
       "description": "A calm blue colour theme for light and dark mode.",
+      "types": [
+        "appearance"
+      ],
       "file": "modules/ocean-theme.mamod",
       "sha256": "4205832b5016ca631a6a252b14aa16c22ab577dcfef0b45e9e799f05c6e07f53"
     },
@@ -106,6 +143,9 @@
       "version": "1.0.0",
       "author": "Messages AI",
       "description": "Shows three suggested replies in bubbles above an open chat. Tap a bubble to send that reply, tap ↻ for three new ones, × hides them until you open another chat. New suggestions appear by themselves when a message arrives. In the Google Play version a tapped reply is typed into the text field and you send it. Uses your AI provider. Requires Messages AI 0.43.0 or newer.",
+      "types": [
+        "ai"
+      ],
       "file": "modules/reply-suggestions.mamod",
       "sha256": "0c34dbbc6c7b3915816bca0ca8ca7f40e36904da5f07ca5497b673adc94f4870"
     }
