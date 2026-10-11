@@ -4,150 +4,196 @@
     {
       "id": "automatic-drafts",
       "name": "Automatic drafts",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": "Messages AI",
-      "description": "Automatically writes drafts in enabled messaging apps. You send them yourself. Starts when an enabled app is open; disable this module to restore your settings.",
+      "description": "Automatically writes drafts in enabled messaging apps. You send them yourself. This and Automatic sending are alternative reply modes; enabling either one turns the other off.",
       "types": [
         "ai",
         "automation"
       ],
+      "conflicts": [
+        "automatic-send"
+      ],
+      "exclusiveGroups": [
+        "automation.reply-mode"
+      ],
       "file": "modules/automatic-drafts.mamod",
-      "sha256": "7fb033a30cde6388fb286c518ffba91c108a24726cc12d5030f21b75a5eab4f0"
+      "sha256": "55ae4259445b0021f711b771ba99643478b3ce6e3080ee10d94fad2f992a9c1d"
     },
     {
       "id": "automatic-send",
       "name": "Automatic sending",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": "Messages AI",
-      "description": "Automatically writes and sends replies in enabled messaging apps, including screen and notification replies. Takes priority over Automatic drafts. Disable this module to restore your settings.",
+      "description": "Automatically writes and sends replies in enabled messaging apps, including screen and notification replies. This and Automatic drafts are alternative reply modes; enabling either one turns the other off.",
       "types": [
         "ai",
         "automation"
       ],
+      "conflicts": [
+        "automatic-drafts"
+      ],
+      "exclusiveGroups": [
+        "automation.reply-mode"
+      ],
       "file": "modules/automatic-send.mamod",
-      "sha256": "e862297ec1ea92051b0b9acb1da92dea49fa07a54f33a0ff4473094e8d6f4f02"
+      "sha256": "b4b182ad54cf930d603cbcd65c74dcd9e3e50c41df5fc617f82961ec6e2aa535"
     },
     {
       "id": "casual-short",
       "name": "Casual & short",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": "Messages AI",
       "description": "Short, relaxed replies like quick texts between friends: very short messages, emoji now and then, no full stop at the end of a one-line reply.",
       "types": [
         "ai",
         "apps"
       ],
+      "conflicts": [],
+      "exclusiveGroups": [
+        "reply.style"
+      ],
       "file": "modules/casual-short.mamod",
-      "sha256": "26bcc387bff34da46a70bba1b88bef32535157fc5c56043bd4982d04dda3cec0"
+      "sha256": "445520934d25a09686894543fb9099a7025554503f2de071124d3561698c32cd"
     },
     {
       "id": "free-ai-auto",
       "name": "Free AI (automatic)",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": "Messages AI",
-      "description": "Writes replies with free AI providers and switches to the next one automatically when one runs out of free quota, is rate-limited or does not answer. OVHcloud and Pollinations work without a key; Gemini, Groq, Mistral, OpenRouter, NVIDIA, GitHub Models, SambaNova, Cohere and LLM7 join once you add your own free key in AI models. Conversations are sent to these providers. Requires Messages AI 0.40.0 or newer.",
+      "description": "Writes replies with free AI providers and switches to the next one automatically when one runs out of free quota, is rate-limited or does not answer. OVHcloud and Pollinations work without a key; Gemini, Groq, Mistral, OpenRouter, NVIDIA, GitHub Models, SambaNova, Cohere and LLM7 join once you add your own free key in AI models. Conversations are sent to these providers. Requires Messages AI 0.46.0 or newer.",
       "types": [
         "ai"
       ],
+      "conflicts": [],
+      "exclusiveGroups": [
+        "ai.routing"
+      ],
       "file": "modules/free-ai-auto.mamod",
-      "sha256": "8ad56899d4484712d3dde8370f41f2812d3616104cb5c9190d7d05441a21e9a4"
+      "sha256": "d97e177f3c2c35097bcf4f22838f95e2ce7b9824db9dee66567f3bfc25b6d21d"
     },
     {
       "id": "friendly-wording",
       "name": "Friendly wording",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": "Messages AI",
       "description": "Simpler, friendlier English words on Home: Auto-reply, Ask me first, Send right away.",
       "types": [
         "appearance"
       ],
+      "conflicts": [],
+      "exclusiveGroups": [
+        "ui.wording"
+      ],
       "file": "modules/friendly-wording.mamod",
-      "sha256": "1f8061efe51df8a64b727a181b37ddc9839959f3679acd0d8b8e861bc3cb16a9"
+      "sha256": "7f79048f8f4fa95ed9112da49e38a21352c3fec30c0174f3f7d294bf13887a3b"
     },
     {
       "id": "google-ads-close",
       "name": "Close Google ads",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": "Messages AI",
       "description": "Recognizes Google full-screen ads in other apps and presses an available Close or Skip control. Works independently of reply modules; does not press Install, advertiser links or reward-resume controls.",
       "types": [
         "automation"
       ],
+      "conflicts": [],
+      "exclusiveGroups": [
+        "automation.ads"
+      ],
       "file": "modules/google-ads-close.mamod",
-      "sha256": "03bd7025f76374d16aed0abc4ea7f753be374b22cf7d4133a9a4e2ef4f789bf1"
+      "sha256": "e5b59808c95935ae143fbc0146f3a0c1323432df7775db5033e195f1eb65314b"
     },
     {
       "id": "more-apps",
       "name": "More messaging apps",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": "Messages AI",
       "description": "Adds Threema, Element and Session to Apps. They reply through the notification's Reply button.",
       "types": [
         "apps"
       ],
+      "conflicts": [],
+      "exclusiveGroups": [],
       "file": "modules/more-apps.mamod",
-      "sha256": "618661797ea675bc47df8d4b8c9345b692a1e5d14e96f8869edae90141b4032a"
+      "sha256": "7e0656b394c75eeb53adfae541e4db0581be49dcd7926347b27a82d45bd81c9d"
     },
     {
       "id": "more-languages",
       "name": "More reply languages",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": "Messages AI",
-      "description": "Teaches the reply logic Finnish, Hungarian, Romanian and Swedish: the app then recognizes questions, requests, bad and good news, thanks and goodbyes in these languages and checks that a reply really answers them, like it does for the built-in languages. The words apply only to chats in that language. Also an example for authors who want to add their own language. Requires Messages AI 0.43.0 or newer.",
+      "description": "Teaches the reply logic Finnish, Hungarian, Romanian and Swedish: the app then recognizes questions, requests, bad and good news, thanks and goodbyes in these languages and checks that a reply really answers them, like it does for the built-in languages. The words apply only to chats in that language. Also an example for authors who want to add their own language. Requires Messages AI 0.46.0 or newer.",
       "types": [
         "ai"
       ],
+      "conflicts": [],
+      "exclusiveGroups": [],
       "file": "modules/more-languages.mamod",
-      "sha256": "d3ee0236271b9d7084e2af4c396bf118b89b162da8955684a7ac39b04a1b5868"
+      "sha256": "b671a02d71ef970dc1ebf66035c0f583f8bc141472a670e82953fa96c9a83a83"
     },
     {
       "id": "no-ai-footer",
       "name": "No AI footer",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": "Messages AI",
-      "description": "Omits the automatic AI-assistance footer from replies sent through notifications or an open chat. Requires Messages AI 0.39.0 or newer. Disable this module to restore the default footer for conversations that have not received it. Does not enable sending or change saved disclosure history.",
+      "description": "Omits the automatic AI-assistance footer from replies sent through notifications or an open chat. Requires Messages AI 0.46.0 or newer. Disable this module to restore the default footer for conversations that have not received it. Does not enable sending or change saved disclosure history.",
       "types": [
         "automation"
       ],
+      "conflicts": [],
+      "exclusiveGroups": [
+        "reply.disclosure"
+      ],
       "file": "modules/no-ai-footer.mamod",
-      "sha256": "d287b815f0aa607fddd1173db3ec0a302c752d68c0697839de34a0cb1fcafb31"
+      "sha256": "1c74e9efd829f0a7fce2ffa3af07621fe90ccf11d8aac63373f259de3b05d581"
     },
     {
       "id": "no-work-talk",
       "name": "No work talk",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": "Messages AI",
       "description": "Keeps private chats private: no talk about work, and a chat that turns urgent is handed to you.",
       "types": [
         "ai",
         "apps"
       ],
+      "conflicts": [],
+      "exclusiveGroups": [],
       "file": "modules/no-work-talk.mamod",
-      "sha256": "a3f1be882c088d0d0e650e6fa8595172a787f063445040df39a34a81d497488c"
+      "sha256": "e2b9ad5f447f97d585212368ca534da35d9823dafe02e8f3f18e1d8ffbfd911f"
     },
     {
       "id": "ocean-theme",
       "name": "Ocean",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": "Messages AI",
       "description": "A calm blue colour theme for light and dark mode.",
       "types": [
         "appearance"
       ],
+      "conflicts": [],
+      "exclusiveGroups": [
+        "visual.theme"
+      ],
       "file": "modules/ocean-theme.mamod",
-      "sha256": "4205832b5016ca631a6a252b14aa16c22ab577dcfef0b45e9e799f05c6e07f53"
+      "sha256": "39fca18fb3b78494b718a4bfa0ed1288acae361216cc8ee1305c448d14fa6d64"
     },
     {
       "id": "reply-suggestions",
       "name": "Reply suggestions",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": "Messages AI",
-      "description": "Shows three suggested replies in bubbles above an open chat. Tap a bubble to send that reply, tap ↻ for three new ones, × hides them until you open another chat. New suggestions appear by themselves when a message arrives. In the Google Play version a tapped reply is typed into the text field and you send it. Uses your AI provider. Requires Messages AI 0.43.0 or newer.",
+      "description": "Shows three movable Apple-style reply bubbles above an open chat without an enclosing panel. Their position is remembered and can be reset. Tap a bubble to use it, ↻ writes three new ones and × hides them until another chat opens.",
       "types": [
         "ai"
       ],
+      "conflicts": [],
+      "exclusiveGroups": [
+        "reply.overlay"
+      ],
       "file": "modules/reply-suggestions.mamod",
-      "sha256": "0c34dbbc6c7b3915816bca0ca8ca7f40e36904da5f07ca5497b673adc94f4870"
+      "sha256": "c2ac890baed113b9be91957121cd8555327d13e1ac56fb78d911458d8ca83b86"
     }
   ]
 }
