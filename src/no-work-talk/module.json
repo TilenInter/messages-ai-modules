@@ -2,11 +2,15 @@
   "format": 1,
   "id": "no-work-talk",
   "name": "No work talk",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
   "description": "Keeps private chats private: no talk about work, and a chat that turns urgent is handed to you.",
-  "minAppVersion": 37,
+  "minAppVersion": 56,
+  "compatibility": {
+    "conflicts": [],
+    "exclusiveGroups": []
+  },
   "rules": {
     "forbidden": "Don't talk about work, the office, colleagues, clients or deadlines. If they bring it up, say you'll talk about it later."
   },

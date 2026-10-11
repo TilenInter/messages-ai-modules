@@ -1,6 +1,6 @@
 # Vodnik za avtorje modulov
 
-Vse, kar zmore modul za Messages AI, od aplikacije 0.43.0 (versionCode 53) naprej. Podrobnejša angleška različica: [GUIDE.md](GUIDE.md).
+Vse, kar zmore modul za Messages AI, od aplikacije 0.46.0 (versionCode 56) naprej. Podrobnejša angleška različica: [GUIDE.md](GUIDE.md).
 
 ## Moduli skupnosti zmorejo vse, kar uradni
 
@@ -31,11 +31,12 @@ mkdir -p src/moj-slog
   "format": 1,
   "id": "moj-slog",
   "name": "Moj slog",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Tvoje ime",
   "license": "CC-BY-4.0",
   "description": "Kratki, topli odgovori, občasno z emojijem.",
-  "minAppVersion": 53,
+  "minAppVersion": 56,
+  "compatibility": { "conflicts": [], "exclusiveGroups": ["reply.style"] },
   "settings": { "style_length": "short", "style_emoji": "rare" },
   "prompt": "Piši toplo in preprosto."
 }
@@ -53,7 +54,7 @@ Datoteko `.mamod` prenesi na telefon: **Nastavitve → Moduli → Uvozi iz datot
 
 - `.mamod` je ZIP z `module.json`, po želji `script.js` in `signature.json` (naredi ga `pack`). Druge datoteke (koda, knjižnice) so zavrnjene.
 - Omejitve: 512 KB na datoteko, 256 KB `module.json`, 64 KB `script.js`.
-- `id`: 3–64 znakov `a-z 0-9 . _ -`; modul z istim `id` posodobi prejšnjega. `format` je `1`, `minAppVersion` je **versionCode** aplikacije (0.43.0 = 53).
+- `id`: 3–64 znakov `a-z 0-9 . _ -`; modul z istim `id` posodobi prejšnjega. `format` je `1`, `minAppVersion` je **versionCode** aplikacije (0.46.0 = 56).
 
 ## 3. Kaj lahko modul spremeni
 
@@ -69,6 +70,7 @@ Datoteko `.mamod` prenesi na telefon: **Nastavitve → Moduli → Uvozi iz datot
 | `freeAi` | 0.40 | Brezplačni AI s samodejnim preklopom. |
 | `replyLogic` | 0.43 | Logika odgovora v katerem koli jeziku. |
 | `script.js` | 0.28 | Kljuke pred in po AI. |
+| `compatibility` | 0.46 | Neposredni konflikti in skupine izključevanja; aplikacija pusti vklopljen le en nezdružljiv modul. |
 
 ## 4. Nastavitve
 
@@ -78,13 +80,29 @@ Avtomatizacija: `on_screen_auto: true`, `auto_send: true`, `dismiss_google_ads: 
 
 **Zaklenjeno** za vse module (se prezre in pokaže v povzetku): pogoji, privolitve, razkritja, prijava in računi, ključi in izbrani ponudnik, hramba podatkov, diagnostika, SMS, osebni opis in opombe, jeziki lastnika, jezik aplikacije ter seznami pravil, tem in besed (za te so razdelki modula). Celoten seznam je v [GUIDE.md](GUIDE.md#4-settings).
 
+## Združljivost modulov
+
+Kadar dva modula ponujata različni izvedbi iste funkcije, to opiši v manifestu:
+
+```json
+"compatibility": {
+  "conflicts": ["id-drugega-modula"],
+  "exclusiveGroups": ["automation.reply-mode"]
+}
+```
+
+- `conflicts` vsebuje id-je modulov, ki ne smejo biti vklopljeni hkrati; dovolj je zapis v enem od obeh modulov.
+- Moduli z isto vrednostjo v `exclusiveGroups` se izključujejo. Stabilna imena, na primer `reply.style`, `ai.routing`, `visual.theme` in `reply.overlay`, delujejo tudi za prihodnje module.
+- Namestitev ali vklop modula izklopi trenutno vklopljene konflikte in lastniku pove, kaj se je spremenilo. Ob izklopu novega se stari ne vklopi sam.
+- Pri dodatnih modulih uporabi prazna seznama. Največ je 50 id-jev oziroma skupin; modul ne sme biti v konfliktu sam s seboj.
+
 ## 5. Predlogi odgovorov
 
 ```json
 "settings": { "reply_suggestions": true }
 ```
 
-Nad odprtim pogovorom se pokažejo trije oblački s predlogi odgovora. Ko pride novo sporočilo, se novi napišejo sami; **↻** napiše tri nove, **×** jih skrije do drugega pogovora. Dotik oblačka pošlje ta odgovor v isti pogovor – samo če so sporočila še ista in je polje za pisanje prazno. V različici za Google Play (brez modula za samodejno delo na zaslonu) se odgovor vpiše v polje, pošlješ ga sam. Predlogi gredo skozi ista preverjanja kot vsak odgovor (prepovedane besede, nikoli ne zanikajo AI, kljuka `afterReply`); pri sporočilih, ki potrebujejo lastnika (denar, slike, »si bot?«), predlogov ni.
+Nad odprtim pogovorom se pokažejo trije samostojni oblački s predlogi odgovora brez skupnega ozadja. Z majhnim ročajem jih povlečeš kamor koli; položaj se zapomni za velikost zaslona, gumb za ponastavitev pa jih vrne na privzeto mesto. Ko pride novo sporočilo, se novi napišejo sami; **↻** napiše tri nove, **×** jih skrije do drugega pogovora. Dotik oblačka pošlje ta odgovor v isti pogovor – samo če so sporočila še ista in je polje za pisanje prazno. V različici za Google Play se odgovor vpiše v polje, pošlješ ga sam. Predlogi gredo skozi ista preverjanja kot vsak odgovor; pri sporočilih, ki potrebujejo lastnika, predlogov ni.
 
 ## 6. Logika odgovora v katerem koli jeziku
 

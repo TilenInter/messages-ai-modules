@@ -10,6 +10,8 @@ In the app: **Settings → Modules → Community modules**, pick one and confirm
 
 **Write your own:** the [module author guide](GUIDE.md) ([slovensko](VODNIK.sl.md)) describes every section and setting. Community modules can use everything the official modules use – the signature only changes the warning before installing, never what a module may do.
 
+All bundled modules are version 1.1.0 and declare their compatibility for Messages AI 0.46.0+. Alternative modules share an exclusive group; enabling one automatically turns off the incompatible one and the app shows what changed.
+
 
 ## External automation modules — Messages AI 0.33.0/code 43+
 
@@ -18,10 +20,10 @@ Install from **Settings → Modules → Community modules**, or download the pac
 | Module | Behaviour |
 |---|---|
 | [Automatic drafts](modules/automatic-drafts.mamod) | Starts screen Auto in an enabled app and writes a draft. You send it. |
-| [Automatic sending](modules/automatic-send.mamod) | Starts screen Auto and notification automation, writes and sends replies. Takes priority over drafts regardless of installation order. |
+| [Automatic sending](modules/automatic-send.mamod) | Starts screen Auto and notification automation, writes and sends replies. Enabling it turns off Automatic drafts. |
 | [Close Google ads](modules/google-ads-close.mamod) | Independently recognizes Google full-screen ads and presses an available enabled Close/Skip control. |
 
-Each module is independently enabled/disabled. Disable sending to return to drafts; disable both reply modules to restore saved settings. The Auto switch pauses the module-started screen session. The sending module's background setting is removed by disabling that module. The ad module does not enable replies or reopen a paused writer session.
+Automatic drafts and Automatic sending are mutually exclusive reply modes. Enabling either one turns the other off; disabling the active one restores saved app settings but does not silently re-enable the old module. The Auto switch pauses the module-started screen session. The sending module's background setting is removed by disabling that module. The ad module does not enable replies or reopen a paused writer session.
 
 Manifest `settings` API: `on_screen_auto: true`, `auto_send: true`, `dismiss_google_ads: true`; `max_reply_tokens`, `max_per_hour` and `max_per_contact_day` accept `0` for no local cap; `min_reply_gap_ms: 0` removes the extra local gap. `min_delay`, `max_delay` and `realistic_typing` configure writing delay. The published reply modules remove these local caps/delays. Account entitlement and the selected AI provider still apply.
 
@@ -69,13 +71,13 @@ Free plans have their own terms and some may use prompts to improve their models
 
 `free_ai: true` (or `"first"`) uses free routes before the owner's providers; `"backup"` uses them only after the owner's providers fail. `baseUrl` is an OpenAI-compatible HTTPS address without `/chat/completions`; only built-in known free-tier servers are accepted (`FreeAiCatalog.HOSTS` in the app), so a module can never send conversations to another server. `key: true` routes are skipped until the owner saves a key for a provider on the same server. Up to 60 routes.
 
-## Reply suggestions — Messages AI 0.43.0/code 53+
+## Reply suggestions — Messages AI 0.46.0/code 56+
 
-[Reply suggestions](modules/reply-suggestions.mamod) shows three suggested replies in bubbles above an open chat. Tap a bubble to send that reply, tap **↻** for three new ones, **×** hides them until you open another chat. New suggestions are written by themselves when a message arrives. A reply is sent only if the chat and its last messages are still the same and the text field is empty; in the Google Play version it is typed into the field and you send it. Suggestions use your AI provider (or Free AI) and pass the same checks as every reply.
+[Reply suggestions](modules/reply-suggestions.mamod) shows three independent Apple-style bubbles above an open chat, without an enclosing panel. Drag the move control anywhere; the position is remembered per screen size and can be reset. Tap a bubble to use that reply, tap **↻** for three new ones, and **×** hides them until you open another chat. A reply is used only if the chat and its last messages are still the same and the text field is empty. Suggestions use your AI provider (or Free AI) and pass the same checks as every reply.
 
 Its only setting is `reply_suggestions: true`.
 
-## More reply languages — Messages AI 0.43.0/code 53+
+## More reply languages — Messages AI 0.46.0/code 56+
 
 [More reply languages](modules/more-languages.mamod) teaches the reply logic Finnish, Hungarian, Romanian and Swedish: the app recognizes questions, requests, bad and good news, thanks and goodbyes in those languages and checks that a reply really answers them. The words apply only to chats in that language. Since 0.43.0 the app itself also understands French, Portuguese, Dutch, Polish, Czech, Slovak, Russian, Ukrainian, Serbian and Turkish, and treats a question mark in any script as a question.
 
@@ -103,6 +105,7 @@ Categories: `question`, `info`, `howAreYou`, `confused`, `request`, `greeting`, 
 | `freeAi` | Free AI routes tried in order with automatic switching, enabled by `"settings": {"free_ai": true}` (since app 0.40.0). Only known free-tier HTTPS servers; see [Free AI](#free-ai-automatic--messages-ai-0400code-50). |
 | `replyLogic` | Words that teach the reply logic another language, by ISO 639 code (since app 0.43.0). |
 | `settings.reply_suggestions` | Three suggested replies above an open chat; tap one to send it (since app 0.43.0). |
+| `compatibility` | `conflicts` ids and `exclusiveGroups`; enabling a module automatically disables incompatible enabled modules (since app 0.46.0). |
 | `script.js` | Optional hooks, see below. |
 
 ## What a module can never change
@@ -162,7 +165,7 @@ The full reference is the [module author guide](GUIDE.md) ([slovensko](VODNIK.sl
   "format": 1,
   "id": "my-style",
   "name": "My style",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Your name",
   "license": "CC-BY-4.0",
   "description": "What it does, in one or two sentences.",

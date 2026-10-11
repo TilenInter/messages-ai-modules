@@ -2,11 +2,15 @@
   "format": 1,
   "id": "casual-short",
   "name": "Casual & short",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
   "description": "Short, relaxed replies like quick texts between friends: very short messages, emoji now and then, no full stop at the end of a one-line reply.",
-  "minAppVersion": 37,
+  "minAppVersion": 56,
+  "compatibility": {
+    "conflicts": [],
+    "exclusiveGroups": ["reply.style"]
+  },
   "settings": {
     "style_length": "very_short",
     "style_emoji": "often"
