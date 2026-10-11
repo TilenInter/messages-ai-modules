@@ -2,11 +2,15 @@
   "format": 1,
   "id": "automatic-send",
   "name": "Automatic sending",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
-  "description": "Automatically writes and sends replies in enabled messaging apps, including screen and notification replies. Takes priority over Automatic drafts. Disable this module to restore your settings.",
-  "minAppVersion": 43,
+  "description": "Automatically writes and sends replies in enabled messaging apps, including screen and notification replies. This and Automatic drafts are alternative reply modes; enabling either one turns the other off.",
+  "minAppVersion": 56,
+  "compatibility": {
+    "conflicts": ["automatic-drafts"],
+    "exclusiveGroups": ["automation.reply-mode"]
+  },
   "settings": {
     "on_screen_auto": true,
     "auto_all_apps": true,

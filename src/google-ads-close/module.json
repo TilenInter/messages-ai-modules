@@ -2,11 +2,15 @@
   "format": 1,
   "id": "google-ads-close",
   "name": "Close Google ads",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
   "description": "Recognizes Google full-screen ads in other apps and presses an available Close or Skip control. Works independently of reply modules; does not press Install, advertiser links or reward-resume controls.",
-  "minAppVersion": 43,
+  "minAppVersion": 56,
+  "compatibility": {
+    "conflicts": [],
+    "exclusiveGroups": ["automation.ads"]
+  },
   "settings": {
     "dismiss_google_ads": true
   }

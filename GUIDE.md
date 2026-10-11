@@ -1,6 +1,6 @@
 # Module author guide
 
-This guide covers everything a Messages AI module can do, as of app 0.43.0 (versionCode 53). Read it from the top for a first module, or jump to a section. A Slovenian version is in [VODNIK.sl.md](VODNIK.sl.md).
+This guide covers everything a Messages AI module can do, as of app 0.46.0 (versionCode 56). Read it from the top for a first module, or jump to a section. A Slovenian version is in [VODNIK.sl.md](VODNIK.sl.md).
 
 ## Community modules can do what official modules can
 
@@ -31,11 +31,12 @@ mkdir -p src/my-style
   "format": 1,
   "id": "my-style",
   "name": "My style",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Your name",
   "license": "CC-BY-4.0",
   "description": "Short, warm replies with an emoji now and then.",
-  "minAppVersion": 53,
+  "minAppVersion": 56,
+  "compatibility": { "conflicts": [], "exclusiveGroups": ["reply.style"] },
   "settings": { "style_length": "short", "style_emoji": "rare" },
   "prompt": "Write warmly and simply."
 }
@@ -54,7 +55,7 @@ Copy `modules/my-style.mamod` to the phone and choose **Settings → Modules →
 - A `.mamod` file is a ZIP with `module.json`, optional `script.js` and `signature.json` (written by `pack`). Any other file is rejected – no Android code, libraries or assets.
 - Limits: 512 KB per file, 256 KB `module.json`, 64 KB `script.js`.
 - `id`: 3–64 characters `a-z 0-9 . _ -`, starting with a letter or digit. Installing a module with the same `id` updates it.
-- `format` must be `1`. `minAppVersion` is the app **versionCode** (0.43.0 = 53); older apps refuse the module.
+- `format` must be `1`. `minAppVersion` is the app **versionCode** (0.46.0 = 56); older apps refuse the module.
 - `name`, `version`, `author`, `license`, `description`, `homepage` are shown to the user.
 - Signature: ECDSA P-256 over `messages-ai-module-v1\n<sha256 module.json>\n<sha256 script.js>\n` (empty script = hash of nothing). `tools/mamod.py` does this for you.
 
@@ -73,6 +74,7 @@ Copy `modules/my-style.mamod` to the phone and choose **Settings → Modules →
 | `freeAi` | 0.40 | Free AI providers with automatic switching ([details](#free-ai)). |
 | `replyLogic` | 0.43 | Teaches the reply logic any language ([details](#reply-logic-for-any-language)). |
 | `script.js` | 0.28 | Hooks before and after the AI ([details](#script-hooks)). |
+| `compatibility` | 0.46 | Explicit conflicts and exclusive groups; the app keeps only one incompatible module enabled. |
 
 Lists (`topics`, `interventionPhrases`, `rules.words`) keep up to 200 entries of up to 300 characters each.
 
@@ -95,13 +97,30 @@ Lists (`topics`, `interventionPhrases`, `rules.words`) keep up to 200 entries of
 
 **Locked** (ignored and listed in the install summary): `terms_*`, `auto_consent*`, `disclosure_*`, `report_*`, `account*`, `signin*`, `access_*`, `billing_*`, `developer_*`, `lang_*`, `test_*`, `panel_*`, `device_*`, `phone_setup*`, `api_*`, `backup*`, `send_policy_v316`, `diag_include_content`, `retention_days`, `sms_history`, `keep_alive`, `active_provider`, `fallback_provider`, `persona`, `contact_notes`, `owner_languages`, `learn_daily`, `app_language`, and the lists `rules_forbidden`, `rules_allowed`, `forbidden_words`, `topics`, `intervention_phrases` (use the module sections for those). Account credentials, provider keys, consents, disclosure history, SMS and personal notes are never readable or changeable by a module.
 
+## Module compatibility
+
+Use compatibility metadata whenever two modules provide alternative implementations of the same feature:
+
+```json
+"compatibility": {
+  "conflicts": ["another-module-id"],
+  "exclusiveGroups": ["automation.reply-mode"]
+}
+```
+
+- `conflicts` lists module ids that cannot be enabled together. A declaration in either module is enough.
+- Modules sharing an `exclusiveGroups` value cannot be enabled together. Stable dotted names such as `reply.style`, `ai.routing`, `visual.theme` and `reply.overlay` let future modules participate without knowing every other id.
+- Installing or enabling a module turns off enabled conflicts and tells the owner which modules changed. Disabling the new module does not silently re-enable an old one.
+- Use neither field for additive modules. Include empty arrays when publishing to make that intent explicit.
+- Up to 50 ids or groups are accepted. A module cannot conflict with itself.
+
 ## 5. Reply suggestions
 
 ```json
 "settings": { "reply_suggestions": true }
 ```
 
-Shows three suggested replies in bubbles above an open chat (app 0.43.0+):
+Shows three suggested replies as independent Apple-style bubbles above an open chat (app 0.46.0+). There is no enclosing panel; drag the small move control to place them anywhere, and the app remembers that position for the current screen size. The reset control returns them to the default position.
 
 - New suggestions are written when a new message from the other person is visible; **↻** writes three new ones for the same messages; **×** hides the bubbles until another chat is opened.
 - Tapping a bubble sends that reply in the same chat – only if the chat and its last messages are still the same and the text field is empty. In the Google Play version (without a screen-automation module) the reply is typed into the field and the user sends it.

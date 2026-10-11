@@ -2,12 +2,16 @@
   "format": 1,
   "id": "more-languages",
   "name": "More reply languages",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
-  "description": "Teaches the reply logic Finnish, Hungarian, Romanian and Swedish: the app then recognizes questions, requests, bad and good news, thanks and goodbyes in these languages and checks that a reply really answers them, like it does for the built-in languages. The words apply only to chats in that language. Also an example for authors who want to add their own language. Requires Messages AI 0.43.0 or newer.",
+  "description": "Teaches the reply logic Finnish, Hungarian, Romanian and Swedish: the app then recognizes questions, requests, bad and good news, thanks and goodbyes in these languages and checks that a reply really answers them, like it does for the built-in languages. The words apply only to chats in that language. Also an example for authors who want to add their own language. Requires Messages AI 0.46.0 or newer.",
   "homepage": "https://github.com/TilenInter/messages-ai-modules",
-  "minAppVersion": 53,
+  "minAppVersion": 56,
+  "compatibility": {
+    "conflicts": [],
+    "exclusiveGroups": []
+  },
   "replyLogic": {
     "fi": {
       "question": [

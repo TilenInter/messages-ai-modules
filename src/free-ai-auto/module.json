@@ -2,12 +2,16 @@
   "format": 1,
   "id": "free-ai-auto",
   "name": "Free AI (automatic)",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
-  "description": "Writes replies with free AI providers and switches to the next one automatically when one runs out of free quota, is rate-limited or does not answer. OVHcloud and Pollinations work without a key; Gemini, Groq, Mistral, OpenRouter, NVIDIA, GitHub Models, SambaNova, Cohere and LLM7 join once you add your own free key in AI models. Conversations are sent to these providers. Requires Messages AI 0.40.0 or newer.",
+  "description": "Writes replies with free AI providers and switches to the next one automatically when one runs out of free quota, is rate-limited or does not answer. OVHcloud and Pollinations work without a key; Gemini, Groq, Mistral, OpenRouter, NVIDIA, GitHub Models, SambaNova, Cohere and LLM7 join once you add your own free key in AI models. Conversations are sent to these providers. Requires Messages AI 0.46.0 or newer.",
   "homepage": "https://github.com/TilenInter/messages-ai-modules",
-  "minAppVersion": 50,
+  "minAppVersion": 56,
+  "compatibility": {
+    "conflicts": [],
+    "exclusiveGroups": ["ai.routing"]
+  },
   "settings": {
     "free_ai": true
   },

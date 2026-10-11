@@ -40,6 +40,14 @@ def check_manifest(data: bytes) -> dict:
     assert ID.match(m.get("id", "")), "id: 3–64 of a-z 0-9 . _ - (starting with a letter or digit)"
     assert m.get("name", "").strip(), "name is required"
     assert m.get("license", "").strip(), "license is required (for example CC-BY-4.0 or MIT)"
+    compatibility = m.get("compatibility", {})
+    assert isinstance(compatibility, dict), "compatibility must be an object"
+    for field in ("conflicts", "exclusiveGroups"):
+        values = compatibility.get(field, [])
+        assert isinstance(values, list) and len(values) <= 50, f"compatibility.{field} must be a list of up to 50 ids"
+        assert all(isinstance(value, str) and ID.fullmatch(value) for value in values), \
+            f"compatibility.{field} contains an invalid id"
+    assert m.get("id") not in compatibility.get("conflicts", []), "a module cannot conflict with itself"
     assert len(data) <= 256 * 1024, "module.json is larger than 256 KB"
     return m
 
@@ -155,6 +163,8 @@ def index(folder, out):
         entries.append({
             "id": m["id"], "name": m["name"], "version": m.get("version", ""), "author": m.get("author", ""),
             "description": m.get("description", ""), "types": types,
+            "conflicts": m.get("compatibility", {}).get("conflicts", []),
+            "exclusiveGroups": m.get("compatibility", {}).get("exclusiveGroups", []),
             "file": f"modules/{f.name}", "sha256": sha(f.read_bytes()),
         })
     Path(out).write_text(json.dumps({"format": 1, "modules": entries}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

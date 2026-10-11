@@ -2,11 +2,15 @@
   "format": 1,
   "id": "more-apps",
   "name": "More messaging apps",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
   "description": "Adds Threema, Element and Session to Apps. They reply through the notification's Reply button.",
-  "minAppVersion": 37,
+  "minAppVersion": 56,
+  "compatibility": {
+    "conflicts": [],
+    "exclusiveGroups": []
+  },
   "apps": [
     {
       "package": "ch.threema.app",

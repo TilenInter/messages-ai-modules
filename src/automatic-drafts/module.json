@@ -2,11 +2,15 @@
   "format": 1,
   "id": "automatic-drafts",
   "name": "Automatic drafts",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
-  "description": "Automatically writes drafts in enabled messaging apps. You send them yourself. Starts when an enabled app is open; disable this module to restore your settings.",
-  "minAppVersion": 43,
+  "description": "Automatically writes drafts in enabled messaging apps. You send them yourself. This and Automatic sending are alternative reply modes; enabling either one turns the other off.",
+  "minAppVersion": 56,
+  "compatibility": {
+    "conflicts": ["automatic-send"],
+    "exclusiveGroups": ["automation.reply-mode"]
+  },
   "settings": {
     "on_screen_auto": true,
     "auto_all_apps": true,

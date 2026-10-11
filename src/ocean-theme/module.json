@@ -2,11 +2,15 @@
   "format": 1,
   "id": "ocean-theme",
   "name": "Ocean",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
   "description": "A calm blue colour theme for light and dark mode.",
-  "minAppVersion": 38,
+  "minAppVersion": 56,
+  "compatibility": {
+    "conflicts": [],
+    "exclusiveGroups": ["visual.theme"]
+  },
   "theme": {
     "name": "Ocean",
     "light": {
