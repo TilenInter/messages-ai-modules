@@ -110,7 +110,8 @@ def verify(path, quiet=False):
 
 # Besedila, ki jih modul ne sme spremeniti (enako kot ModuleUi.LOCKED_TEXT v aplikaciji).
 LOCKED_TEXT = ("disclosure_", "auto_consent", "terms_", "account_privacy", "account_delete", "account_required", "protect_", "modules_",
-               "wipe_", "report_", "signin_privacy", "signin_terms", "send_changed", "mydata_", "oss_", "backup_", "privacy")
+               "wipe_", "report_", "signin_privacy", "signin_terms", "send_changed", "mydata_", "oss_", "backup_", "privacy",
+               "sms_import_")
 
 
 def strings_template(strings_xml, lang, out):
@@ -136,7 +137,9 @@ def strings_template(strings_xml, lang, out):
 
 AUTOMATION_SETTINGS = {"on_screen_auto", "auto_send", "send_mode", "dismiss_google_ads", "ai_reply_note", "automation_enabled",
                        # 0.50: features the app shows only with a module (ModuleFeature in the app)
-                       "followups", "followup_enabled", "openers", "opener_auto", "new_chats", "group_chats", "reply_groups", "skip_ads"}
+                       "followups", "followup_enabled", "openers", "opener_auto", "new_chats", "group_chats", "reply_groups", "skip_ads",
+                       # 0.55: SMS import (the owner turns it on in Learning → SMS import)
+                       "sms_import"}
 
 
 def module_types(manifest, script=False):

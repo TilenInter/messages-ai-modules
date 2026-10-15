@@ -10,7 +10,7 @@ In the app: **Settings → Modules → Community modules**, pick one and confirm
 
 **Write your own:** the [module author guide](GUIDE.md) ([slovensko](VODNIK.sl.md)) describes every section and setting. Community modules can use everything the official modules use – the signature only changes the warning before installing, never what a module may do.
 
-All bundled modules declare their compatibility (version 1.1.0 for Messages AI 0.46.0+; the 0.50.0 feature modules and Automatic sending 1.2.0 need app code 61+). Alternative modules share an exclusive group; enabling one automatically turns off the incompatible one and the app shows what changed.
+All bundled modules declare their compatibility (version 1.1.0 for Messages AI 0.46.0+; the 0.50.0 feature modules and Automatic sending 1.2.0 need app code 61+, SMS import needs code 66+). Alternative modules share an exclusive group; enabling one automatically turns off the incompatible one and the app shows what changed.
 
 
 ## External automation modules — Messages AI 0.33.0/code 43+
@@ -42,6 +42,16 @@ Since 0.50.0 everything that acts on your behalf beyond drafting lives in module
 | [Automatic sending](modules/automatic-send.mamod) | **Send / Review first** on the home screen and **Sending to this person** (`auto_send: true`). Sending always needs your explicit confirmation of the warning. |
 
 Older modules that switched a setting on directly (`followup_enabled`, `opener_auto`, `reply_groups`, `send_mode: "auto"`) still work: they add the feature and turn it on. Close Google ads stays separate and never resumes reward videos.
+
+## SMS import — Messages AI 0.55.0/code 66+
+
+[SMS import](modules/sms-import.mamod) adds **Learning → SMS import** (setting `sms_import: true`). Since app 0.55.0 importing all SMS chats is a module feature: without it, Learning no longer imports SMS in bulk (the AI still reads the SMS history with the person you reply to). With it the app goes through all SMS chats on the phone and the text of 1-to-1 MMS and saves every person with their name from your contacts, together with the earlier messages:
+
+- **Save everyone from my contacts** (on by default): also people from your contacts you haven't written to yet; off = only chats you wrote in. Bank notices, codes, short numbers, named senders and group MMS are always skipped.
+- **Import new SMS automatically**: every few hours in the background (no internet) and with every learning run. Only messages newer than the last import are read; new received messages from people you already know are kept.
+- People saved under a number get their contact name once the number is in your contacts (messages and notes stay). **Look through all SMS again** adds people from older SMS who aren't saved yet without changing saved chats.
+
+Nothing is read until you allow SMS and contacts access and confirm what the import saves; that confirmation stays on the phone (not in backups). A module cannot switch the import on or change these choices (`sms_import_*` settings are locked). GitHub version of the app only – the Google Play version has no SMS permission. RCS chat messages are not in Android's SMS store; the app gets those from the screen and notifications.
 
 ## No AI footer — Messages AI 0.39.0/code 49+
 
@@ -119,14 +129,15 @@ Categories: `question`, `info`, `howAreYou`, `confused`, `request`, `greeting`, 
 | `freeAi` | Free AI routes tried in order with automatic switching, enabled by `"settings": {"free_ai": true}` (since app 0.40.0). Only known free-tier HTTPS servers; see [Free AI](#free-ai-automatic--messages-ai-0400code-50). |
 | `replyLogic` | Words that teach the reply logic another language, by ISO 639 code (since app 0.43.0). |
 | `settings.reply_suggestions` | Three suggested replies above an open chat; tap one to send it (since app 0.43.0). |
+| `settings.sms_import` | Adds **Learning → SMS import** (all SMS chats and contacts); the owner allows and turns it on (since app 0.55.0, GitHub version only). |
 | `compatibility` | `conflicts` ids and `exclusiveGroups`; enabling a module automatically disables incompatible enabled modules (since app 0.46.0). |
 | `script.js` | Optional hooks, see below. |
 
 ## What a module can never change
 
-Account credentials, stored consent and disclosure history, provider keys, chat retention, diagnostics, SMS and personal profile/notes stay separate. Since app 0.33.0, modules can configure automatic drafting/sending, reply scope, local length/rate/gap limits, AI review/privacy processing and protective rules in either direction. Since 0.39.0, `ai_reply_note: false` omits the automatic AI footer. Since 0.40.0, `free_ai` with `freeAi.routes` sends replies to the listed known free-tier AI servers with automatic switching; keys stay with the owner. Since 0.43.0, `reply_suggestions: true` shows suggested replies that the owner sends with a tap, and `replyLogic` adds reply-logic words for any language. Runtime overrides disappear when a module is disabled; they do not rewrite saved preferences. Locked settings are ignored and listed in the existing install summary.
+Account credentials, stored consent and disclosure history, provider keys, chat retention, diagnostics, SMS (including the owner's SMS import choices, `sms_import_*`) and personal profile/notes stay separate. Since app 0.33.0, modules can configure automatic drafting/sending, reply scope, local length/rate/gap limits, AI review/privacy processing and protective rules in either direction. Since 0.39.0, `ai_reply_note: false` omits the automatic AI footer. Since 0.40.0, `free_ai` with `freeAi.routes` sends replies to the listed known free-tier AI servers with automatic switching; keys stay with the owner. Since 0.43.0, `reply_suggestions: true` shows suggested replies that the owner sends with a tap, and `replyLogic` adds reply-logic words for any language. Runtime overrides disappear when a module is disabled; they do not rewrite saved preferences. Locked settings are ignored and listed in the existing install summary.
 
-Texts about consents, privacy, terms, data export, reports and modules themselves (keys starting with `disclosure_`, `auto_consent`, `terms_`, `account_privacy`, `account_delete`, `account_required`, `protect_`, `modules_`, `wipe_`, `report_`, `signin_privacy`, `signin_terms`, `send_changed`, `mydata_`, `oss_`, `backup_`, `privacy`) can't be changed: in a new language they stay in English so they are always accurate. A text whose placeholders (`%1$s`, `%2$d` …) differ from the original is ignored.
+Texts about consents, privacy, terms, data export, reports and modules themselves (keys starting with `disclosure_`, `auto_consent`, `terms_`, `account_privacy`, `account_delete`, `account_required`, `protect_`, `modules_`, `wipe_`, `report_`, `signin_privacy`, `signin_terms`, `send_changed`, `mydata_`, `oss_`, `backup_`, `privacy`, and since 0.55.0 `sms_import_`) can't be changed: in a new language they stay in English so they are always accurate. A text whose placeholders (`%1$s`, `%2$d` …) differ from the original is ignored.
 
 ## Translations
 
