@@ -134,7 +134,9 @@ def strings_template(strings_xml, lang, out):
     print(f"{len(texts)} texts -> {out} (translate the values, keep the keys and placeholders like %1$s)")
 
 
-AUTOMATION_SETTINGS = {"on_screen_auto", "auto_send", "send_mode", "dismiss_google_ads", "ai_reply_note", "automation_enabled"}
+AUTOMATION_SETTINGS = {"on_screen_auto", "auto_send", "send_mode", "dismiss_google_ads", "ai_reply_note", "automation_enabled",
+                       # 0.50: features the app shows only with a module (ModuleFeature in the app)
+                       "followups", "followup_enabled", "openers", "opener_auto", "new_chats", "group_chats", "reply_groups", "skip_ads"}
 
 
 def module_types(manifest, script=False):

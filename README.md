@@ -10,7 +10,7 @@ In the app: **Settings → Modules → Community modules**, pick one and confirm
 
 **Write your own:** the [module author guide](GUIDE.md) ([slovensko](VODNIK.sl.md)) describes every section and setting. Community modules can use everything the official modules use – the signature only changes the warning before installing, never what a module may do.
 
-All bundled modules are version 1.1.0 and declare their compatibility for Messages AI 0.46.0+. Alternative modules share an exclusive group; enabling one automatically turns off the incompatible one and the app shows what changed.
+All bundled modules declare their compatibility (version 1.1.0 for Messages AI 0.46.0+; the 0.50.0 feature modules and Automatic sending 1.2.0 need app code 61+). Alternative modules share an exclusive group; enabling one automatically turns off the incompatible one and the app shows what changed.
 
 
 ## External automation modules — Messages AI 0.33.0/code 43+
@@ -20,7 +20,7 @@ Install from **Settings → Modules → Community modules**, or download the pac
 | Module | Behaviour |
 |---|---|
 | [Automatic drafts](modules/automatic-drafts.mamod) | Starts screen Auto in an enabled app and writes a draft. You send it. |
-| [Automatic sending](modules/automatic-send.mamod) | Starts screen Auto and notification automation, writes and sends replies. Enabling it turns off Automatic drafts. |
+| [Automatic sending](modules/automatic-send.mamod) | Starts screen Auto and notification automation and adds automatic sending. Since app 0.50.0 (module 1.2.0) replies are sent only after you choose **Send** on the home screen and confirm the warning once; installing is not a confirmation. Enabling it turns off Automatic drafts. |
 | [Close Google ads](modules/google-ads-close.mamod) | Independently recognizes Google full-screen ads and presses an available enabled Close/Skip control. |
 
 Automatic drafts and Automatic sending are mutually exclusive reply modes. Enabling either one turns the other off; disabling the active one restores saved app settings but does not silently re-enable the old module. The Auto switch pauses the module-started screen session. The sending module's background setting is removed by disabling that module. The ad module does not enable replies or reopen a paused writer session.
@@ -28,6 +28,20 @@ Automatic drafts and Automatic sending are mutually exclusive reply modes. Enabl
 Manifest `settings` API: `on_screen_auto: true`, `auto_send: true`, `dismiss_google_ads: true`; `max_reply_tokens`, `max_per_hour` and `max_per_contact_day` accept `0` for no local cap; `min_reply_gap_ms: 0` removes the extra local gap. `min_delay`, `max_delay` and `realistic_typing` configure writing delay. The published reply modules remove these local caps/delays. Account entitlement and the selected AI provider still apply.
 
 The ads module does not click advertiser destinations, resume reward videos, bypass timers or guess coordinates. Google composers that hide EditText can use the Android 13+ accessibility input method if an actual editor connection is available; the app verifies the target, draft contents and resulting message.
+
+## Feature modules — Messages AI 0.50.0/code 61+
+
+Since 0.50.0 everything that acts on your behalf beyond drafting lives in modules. Without them the app shows no trace of these features and never does them; your earlier choices stay saved and apply again when a module adds the feature back. A feature module **adds** the feature (its settings appear); **you turn it on** in the app.
+
+| Module | Adds |
+|---|---|
+| [Follow-ups](modules/follow-ups.mamod) | **If they don't reply** in Settings and the follow-up choice for each person (setting `followups: true`). |
+| [Stranger chats](modules/stranger-chats.mamod) | **Start the conversation myself** and automatic new random chats per app for anonymous chat apps (`openers: true`, `new_chats: true`). |
+| [Group chats](modules/group-chats.mamod) | **Also reply in groups** and the per-app **Skip group chats** switch (`group_chats: true`). |
+| [Skip ads during Auto](modules/skip-ads.mamod) | The per-app **Skip ads** switch and the optional **Close ad** area; without it Auto waits until you close an ad (`skip_ads: true`). |
+| [Automatic sending](modules/automatic-send.mamod) | **Send / Review first** on the home screen and **Sending to this person** (`auto_send: true`). Sending always needs your explicit confirmation of the warning. |
+
+Older modules that switched a setting on directly (`followup_enabled`, `opener_auto`, `reply_groups`, `send_mode: "auto"`) still work: they add the feature and turn it on. Close Google ads stays separate and never resumes reward videos.
 
 ## No AI footer — Messages AI 0.39.0/code 49+
 

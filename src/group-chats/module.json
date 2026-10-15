@@ -1,0 +1,17 @@
+{
+  "format": 1,
+  "id": "group-chats",
+  "name": "Group chats",
+  "version": "1.0.0",
+  "author": "Messages AI",
+  "license": "CC0-1.0",
+  "description": "Adds “Also reply in groups” (Settings → Timing, limits and behavior) and the “Skip group chats” switch for each app. Group chats stay skipped until you turn it on; everyone in a group reads the replies, so turn it on only for groups that expect it. Disable this module to hide it again.",
+  "minAppVersion": 61,
+  "compatibility": {
+    "conflicts": [],
+    "exclusiveGroups": []
+  },
+  "settings": {
+    "group_chats": true
+  }
+}

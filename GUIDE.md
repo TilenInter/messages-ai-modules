@@ -86,11 +86,12 @@ Lists (`topics`, `interventionPhrases`, `rules.words`) keep up to 200 entries of
 |---|---|
 | Reply style | `style_length` (`natural`, `very_short`, `short`, `medium`, `long`, `like_me`), `style_emoji` (`never`, `rare`, `often`, `like_me`), `style_address`, `style_lowercase`, `style_language`, `style_max_chars`, `split_messages`, `split_max` |
 | Timing | `min_delay`, `max_delay` (seconds), `realistic_typing`, `quiet_enabled`, `quiet_from`, `quiet_to` (`"22:00"`), `start_reply_window` |
-| Follow-ups | `followup_enabled`, `followup_max`, `followup_seen_min`, `followup_unseen_min`, `followup_style` |
+| Follow-ups | `followups: true` adds the feature (app 0.50.0+); `followup_enabled`, `followup_max`, `followup_seen_min`, `followup_unseen_min`, `followup_style` |
 | Rules | `rule_no_money`, `rule_no_meetings`, `rule_no_personal`, `rule_no_promises`, `rule_no_politics`, `rule_no_flirt`, `rule_no_insults`, `rule_no_links`, `rule_no_swearing`, `rule_admit_ai`, `money_style`, `money_action` |
 | Hand-over | `pause_photo`, `pause_call`, `pause_personal_data`, `pause_threat`, `bot_question` |
 | Memory and learning | `memory_enabled`, `memory_every`, `learn_owner`, `use_past_replies`, `max_history`, `review_replies`, `protected_ai` |
-| Automation | `on_screen_auto: true` (start screen Auto in an open enabled app), `auto_send: true` or `send_mode: "auto"` (send instead of drafting), `dismiss_google_ads: true`, `max_reply_tokens`, `max_per_hour`, `max_per_contact_day` (`0` = no local cap), `min_reply_gap_ms` (`0` = no extra gap) |
+| Automation | `on_screen_auto: true` (start screen Auto in an open enabled app), `auto_send: true` or `send_mode: "auto"` (adds sending instead of drafting; since app 0.50.0 it sends only after the owner chooses Send and confirms the warning), `dismiss_google_ads: true`, `max_reply_tokens`, `max_per_hour`, `max_per_contact_day` (`0` = no local cap), `min_reply_gap_ms` (`0` = no extra gap) |
+| Features added by modules (app 0.50.0+) | `followups: true`, `openers: true` (start the conversation), `new_chats: true` (new random chats in anonymous apps), `group_chats: true`, `skip_ads: true` (skip ads during screen Auto). Without one of these the app hides the feature and ignores the owner's saved choice for it. |
 | AI note | `ai_reply_note: false` omits the automatic “an AI assistant helps me” footer |
 | Free AI | `free_ai: true` / `"first"` or `"backup"` with a `freeAi` section |
 | Reply suggestions | `reply_suggestions: true` ([details](#reply-suggestions)) |
