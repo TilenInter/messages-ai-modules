@@ -249,7 +249,7 @@
       "conflicts": [],
       "exclusiveGroups": [],
       "file": "modules/sms-import.mamod",
-      "sha256": "b74e47eb45915065e0720987be889a66d8a50e2f2d7a32d2a7242a4339d959c2"
+      "sha256": "e951c7e723eeed73f16ddc1e1d2bb2c3f0c167755cb70753b87d13eea4a79ba3"
     },
     {
       "id": "stranger-chats",
