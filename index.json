@@ -238,6 +238,20 @@
       "sha256": "46f2787d4c25d516882927852c4e5b37b7b04aa2344458f196bd1ead6027189f"
     },
     {
+      "id": "sms-import",
+      "name": "SMS import",
+      "version": "1.0.0",
+      "author": "Messages AI",
+      "description": "Adds “SMS import” to Learning: goes through all SMS chats on the phone (and the text of 1-to-1 MMS) and saves every person with their name from your contacts, together with your earlier messages. You choose whether to save everyone from your contacts or only chats you wrote in, and whether new SMS are imported automatically every few hours. Bank notices, codes, short numbers and group MMS are skipped. Nothing is read until you allow SMS access and confirm what is saved. GitHub version of the app only (the Google Play version doesn't read SMS). Disable this module to hide it again; saved people stay.",
+      "types": [
+        "automation"
+      ],
+      "conflicts": [],
+      "exclusiveGroups": [],
+      "file": "modules/sms-import.mamod",
+      "sha256": "b74e47eb45915065e0720987be889a66d8a50e2f2d7a32d2a7242a4339d959c2"
+    },
+    {
       "id": "stranger-chats",
       "name": "Stranger chats",
       "version": "1.0.0",

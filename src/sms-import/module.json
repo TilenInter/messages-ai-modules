@@ -1,0 +1,17 @@
+{
+  "format": 1,
+  "id": "sms-import",
+  "name": "SMS import",
+  "version": "1.0.0",
+  "author": "Messages AI",
+  "license": "CC0-1.0",
+  "description": "Adds “SMS import” to Learning: goes through all SMS chats on the phone (and the text of 1-to-1 MMS) and saves every person with their name from your contacts, together with your earlier messages. You choose whether to save everyone from your contacts or only chats you wrote in, and whether new SMS are imported automatically every few hours. Bank notices, codes, short numbers and group MMS are skipped. Nothing is read until you allow SMS access and confirm what is saved. GitHub version of the app only (the Google Play version doesn't read SMS). Disable this module to hide it again; saved people stay.",
+  "minAppVersion": 66,
+  "compatibility": {
+    "conflicts": [],
+    "exclusiveGroups": []
+  },
+  "settings": {
+    "sms_import": true
+  }
+}
