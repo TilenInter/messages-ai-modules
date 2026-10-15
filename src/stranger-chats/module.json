@@ -1,0 +1,18 @@
+{
+  "format": 1,
+  "id": "stranger-chats",
+  "name": "Stranger chats",
+  "version": "1.0.0",
+  "author": "Messages AI",
+  "license": "CC0-1.0",
+  "description": "For anonymous chat apps such as RandoChat: adds “Start the conversation myself” (Settings → Timing, limits and behavior) and automatic new random chats for each app (Apps → app; mark the New chat button). Both stay off until you turn them on. Every new person still gets the one-time AI note when replies are sent automatically. Disable this module to hide them again.",
+  "minAppVersion": 61,
+  "compatibility": {
+    "conflicts": [],
+    "exclusiveGroups": []
+  },
+  "settings": {
+    "openers": true,
+    "new_chats": true
+  }
+}

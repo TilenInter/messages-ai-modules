@@ -1,0 +1,17 @@
+{
+  "format": 1,
+  "id": "skip-ads",
+  "name": "Skip ads during Auto",
+  "version": "1.0.0",
+  "author": "Messages AI",
+  "license": "CC0-1.0",
+  "description": "Lets screen Auto close or skip ads in the apps where you turn on “Skip ads” (Apps → app) and mark an optional Close ad button. It waits for countdowns, never taps the advertiser and, on rewarded ads, continues the video to keep the reward. Without this module Auto waits until you close an ad yourself.",
+  "minAppVersion": 61,
+  "compatibility": {
+    "conflicts": [],
+    "exclusiveGroups": []
+  },
+  "settings": {
+    "skip_ads": true
+  }
+}

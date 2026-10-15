@@ -1,0 +1,17 @@
+{
+  "format": 1,
+  "id": "follow-ups",
+  "name": "Follow-ups",
+  "version": "1.0.0",
+  "author": "Messages AI",
+  "license": "CC0-1.0",
+  "description": "Adds “If they don't reply” to Settings: when your message is the last one and the person doesn't answer, the app can write a short follow-up (at most 3; it waits longer if they haven't seen your message). It stays off until you turn it on there, and you can turn it off for a single person. Disable this module to hide it again; your choices are kept.",
+  "minAppVersion": 61,
+  "compatibility": {
+    "conflicts": [],
+    "exclusiveGroups": []
+  },
+  "settings": {
+    "followups": true
+  }
+}

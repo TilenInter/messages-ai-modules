@@ -23,9 +23,9 @@
     {
       "id": "automatic-send",
       "name": "Automatic sending",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "author": "Messages AI",
-      "description": "Automatically writes and sends replies in enabled messaging apps, including screen and notification replies. This and Automatic drafts are alternative reply modes; enabling either one turns the other off.",
+      "description": "Adds automatic sending of replies in enabled messaging apps, including screen and notification replies. Replies are sent only after you choose Send and confirm the warning once (installing is not a confirmation); each person once gets a short note that an AI assistant helps you write, and you can keep review-first for single people. This and Automatic drafts are alternative reply modes; enabling either one turns the other off.",
       "types": [
         "ai",
         "automation"
@@ -37,7 +37,7 @@
         "automation.reply-mode"
       ],
       "file": "modules/automatic-send.mamod",
-      "sha256": "b4b182ad54cf930d603cbcd65c74dcd9e3e50c41df5fc617f82961ec6e2aa535"
+      "sha256": "5546da25e8998bda99dc355fc43f9edd7e0a054bba76d32e6a79a7684666647b"
     },
     {
       "id": "casual-short",
@@ -55,6 +55,20 @@
       ],
       "file": "modules/casual-short.mamod",
       "sha256": "445520934d25a09686894543fb9099a7025554503f2de071124d3561698c32cd"
+    },
+    {
+      "id": "follow-ups",
+      "name": "Follow-ups",
+      "version": "1.0.0",
+      "author": "Messages AI",
+      "description": "Adds “If they don't reply” to Settings: when your message is the last one and the person doesn't answer, the app can write a short follow-up (at most 3; it waits longer if they haven't seen your message). It stays off until you turn it on there, and you can turn it off for a single person. Disable this module to hide it again; your choices are kept.",
+      "types": [
+        "automation"
+      ],
+      "conflicts": [],
+      "exclusiveGroups": [],
+      "file": "modules/follow-ups.mamod",
+      "sha256": "2f183154e5b12beadf0ef6473b36b710ccba16059893ec1a9880e0a117af9a31"
     },
     {
       "id": "free-ai-auto",
@@ -103,6 +117,20 @@
       ],
       "file": "modules/google-ads-close.mamod",
       "sha256": "e5b59808c95935ae143fbc0146f3a0c1323432df7775db5033e195f1eb65314b"
+    },
+    {
+      "id": "group-chats",
+      "name": "Group chats",
+      "version": "1.0.0",
+      "author": "Messages AI",
+      "description": "Adds “Also reply in groups” (Settings → Timing, limits and behavior) and the “Skip group chats” switch for each app. Group chats stay skipped until you turn it on; everyone in a group reads the replies, so turn it on only for groups that expect it. Disable this module to hide it again.",
+      "types": [
+        "automation"
+      ],
+      "conflicts": [],
+      "exclusiveGroups": [],
+      "file": "modules/group-chats.mamod",
+      "sha256": "3c34bf897262dee0d02e81bf84078445a05236646c170b673269b18b57637a48"
     },
     {
       "id": "more-apps",
@@ -194,6 +222,34 @@
       ],
       "file": "modules/reply-suggestions.mamod",
       "sha256": "c2ac890baed113b9be91957121cd8555327d13e1ac56fb78d911458d8ca83b86"
+    },
+    {
+      "id": "skip-ads",
+      "name": "Skip ads during Auto",
+      "version": "1.0.0",
+      "author": "Messages AI",
+      "description": "Lets screen Auto close or skip ads in the apps where you turn on “Skip ads” (Apps → app) and mark an optional Close ad button. It waits for countdowns, never taps the advertiser and, on rewarded ads, continues the video to keep the reward. Without this module Auto waits until you close an ad yourself.",
+      "types": [
+        "automation"
+      ],
+      "conflicts": [],
+      "exclusiveGroups": [],
+      "file": "modules/skip-ads.mamod",
+      "sha256": "46f2787d4c25d516882927852c4e5b37b7b04aa2344458f196bd1ead6027189f"
+    },
+    {
+      "id": "stranger-chats",
+      "name": "Stranger chats",
+      "version": "1.0.0",
+      "author": "Messages AI",
+      "description": "For anonymous chat apps such as RandoChat: adds “Start the conversation myself” (Settings → Timing, limits and behavior) and automatic new random chats for each app (Apps → app; mark the New chat button). Both stay off until you turn them on. Every new person still gets the one-time AI note when replies are sent automatically. Disable this module to hide them again.",
+      "types": [
+        "automation"
+      ],
+      "conflicts": [],
+      "exclusiveGroups": [],
+      "file": "modules/stranger-chats.mamod",
+      "sha256": "88025311039683b88d7f6b97f15ed2eaf4542612bd30aff18c161bb205f134f0"
     }
   ]
 }
