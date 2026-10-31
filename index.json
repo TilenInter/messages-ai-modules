@@ -4,9 +4,9 @@
     {
       "id": "automatic-drafts",
       "name": "Automatic drafts",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "author": "Messages AI",
-      "description": "Automatically writes drafts in enabled messaging apps. You send them yourself. This and Automatic sending are alternative reply modes; enabling either one turns the other off.",
+      "description": "Writes a draft reply by itself in the messaging apps you turned on. Nothing is sent: you read the draft and send it yourself. It can't be on together with Automatic sending – turning one on turns the other off.",
       "types": [
         "ai",
         "automation"
@@ -18,14 +18,37 @@
         "automation.reply-mode"
       ],
       "file": "modules/automatic-drafts.mamod",
-      "sha256": "55ae4259445b0021f711b771ba99643478b3ce6e3080ee10d94fad2f992a9c1d"
+      "sha256": "247fcf2682b305cc3a9e244be0b2dae42aa6131a9db6689c87733e2da9fc62d1",
+      "icon": "pen",
+      "translations": {
+        "sl": {
+          "name": "Samodejni osnutki",
+          "description": "V aplikacijah, ki si jih vklopil, sam napiše osnutek odgovora. Nič se ne pošlje: osnutek prebereš in ga pošlješ sam. Ne more biti vklopljen hkrati s Samodejnim pošiljanjem – ko vklopiš enega, se drugi izklopi."
+        },
+        "de": {
+          "name": "Automatische Entwürfe",
+          "description": "Schreibt in den Messenger-Apps, die du eingeschaltet hast, selbst einen Antwortentwurf. Nichts wird gesendet: Du liest den Entwurf und sendest ihn selbst. Kann nicht zusammen mit „Automatisch senden“ an sein – schaltest du eines ein, geht das andere aus."
+        },
+        "hr": {
+          "name": "Automatski nacrti",
+          "description": "U aplikacijama za poruke koje si uključio sam napiše nacrt odgovora. Ništa se ne šalje: nacrt pročitaš i pošalješ sam. Ne može biti uključen zajedno s Automatskim slanjem – kad uključiš jedno, drugo se isključi."
+        },
+        "it": {
+          "name": "Bozze automatiche",
+          "description": "Nelle app di messaggistica che hai attivato scrive da solo una bozza di risposta. Non viene inviato nulla: leggi la bozza e la invii tu. Non può essere attivo insieme a Invio automatico: attivandone uno, l'altro si spegne."
+        },
+        "es": {
+          "name": "Borradores automáticos",
+          "description": "En las apps de mensajería que activaste escribe solo un borrador de respuesta. No se envía nada: lees el borrador y lo envías tú. No puede estar activo junto con Envío automático: al activar uno, el otro se desactiva."
+        }
+      }
     },
     {
       "id": "automatic-send",
       "name": "Automatic sending",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "author": "Messages AI",
-      "description": "Adds automatic sending of replies in enabled messaging apps, including screen and notification replies. Replies are sent only after you choose Send and confirm the warning once (installing is not a confirmation); each person once gets a short note that an AI assistant helps you write, and you can keep review-first for single people. This and Automatic drafts are alternative reply modes; enabling either one turns the other off.",
+      "description": "Adds automatic sending of replies in the messaging apps you turned on. Nothing is sent until you choose Send on Home and confirm the warning once – installing isn't enough. Each person once gets a short note that an AI assistant helps you write, and you can keep Review first for single people. It can't be on together with Automatic drafts.",
       "types": [
         "ai",
         "automation"
@@ -37,14 +60,37 @@
         "automation.reply-mode"
       ],
       "file": "modules/automatic-send.mamod",
-      "sha256": "5546da25e8998bda99dc355fc43f9edd7e0a054bba76d32e6a79a7684666647b"
+      "sha256": "14ea4ba9001e322e8e62b5149d0c5f4ee81f3a9d33d6d571db58bedd256474b8",
+      "icon": "send",
+      "translations": {
+        "sl": {
+          "name": "Samodejno pošiljanje",
+          "description": "Doda samodejno pošiljanje odgovorov v aplikacijah, ki si jih vklopil. Nič se ne pošlje, dokler na zaslonu Domov ne izbereš Pošlji in enkrat potrdiš opozorila – sama namestitev ni dovolj. Vsaka oseba enkrat dobi kratko obvestilo, da ti pri pisanju pomaga AI pomočnik, za posamezne osebe pa lahko ostane Najprej preglej. Ne more biti vklopljen hkrati s Samodejnimi osnutki."
+        },
+        "de": {
+          "name": "Automatisch senden",
+          "description": "Fügt das automatische Senden von Antworten in den Messenger-Apps hinzu, die du eingeschaltet hast. Nichts wird gesendet, bis du auf Start „Senden“ wählst und die Warnung einmal bestätigst – die Installation allein reicht nicht. Jede Person erhält einmal einen kurzen Hinweis, dass dir ein KI-Assistent beim Schreiben hilft, und für einzelne Personen kannst du „Zuerst prüfen“ behalten. Kann nicht zusammen mit „Automatische Entwürfe“ an sein."
+        },
+        "hr": {
+          "name": "Automatsko slanje",
+          "description": "Dodaje automatsko slanje odgovora u aplikacijama za poruke koje si uključio. Ništa se ne šalje dok na Početnoj ne odabereš Pošalji i jednom ne potvrdiš upozorenje – sama instalacija nije dovoljna. Svaka osoba jednom dobije kratku napomenu da ti AI asistent pomaže pisati, a za pojedine osobe možeš zadržati Prvo pregledaj. Ne može biti uključen zajedno s Automatskim nacrtima."
+        },
+        "it": {
+          "name": "Invio automatico",
+          "description": "Aggiunge l'invio automatico delle risposte nelle app di messaggistica che hai attivato. Non viene inviato nulla finché nella Home non scegli Invia e confermi l'avviso una volta: l'installazione da sola non basta. Ogni persona riceve una sola volta una breve nota che un assistente IA ti aiuta a scrivere, e per singole persone puoi mantenere Prima controlla. Non può essere attivo insieme a Bozze automatiche."
+        },
+        "es": {
+          "name": "Envío automático",
+          "description": "Añade el envío automático de respuestas en las apps de mensajería que activaste. No se envía nada hasta que en Inicio eliges Enviar y confirmas el aviso una vez: instalarlo no basta. Cada persona recibe una sola vez una breve nota de que un asistente de IA te ayuda a escribir, y para personas concretas puedes mantener Revisar primero. No puede estar activo junto con Borradores automáticos."
+        }
+      }
     },
     {
       "id": "casual-short",
       "name": "Casual & short",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "author": "Messages AI",
-      "description": "Short, relaxed replies like quick texts between friends: very short messages, emoji now and then, no full stop at the end of a one-line reply.",
+      "description": "Short, relaxed replies like quick texts between friends: one short line, an emoji now and then and no full stop at the end of a one-line reply.",
       "types": [
         "ai",
         "apps"
@@ -54,28 +100,74 @@
         "reply.style"
       ],
       "file": "modules/casual-short.mamod",
-      "sha256": "445520934d25a09686894543fb9099a7025554503f2de071124d3561698c32cd"
+      "sha256": "ef576700a663e83a198d7a08189cd7c361f327367ca4bab83276e5802a9d7586",
+      "icon": "chat",
+      "translations": {
+        "sl": {
+          "name": "Sproščeno in kratko",
+          "description": "Kratki, sproščeni odgovori kot hitra sporočila med prijatelji: ena kratka vrstica, občasno emoji in brez pike na koncu enovrstičnega odgovora."
+        },
+        "de": {
+          "name": "Locker & kurz",
+          "description": "Kurze, lockere Antworten wie schnelle Nachrichten unter Freunden: eine kurze Zeile, ab und zu ein Emoji und kein Punkt am Ende einer einzeiligen Antwort."
+        },
+        "hr": {
+          "name": "Opušteno i kratko",
+          "description": "Kratki, opušteni odgovori poput brzih poruka među prijateljima: jedan kratak redak, povremeno emoji i bez točke na kraju odgovora u jednom retku."
+        },
+        "it": {
+          "name": "Informale e breve",
+          "description": "Risposte brevi e rilassate come messaggi veloci tra amici: una riga breve, ogni tanto un'emoji e niente punto alla fine di una risposta di una riga."
+        },
+        "es": {
+          "name": "Informal y breve",
+          "description": "Respuestas cortas y relajadas como mensajes rápidos entre amigos: una línea corta, algún emoji de vez en cuando y sin punto al final de una respuesta de una línea."
+        }
+      }
     },
     {
       "id": "follow-ups",
       "name": "Follow-ups",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": "Messages AI",
-      "description": "Adds “If they don't reply” to Settings: when your message is the last one and the person doesn't answer, the app can write a short follow-up (at most 3; it waits longer if they haven't seen your message). It stays off until you turn it on there, and you can turn it off for a single person. Disable this module to hide it again; your choices are kept.",
+      "description": "Adds “If they don't reply” to Settings. When your message is the last one and the person doesn't answer, the app can write a short follow-up – at most 3, and it waits longer if they haven't seen your message. It stays off until you turn it on, and you can turn it off for one person. Disabling the module hides it again; your choices are kept.",
       "types": [
         "automation"
       ],
       "conflicts": [],
       "exclusiveGroups": [],
       "file": "modules/follow-ups.mamod",
-      "sha256": "2f183154e5b12beadf0ef6473b36b710ccba16059893ec1a9880e0a117af9a31"
+      "sha256": "3bff408bd5acb41a3d1985d6dd8d22e47262918a8f87b5521dfd90c893b0dfa4",
+      "icon": "clock",
+      "translations": {
+        "sl": {
+          "name": "Ponovna sporočila",
+          "description": "V Nastavitve doda »Če oseba ne odpiše«. Ko je tvoje sporočilo zadnje in oseba ne odgovori, lahko aplikacija napiše kratko ponovno sporočilo – največ 3, in počaka dlje, če tvojega sporočila še ni videla. Ostane izklopljeno, dokler ga ne vklopiš, za posamezno osebo pa ga lahko izklopiš. Ko modul onemogočiš, se spet skrije; tvoje izbire ostanejo."
+        },
+        "de": {
+          "name": "Nachfassen",
+          "description": "Fügt „Wenn sie nicht antworten“ zu den Einstellungen hinzu. Ist deine Nachricht die letzte und die Person antwortet nicht, kann die App kurz nachfassen – höchstens 3-mal, und sie wartet länger, wenn die Person deine Nachricht noch nicht gesehen hat. Bleibt aus, bis du es einschaltest, und lässt sich für einzelne Personen ausschalten. Deaktivierst du das Modul, ist es wieder ausgeblendet; deine Auswahl bleibt."
+        },
+        "hr": {
+          "name": "Ponovne poruke",
+          "description": "U Postavke dodaje „Ako ne odgovore”. Kad je tvoja poruka posljednja, a osoba ne odgovori, aplikacija može napisati kratku ponovnu poruku – najviše 3, i čeka dulje ako osoba još nije vidjela tvoju poruku. Ostaje isključeno dok ga ne uključiš, a za pojedinu osobu možeš ga isključiti. Kad onemogućiš modul, opet se skrije; tvoji odabiri ostaju."
+        },
+        "it": {
+          "name": "Solleciti",
+          "description": "Aggiunge «Se non rispondono» alle Impostazioni. Quando il tuo messaggio è l'ultimo e la persona non risponde, l'app può scrivere un breve sollecito: al massimo 3, e aspetta di più se non ha ancora visto il tuo messaggio. Resta spento finché non lo attivi e puoi spegnerlo per una singola persona. Disattivando il modulo si nasconde di nuovo; le tue scelte restano."
+        },
+        "es": {
+          "name": "Seguimientos",
+          "description": "Añade «Si no responden» a Ajustes. Cuando tu mensaje es el último y la persona no contesta, la app puede escribir un breve seguimiento: como máximo 3, y espera más si aún no ha visto tu mensaje. Sigue desactivado hasta que lo actives y puedes desactivarlo para una persona concreta. Al desactivar el módulo se oculta de nuevo; tus elecciones se conservan."
+        }
+      }
     },
     {
       "id": "free-ai-auto",
       "name": "Free AI (automatic)",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "author": "Messages AI",
-      "description": "Writes replies with free AI providers and switches to the next one automatically when one runs out of free quota, is rate-limited or does not answer. OVHcloud and Pollinations work without a key; Gemini, Groq, Mistral, OpenRouter, NVIDIA, GitHub Models, SambaNova, Cohere and LLM7 join once you add your own free key in AI models. Conversations are sent to these providers. Requires Messages AI 0.46.0 or newer.",
+      "description": "Writes replies with free AI services and moves to the next one by itself when one runs out of free use, is busy or doesn't answer. OVHcloud and Pollinations work without a key; Gemini, Groq, Mistral, OpenRouter, NVIDIA, GitHub Models, SambaNova, Cohere and LLM7 join once you add your own free key in “AI models”. Conversations are sent to these services.",
       "types": [
         "ai"
       ],
@@ -84,14 +176,37 @@
         "ai.routing"
       ],
       "file": "modules/free-ai-auto.mamod",
-      "sha256": "d97e177f3c2c35097bcf4f22838f95e2ce7b9824db9dee66567f3bfc25b6d21d"
+      "sha256": "072ce00acb678efc1dda18a4580a9f6b6c3e05ffb9239608d6725d65a519fbe4",
+      "icon": "sparkles",
+      "translations": {
+        "sl": {
+          "name": "Brezplačni AI (samodejno)",
+          "description": "Odgovore piše z brezplačnimi storitvami AI in sam preide na naslednjo, ko eni zmanjka brezplačne porabe, je zasedena ali ne odgovori. OVHcloud in Pollinations delujeta brez ključa; Gemini, Groq, Mistral, OpenRouter, NVIDIA, GitHub Models, SambaNova, Cohere in LLM7 se pridružijo, ko v »AI modeli« dodaš svoj brezplačni ključ. Pogovori se pošljejo tem storitvam."
+        },
+        "de": {
+          "name": "Kostenlose KI (automatisch)",
+          "description": "Schreibt Antworten mit kostenlosen KI-Diensten und wechselt selbst zum nächsten, wenn bei einem das Gratiskontingent aufgebraucht ist, er ausgelastet ist oder nicht antwortet. OVHcloud und Pollinations funktionieren ohne Schlüssel; Gemini, Groq, Mistral, OpenRouter, NVIDIA, GitHub Models, SambaNova, Cohere und LLM7 kommen hinzu, sobald du unter „KI-Modelle“ deinen eigenen kostenlosen Schlüssel einträgst. Unterhaltungen werden an diese Dienste gesendet."
+        },
+        "hr": {
+          "name": "Besplatni AI (automatski)",
+          "description": "Odgovore piše besplatnim AI uslugama i sam prelazi na sljedeću kad jednoj ponestane besplatne upotrebe, zauzeta je ili ne odgovara. OVHcloud i Pollinations rade bez ključa; Gemini, Groq, Mistral, OpenRouter, NVIDIA, GitHub Models, SambaNova, Cohere i LLM7 pridružuju se kad u „AI modeli” dodaš svoj besplatni ključ. Razgovori se šalju tim uslugama."
+        },
+        "it": {
+          "name": "IA gratuita (automatica)",
+          "description": "Scrive le risposte con servizi di IA gratuiti e passa da solo al successivo quando uno esaurisce l'uso gratuito, è occupato o non risponde. OVHcloud e Pollinations funzionano senza chiave; Gemini, Groq, Mistral, OpenRouter, NVIDIA, GitHub Models, SambaNova, Cohere e LLM7 si aggiungono quando inserisci la tua chiave gratuita in «Modelli IA». Le conversazioni vengono inviate a questi servizi."
+        },
+        "es": {
+          "name": "IA gratis (automática)",
+          "description": "Escribe las respuestas con servicios de IA gratuitos y pasa solo al siguiente cuando uno agota el uso gratuito, está saturado o no responde. OVHcloud y Pollinations funcionan sin clave; Gemini, Groq, Mistral, OpenRouter, NVIDIA, GitHub Models, SambaNova, Cohere y LLM7 se suman cuando añades tu propia clave gratuita en «Modelos de IA». Las conversaciones se envían a estos servicios."
+        }
+      }
     },
     {
       "id": "friendly-wording",
       "name": "Friendly wording",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "author": "Messages AI",
-      "description": "Simpler, friendlier English words on Home: Auto-reply, Ask me first, Send right away.",
+      "description": "Simpler, friendlier words on Home in every app language: Auto-reply, Ask me first and Send now.",
       "types": [
         "appearance"
       ],
@@ -100,14 +215,37 @@
         "ui.wording"
       ],
       "file": "modules/friendly-wording.mamod",
-      "sha256": "7f79048f8f4fa95ed9112da49e38a21352c3fec30c0174f3f7d294bf13887a3b"
+      "sha256": "68330efd3809ead42d1183aa26238479ec0e5aa42e5feb66e37761b91e179335",
+      "icon": "heart",
+      "translations": {
+        "sl": {
+          "name": "Prijaznejše besede",
+          "description": "Preprostejše, prijaznejše besede na zaslonu Domov v vseh jezikih aplikacije: Samodejno odpiši, Vprašaj me in Pošlji zdaj."
+        },
+        "de": {
+          "name": "Freundlichere Wörter",
+          "description": "Einfachere, freundlichere Wörter auf Start in allen Sprachen der App: Auto-Antwort, Erst fragen und Jetzt senden."
+        },
+        "hr": {
+          "name": "Prijaznije riječi",
+          "description": "Jednostavnije, prijaznije riječi na Početnoj na svim jezicima aplikacije: Auto-odgovor, Prvo pitaj i Pošalji sad."
+        },
+        "it": {
+          "name": "Parole più amichevoli",
+          "description": "Parole più semplici e amichevoli nella Home in tutte le lingue dell'app: Auto-risposta, Chiedi prima e Invia ora."
+        },
+        "es": {
+          "name": "Palabras más amables",
+          "description": "Palabras más sencillas y amables en Inicio en todos los idiomas de la app: Autorrespuesta, Pregúntame y Enviar ya."
+        }
+      }
     },
     {
       "id": "google-ads-close",
       "name": "Close Google ads",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "author": "Messages AI",
-      "description": "Recognizes Google full-screen ads in other apps and presses an available Close or Skip control. Works independently of reply modules; does not press Install, advertiser links or reward-resume controls.",
+      "description": "Recognizes Google full-screen ads in other apps and taps their Close or Skip button. Works on its own, without reply modules. It never taps Install, the advertiser's links or buttons that continue a rewarded video.",
       "types": [
         "automation"
       ],
@@ -116,56 +254,148 @@
         "automation.ads"
       ],
       "file": "modules/google-ads-close.mamod",
-      "sha256": "e5b59808c95935ae143fbc0146f3a0c1323432df7775db5033e195f1eb65314b"
+      "sha256": "d122396627c97e1a2fe35d4b5634121cd379a8a2c0e1ad5c3e4cab99421f808c",
+      "icon": "shield",
+      "translations": {
+        "sl": {
+          "name": "Zapiranje Googlovih oglasov",
+          "description": "V drugih aplikacijah prepozna Googlove celozaslonske oglase in pritisne njihov gumb Zapri ali Preskoči. Deluje samostojno, brez modulov za odgovarjanje. Nikoli ne pritisne Namesti, oglaševalčevih povezav ali gumbov, ki nadaljujejo video z nagrado."
+        },
+        "de": {
+          "name": "Google-Werbung schließen",
+          "description": "Erkennt Google-Vollbildwerbung in anderen Apps und tippt auf deren Schließen- oder Überspringen-Taste. Funktioniert eigenständig, ohne Antwortmodule. Tippt nie auf Installieren, Links des Werbetreibenden oder Tasten, die ein Video mit Belohnung fortsetzen."
+        },
+        "hr": {
+          "name": "Zatvaranje Googleovih oglasa",
+          "description": "U drugim aplikacijama prepoznaje Googleove oglase preko cijelog zaslona i dodiruje njihov gumb Zatvori ili Preskoči. Radi samostalno, bez modula za odgovaranje. Nikad ne dodiruje Instaliraj, poveznice oglašivača ni gumbe koji nastavljaju video s nagradom."
+        },
+        "it": {
+          "name": "Chiudi annunci Google",
+          "description": "Riconosce gli annunci Google a schermo intero nelle altre app e tocca il loro pulsante Chiudi o Salta. Funziona da solo, senza moduli di risposta. Non tocca mai Installa, i link dell'inserzionista o i pulsanti che riprendono un video con premio."
+        },
+        "es": {
+          "name": "Cerrar anuncios de Google",
+          "description": "Reconoce los anuncios de Google a pantalla completa en otras apps y toca su botón Cerrar u Omitir. Funciona por sí solo, sin módulos de respuesta. Nunca toca Instalar, los enlaces del anunciante ni los botones que reanudan un vídeo con recompensa."
+        }
+      }
     },
     {
       "id": "group-chats",
       "name": "Group chats",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": "Messages AI",
-      "description": "Adds “Also reply in groups” (Settings → Timing, limits and behavior) and the “Skip group chats” switch for each app. Group chats stay skipped until you turn it on; everyone in a group reads the replies, so turn it on only for groups that expect it. Disable this module to hide it again.",
+      "description": "Adds “Also reply in groups” (Settings → Timing, limits and behavior) and the “Skip group chats” switch for each app. Group chats stay skipped until you turn it on. Everyone in a group reads the replies, so turn it on only for groups that expect it. Disabling the module hides it again.",
       "types": [
         "automation"
       ],
       "conflicts": [],
       "exclusiveGroups": [],
       "file": "modules/group-chats.mamod",
-      "sha256": "3c34bf897262dee0d02e81bf84078445a05236646c170b673269b18b57637a48"
+      "sha256": "9c4a950c4b1e417a3d6304bfa37504af4992c51257d1a9e812fca83b1fb55f7f",
+      "icon": "people",
+      "translations": {
+        "sl": {
+          "name": "Skupinski pogovori",
+          "description": "Doda »Odgovarjaj tudi v skupinah« (Nastavitve → Časi, omejitve in obnašanje) in stikalo »Preskoči skupinske pogovore« za vsako aplikacijo. Skupinski pogovori se preskakujejo, dokler tega ne vklopiš. Odgovore v skupini preberejo vsi, zato ga vklopi le za skupine, ki to pričakujejo. Ko modul onemogočiš, se spet skrije."
+        },
+        "de": {
+          "name": "Gruppenchats",
+          "description": "Fügt „Auch in Gruppen antworten“ (Einstellungen → Zeiten, Limits und Verhalten) und den Schalter „Gruppenchats überspringen“ für jede App hinzu. Gruppenchats werden übersprungen, bis du es einschaltest. Alle in einer Gruppe lesen die Antworten – schalte es also nur für Gruppen ein, die das erwarten. Deaktivierst du das Modul, ist es wieder ausgeblendet."
+        },
+        "hr": {
+          "name": "Grupni razgovori",
+          "description": "Dodaje „Odgovaraj i u grupama” (Postavke → Vrijeme, ograničenja i ponašanje) i prekidač „Preskoči grupne razgovore” za svaku aplikaciju. Grupni razgovori se preskaču dok to ne uključiš. Odgovore u grupi čitaju svi, pa ga uključi samo za grupe koje to očekuju. Kad onemogućiš modul, opet se skrije."
+        },
+        "it": {
+          "name": "Chat di gruppo",
+          "description": "Aggiunge «Rispondi anche nei gruppi» (Impostazioni → Tempi, limiti e comportamento) e l'interruttore «Salta le chat di gruppo» per ogni app. Le chat di gruppo vengono saltate finché non lo attivi. Tutti nel gruppo leggono le risposte, quindi attivalo solo per i gruppi che se lo aspettano. Disattivando il modulo si nasconde di nuovo."
+        },
+        "es": {
+          "name": "Chats de grupo",
+          "description": "Añade «Responder también en grupos» (Ajustes → Tiempos, límites y comportamiento) y el interruptor «Omitir chats de grupo» para cada app. Los chats de grupo se omiten hasta que lo actives. Todos en el grupo leen las respuestas, así que actívalo solo para grupos que lo esperan. Al desactivar el módulo se oculta de nuevo."
+        }
+      }
     },
     {
       "id": "more-apps",
       "name": "More messaging apps",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "author": "Messages AI",
-      "description": "Adds Threema, Element and Session to Apps. They reply through the notification's Reply button.",
+      "description": "Adds Threema, Element and Session to Apps. They reply through the Reply button in the notification.",
       "types": [
         "apps"
       ],
       "conflicts": [],
       "exclusiveGroups": [],
       "file": "modules/more-apps.mamod",
-      "sha256": "7e0656b394c75eeb53adfae541e4db0581be49dcd7926347b27a82d45bd81c9d"
+      "sha256": "df394d668c7fbfc574e79090ce358d5f5491cade0dd8c73aba03c3dc1cebe936",
+      "icon": "grid",
+      "translations": {
+        "sl": {
+          "name": "Več aplikacij za sporočila",
+          "description": "Doda Threema, Element in Session med Aplikacije. Odgovarjajo prek gumba Odgovori v obvestilu."
+        },
+        "de": {
+          "name": "Weitere Messenger",
+          "description": "Fügt Threema, Element und Session zu Apps hinzu. Sie antworten über die Antworten-Taste in der Benachrichtigung."
+        },
+        "hr": {
+          "name": "Još aplikacija za poruke",
+          "description": "Dodaje Threemu, Element i Session u Aplikacije. Odgovaraju putem gumba Odgovori u obavijesti."
+        },
+        "it": {
+          "name": "Altre app di messaggistica",
+          "description": "Aggiunge Threema, Element e Session ad App. Rispondono tramite il pulsante Rispondi nella notifica."
+        },
+        "es": {
+          "name": "Más apps de mensajería",
+          "description": "Añade Threema, Element y Session a Apps. Responden con el botón Responder de la notificación."
+        }
+      }
     },
     {
       "id": "more-languages",
       "name": "More reply languages",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "author": "Messages AI",
-      "description": "Teaches the reply logic Finnish, Hungarian, Romanian and Swedish: the app then recognizes questions, requests, bad and good news, thanks and goodbyes in these languages and checks that a reply really answers them, like it does for the built-in languages. The words apply only to chats in that language. Also an example for authors who want to add their own language. Requires Messages AI 0.46.0 or newer.",
+      "description": "Teaches the reply logic Finnish, Hungarian, Romanian and Swedish. The app then recognizes questions, requests, good and bad news, thanks and goodbyes in these languages and checks that a reply really answers them, like it does for the built-in languages. The words apply only to chats in that language. Also an example for authors who want to add their own language.",
       "types": [
         "ai"
       ],
       "conflicts": [],
       "exclusiveGroups": [],
       "file": "modules/more-languages.mamod",
-      "sha256": "b671a02d71ef970dc1ebf66035c0f583f8bc141472a670e82953fa96c9a83a83"
+      "sha256": "8390688480c81c141e8eab32582557f7b41b9bb7ca958f6ced24db9755c5bc84",
+      "icon": "globe",
+      "translations": {
+        "sl": {
+          "name": "Več jezikov odgovorov",
+          "description": "Logiko odgovorov nauči finščine, madžarščine, romunščine in švedščine. Aplikacija nato v teh jezikih prepozna vprašanja, prošnje, dobre in slabe novice, zahvale in slovo ter preveri, ali odgovor nanje res odgovori – tako kot pri vgrajenih jezikih. Besede veljajo samo za pogovore v tem jeziku. Je tudi primer za avtorje, ki želijo dodati svoj jezik."
+        },
+        "de": {
+          "name": "Weitere Antwortsprachen",
+          "description": "Bringt der Antwortlogik Finnisch, Ungarisch, Rumänisch und Schwedisch bei. Die App erkennt dann in diesen Sprachen Fragen, Bitten, gute und schlechte Nachrichten, Dank und Abschiede und prüft, ob eine Antwort wirklich darauf eingeht – wie bei den eingebauten Sprachen. Die Wörter gelten nur für Chats in dieser Sprache. Auch ein Beispiel für alle, die eine eigene Sprache hinzufügen möchten."
+        },
+        "hr": {
+          "name": "Više jezika odgovora",
+          "description": "Logiku odgovora uči finski, mađarski, rumunjski i švedski. Aplikacija tada na tim jezicima prepoznaje pitanja, molbe, dobre i loše vijesti, zahvale i pozdrave na rastanku te provjerava odgovara li odgovor stvarno na njih – kao kod ugrađenih jezika. Riječi vrijede samo za razgovore na tom jeziku. Ujedno je primjer za autore koji žele dodati svoj jezik."
+        },
+        "it": {
+          "name": "Altre lingue di risposta",
+          "description": "Insegna alla logica delle risposte finlandese, ungherese, rumeno e svedese. L'app riconosce poi in queste lingue domande, richieste, notizie belle e brutte, ringraziamenti e saluti e controlla che una risposta risponda davvero, come per le lingue integrate. Le parole valgono solo per le chat in quella lingua. È anche un esempio per chi vuole aggiungere la propria lingua."
+        },
+        "es": {
+          "name": "Más idiomas de respuesta",
+          "description": "Enseña a la lógica de respuestas finés, húngaro, rumano y sueco. La app reconoce entonces en estos idiomas preguntas, peticiones, buenas y malas noticias, agradecimientos y despedidas, y comprueba que una respuesta de verdad las conteste, como con los idiomas integrados. Las palabras solo se aplican a los chats en ese idioma. También es un ejemplo para quien quiera añadir su propio idioma."
+        }
+      }
     },
     {
       "id": "no-ai-footer",
       "name": "No AI footer",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "author": "Messages AI",
-      "description": "Omits the automatic AI-assistance footer from replies sent through notifications or an open chat. Requires Messages AI 0.46.0 or newer. Disable this module to restore the default footer for conversations that have not received it. Does not enable sending or change saved disclosure history.",
+      "description": "Leaves the automatic note about AI help out of replies sent through notifications or in an open chat. Disable the module to bring the note back for people who haven't received it yet. It doesn't turn on sending and doesn't change who was already told.",
       "types": [
         "automation"
       ],
@@ -174,14 +404,37 @@
         "reply.disclosure"
       ],
       "file": "modules/no-ai-footer.mamod",
-      "sha256": "1c74e9efd829f0a7fce2ffa3af07621fe90ccf11d8aac63373f259de3b05d581"
+      "sha256": "2236d02d41e75320a29ae9d72bc4a7f5d9c01043b31e95ec313ded687176af1e",
+      "icon": "document",
+      "translations": {
+        "sl": {
+          "name": "Brez opombe o AI",
+          "description": "Iz odgovorov, poslanih prek obvestil ali v odprtem pogovoru, izpusti samodejno opombo o pomoči AI. Ko modul onemogočiš, se opomba vrne za osebe, ki je še niso dobile. Ne vklopi pošiljanja in ne spremeni, kdo je obvestilo že dobil."
+        },
+        "de": {
+          "name": "Kein KI-Hinweis",
+          "description": "Lässt den automatischen Hinweis auf KI-Hilfe in Antworten weg, die über Benachrichtigungen oder in einem geöffneten Chat gesendet werden. Deaktivierst du das Modul, kommt der Hinweis für Personen zurück, die ihn noch nicht erhalten haben. Es schaltet das Senden nicht ein und ändert nicht, wer schon informiert wurde."
+        },
+        "hr": {
+          "name": "Bez napomene o AI-u",
+          "description": "Iz odgovora poslanih putem obavijesti ili u otvorenom razgovoru izostavlja automatsku napomenu o pomoći AI-a. Kad onemogućiš modul, napomena se vraća za osobe koje je još nisu dobile. Ne uključuje slanje i ne mijenja tko je već obaviješten."
+        },
+        "it": {
+          "name": "Senza nota IA",
+          "description": "Omette la nota automatica sull'aiuto dell'IA dalle risposte inviate dalle notifiche o in una chat aperta. Disattivando il modulo la nota torna per le persone che non l'hanno ancora ricevuta. Non attiva l'invio e non cambia chi è già stato informato."
+        },
+        "es": {
+          "name": "Sin nota de IA",
+          "description": "Omite la nota automática sobre la ayuda de la IA en las respuestas enviadas desde notificaciones o en un chat abierto. Al desactivar el módulo, la nota vuelve para las personas que aún no la han recibido. No activa el envío ni cambia a quién ya se informó."
+        }
+      }
     },
     {
       "id": "no-work-talk",
       "name": "No work talk",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "author": "Messages AI",
-      "description": "Keeps private chats private: no talk about work, and a chat that turns urgent is handed to you.",
+      "description": "Keeps private chats private: replies don't talk about work, and a chat about meetings, deadlines, invoices or clients, or one that turns urgent, is handed to you.",
       "types": [
         "ai",
         "apps"
@@ -189,12 +442,35 @@
       "conflicts": [],
       "exclusiveGroups": [],
       "file": "modules/no-work-talk.mamod",
-      "sha256": "e2b9ad5f447f97d585212368ca534da35d9823dafe02e8f3f18e1d8ffbfd911f"
+      "sha256": "ebbeec0089a23c3ff87dff98356ba34f5d9e0f9f2546471e4dc1dd039321add9",
+      "icon": "lock",
+      "translations": {
+        "sl": {
+          "name": "Brez pogovorov o službi",
+          "description": "Zasebni pogovori ostanejo zasebni: odgovori ne govorijo o službi, pogovor o sestankih, rokih, računih ali strankah ali tak, ki postane nujen, pa se preda tebi."
+        },
+        "de": {
+          "name": "Keine Arbeitsgespräche",
+          "description": "Private Chats bleiben privat: Antworten sprechen nicht über die Arbeit, und ein Chat über Meetings, Fristen, Rechnungen oder Kunden oder einer, der dringend wird, wird an dich übergeben."
+        },
+        "hr": {
+          "name": "Bez razgovora o poslu",
+          "description": "Privatni razgovori ostaju privatni: odgovori ne govore o poslu, a razgovor o sastancima, rokovima, računima ili klijentima, ili onaj koji postane hitan, predaje se tebi."
+        },
+        "it": {
+          "name": "Niente lavoro",
+          "description": "Le chat private restano private: le risposte non parlano di lavoro e una chat su riunioni, scadenze, fatture o clienti, o che diventa urgente, passa a te."
+        },
+        "es": {
+          "name": "Sin hablar de trabajo",
+          "description": "Los chats privados siguen siendo privados: las respuestas no hablan de trabajo, y un chat sobre reuniones, plazos, facturas o clientes, o que se vuelve urgente, pasa a ti."
+        }
+      }
     },
     {
       "id": "ocean-theme",
       "name": "Ocean",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "author": "Messages AI",
       "description": "A calm blue colour theme for light and dark mode.",
       "types": [
@@ -205,14 +481,37 @@
         "visual.theme"
       ],
       "file": "modules/ocean-theme.mamod",
-      "sha256": "39fca18fb3b78494b718a4bfa0ed1288acae361216cc8ee1305c448d14fa6d64"
+      "sha256": "cf95cc00efb8ea1954e67435881197479a4134a53690d06a5099b12fe7d79f93",
+      "icon": "palette",
+      "translations": {
+        "sl": {
+          "name": "Ocean",
+          "description": "Umirjena modra barvna tema za svetli in temni način."
+        },
+        "de": {
+          "name": "Ozean",
+          "description": "Ein ruhiges blaues Farbschema für den hellen und den dunklen Modus."
+        },
+        "hr": {
+          "name": "Ocean",
+          "description": "Smirena plava tema boja za svijetli i tamni način."
+        },
+        "it": {
+          "name": "Oceano",
+          "description": "Un tema di colori blu e rilassante per la modalità chiara e scura."
+        },
+        "es": {
+          "name": "Océano",
+          "description": "Un tema de color azul y tranquilo para el modo claro y el oscuro."
+        }
+      }
     },
     {
       "id": "reply-suggestions",
       "name": "Reply suggestions",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "author": "Messages AI",
-      "description": "Shows three movable Apple-style reply bubbles above an open chat without an enclosing panel. Their position is remembered and can be reset. Tap a bubble to use it, ↻ writes three new ones and × hides them until another chat opens.",
+      "description": "Shows three reply bubbles above an open chat, without a panel around them. You can move them and the place is remembered (and can be reset). Tap a bubble to use it; ↻ writes three new ones and × hides them until another chat opens.",
       "types": [
         "ai"
       ],
@@ -221,49 +520,141 @@
         "reply.overlay"
       ],
       "file": "modules/reply-suggestions.mamod",
-      "sha256": "c2ac890baed113b9be91957121cd8555327d13e1ac56fb78d911458d8ca83b86"
+      "sha256": "f021e99fce29ff640bf21eebd23c19b794eb2dda11547d36ee71e49cfa429eca",
+      "icon": "lightbulb",
+      "translations": {
+        "sl": {
+          "name": "Predlogi odgovorov",
+          "description": "Nad odprtim pogovorom pokaže tri mehurčke z odgovori, brez panela okoli njih. Lahko jih premakneš, mesto se zapomni (in ga lahko ponastaviš). Tapni mehurček, da ga uporabiš; ↻ napiše tri nove, × pa jih skrije, dokler se ne odpre drug pogovor."
+        },
+        "de": {
+          "name": "Antwortvorschläge",
+          "description": "Zeigt drei Antwortblasen über einem geöffneten Chat, ohne Panel drumherum. Du kannst sie verschieben, die Position wird gespeichert (und lässt sich zurücksetzen). Tippe auf eine Blase, um sie zu verwenden; ↻ schreibt drei neue und × blendet sie aus, bis ein anderer Chat geöffnet wird."
+        },
+        "hr": {
+          "name": "Prijedlozi odgovora",
+          "description": "Iznad otvorenog razgovora prikazuje tri mjehurića s odgovorima, bez panela oko njih. Možeš ih pomaknuti, mjesto se pamti (i može se vratiti). Dodirni mjehurić da ga upotrijebiš; ↻ piše tri nova, a × ih skriva dok se ne otvori drugi razgovor."
+        },
+        "it": {
+          "name": "Suggerimenti di risposta",
+          "description": "Mostra tre bolle di risposta sopra una chat aperta, senza un pannello intorno. Puoi spostarle e la posizione viene ricordata (e si può reimpostare). Tocca una bolla per usarla; ↻ ne scrive tre nuove e × le nasconde finché non si apre un'altra chat."
+        },
+        "es": {
+          "name": "Sugerencias de respuesta",
+          "description": "Muestra tres burbujas de respuesta sobre un chat abierto, sin un panel alrededor. Puedes moverlas y su posición se recuerda (y se puede restablecer). Toca una burbuja para usarla; ↻ escribe tres nuevas y × las oculta hasta que se abra otro chat."
+        }
+      }
     },
     {
       "id": "skip-ads",
       "name": "Skip ads during Auto",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": "Messages AI",
-      "description": "Lets screen Auto close or skip ads in the apps where you turn on “Skip ads” (Apps → app) and mark an optional Close ad button. It waits for countdowns, never taps the advertiser and, on rewarded ads, continues the video to keep the reward. Without this module Auto waits until you close an ad yourself.",
+      "description": "Lets Auto on the screen close or skip ads in apps where you turn on “Skip ads once the button is enabled” (Apps → the app). You can also mark the “Close ad” button. It waits for countdowns, never taps the advertiser and keeps rewarded videos going so you keep the reward. Without this module Auto waits until you close an ad yourself.",
       "types": [
         "automation"
       ],
       "conflicts": [],
       "exclusiveGroups": [],
       "file": "modules/skip-ads.mamod",
-      "sha256": "46f2787d4c25d516882927852c4e5b37b7b04aa2344458f196bd1ead6027189f"
+      "sha256": "0e35b5993aac51e5da0a076a70f1bd4668290275dd5e08d51e147272e5d9c1d2",
+      "icon": "activity",
+      "translations": {
+        "sl": {
+          "name": "Preskakovanje oglasov med Auto",
+          "description": "Auto na zaslonu lahko zapre ali preskoči oglase v aplikacijah, kjer vklopiš »Preskoči oglase, ko je gumb omogočen« (Aplikacije → aplikacija). Označiš lahko tudi gumb »Zapri oglas«. Počaka na odštevanje, nikoli ne tapne oglaševalca in pri oglasih z nagrado pusti video teči, da nagrado obdržiš. Brez tega modula Auto počaka, da oglas zapreš sam."
+        },
+        "de": {
+          "name": "Werbung bei Auto überspringen",
+          "description": "Lässt Auto auf dem Bildschirm Werbung in Apps schließen oder überspringen, in denen du „Werbung überspringen, sobald die Taste aktiv ist“ einschaltest (Apps → App). Du kannst auch die Taste „Werbung schließen“ markieren. Wartet Countdowns ab, tippt nie auf den Werbetreibenden und lässt Videos mit Belohnung weiterlaufen, damit du sie behältst. Ohne dieses Modul wartet Auto, bis du die Werbung selbst schließt."
+        },
+        "hr": {
+          "name": "Preskakanje oglasa tijekom Auto",
+          "description": "Auto na zaslonu može zatvoriti ili preskočiti oglase u aplikacijama u kojima uključiš „Preskoči oglase kad je gumb omogućen” (Aplikacije → aplikacija). Možeš označiti i gumb „Zatvori oglas”. Čeka odbrojavanje, nikad ne dodiruje oglašivača i kod oglasa s nagradom pušta video da teče kako bi zadržao nagradu. Bez ovog modula Auto čeka da oglas zatvoriš sam."
+        },
+        "it": {
+          "name": "Salta annunci durante Auto",
+          "description": "Permette ad Auto sullo schermo di chiudere o saltare gli annunci nelle app in cui attivi «Salta gli annunci quando il pulsante è attivo» (App → app). Puoi anche segnare il pulsante «Chiudi annuncio». Aspetta i conti alla rovescia, non tocca mai l'inserzionista e negli annunci con premio lascia andare il video, così tieni il premio. Senza questo modulo Auto aspetta che chiuda tu l'annuncio."
+        },
+        "es": {
+          "name": "Saltar anuncios en Auto",
+          "description": "Permite que Auto en la pantalla cierre u omita anuncios en las apps donde actives «Saltar anuncios cuando el botón esté activo» (Apps → la app). También puedes marcar el botón «Cerrar anuncio». Espera las cuentas atrás, nunca toca al anunciante y en los anuncios con recompensa deja seguir el vídeo para que conserves la recompensa. Sin este módulo, Auto espera a que cierres tú el anuncio."
+        }
+      }
     },
     {
       "id": "sms-import",
       "name": "SMS import",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": "Messages AI",
-      "description": "Adds “SMS import” to Learning: goes through all SMS chats on the phone (and the text of 1-to-1 MMS) and saves every person with their name from your contacts, together with your earlier messages. You choose whether to save everyone from your contacts or only chats you wrote in, and whether new SMS are imported automatically every few hours. Bank notices, codes, short numbers and group MMS are skipped. Nothing is read until you allow SMS access and confirm what is saved. GitHub version of the app only (the Google Play version doesn't read SMS). Disable this module to hide it again; saved people stay.",
+      "description": "Adds “SMS import” to Learning. It goes through the SMS chats on your phone (and the text of 1-to-1 MMS) and saves each person with their name from your contacts, together with your earlier messages. You choose whether to save everyone from your contacts or only chats you wrote in, and whether new SMS are imported every few hours. Bank notices, codes, short numbers and group MMS are skipped. Nothing is read until you allow SMS access and confirm. Only in the GitHub version of the app.",
       "types": [
         "automation"
       ],
       "conflicts": [],
       "exclusiveGroups": [],
       "file": "modules/sms-import.mamod",
-      "sha256": "e951c7e723eeed73f16ddc1e1d2bb2c3f0c167755cb70753b87d13eea4a79ba3"
+      "sha256": "fc4d6091e30cb92546af406f09b49e88e4fbb0597559408ddc680cc40e498d9b",
+      "icon": "download",
+      "translations": {
+        "sl": {
+          "name": "Uvoz SMS",
+          "description": "V Učenje doda »Uvoz SMS«. Gre čez pogovore SMS na telefonu (in besedilo MMS med dvema osebama) in shrani vsako osebo z imenom iz imenika skupaj s tvojimi prejšnjimi sporočili. Izbereš, ali shrani vse iz imenika ali samo pogovore, v katerih si pisal, in ali se novi SMS uvozijo vsakih nekaj ur. Bančna obvestila, kode, kratke številke in skupinski MMS se preskočijo. Nič se ne prebere, dokler ne dovoliš dostopa do SMS in potrdiš. Samo v različici aplikacije z GitHuba."
+        },
+        "de": {
+          "name": "SMS-Import",
+          "description": "Fügt „SMS-Import“ zu Lernen hinzu. Er geht die SMS-Chats auf deinem Handy durch (und den Text von MMS zwischen zwei Personen) und speichert jede Person mit ihrem Namen aus deinen Kontakten samt deinen früheren Nachrichten. Du wählst, ob alle Kontakte oder nur Chats, in denen du geschrieben hast, gespeichert werden und ob neue SMS alle paar Stunden importiert werden. Bankmitteilungen, Codes, Kurznummern und Gruppen-MMS werden übersprungen. Nichts wird gelesen, bevor du den SMS-Zugriff erlaubst und bestätigst. Nur in der GitHub-Version."
+        },
+        "hr": {
+          "name": "Uvoz SMS-ova",
+          "description": "U Učenje dodaje „Uvoz SMS-ova”. Prolazi kroz SMS razgovore na telefonu (i tekst MMS-ova između dvije osobe) i sprema svaku osobu s imenom iz imenika zajedno s tvojim ranijim porukama. Biraš hoće li se spremiti svi iz imenika ili samo razgovori u kojima si pisao te hoće li se novi SMS-ovi uvoziti svakih nekoliko sati. Obavijesti banaka, kodovi, kratki brojevi i grupni MMS-ovi se preskaču. Ništa se ne čita dok ne dopustiš pristup SMS-ovima i ne potvrdiš. Samo u GitHub verziji aplikacije."
+        },
+        "it": {
+          "name": "Importazione SMS",
+          "description": "Aggiunge «Importazione SMS» ad Apprendimento. Scorre le chat SMS del telefono (e il testo degli MMS tra due persone) e salva ogni persona con il nome dei tuoi contatti insieme ai tuoi messaggi precedenti. Scegli se salvare tutti i contatti o solo le chat in cui hai scritto e se importare i nuovi SMS ogni poche ore. Avvisi bancari, codici, numeri brevi e MMS di gruppo vengono saltati. Non viene letto nulla finché non consenti l'accesso agli SMS e confermi. Solo nella versione dell'app da GitHub."
+        },
+        "es": {
+          "name": "Importación de SMS",
+          "description": "Añade «Importación de SMS» a Aprendizaje. Recorre los chats SMS del teléfono (y el texto de los MMS entre dos personas) y guarda a cada persona con su nombre de tus contactos junto con tus mensajes anteriores. Eliges si guardar a todos tus contactos o solo los chats en los que escribiste, y si los SMS nuevos se importan cada pocas horas. Se omiten avisos bancarios, códigos, números cortos y MMS de grupo. No se lee nada hasta que permitas el acceso a los SMS y confirmes. Solo en la versión de la app de GitHub."
+        }
+      }
     },
     {
       "id": "stranger-chats",
       "name": "Stranger chats",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": "Messages AI",
-      "description": "For anonymous chat apps such as RandoChat: adds “Start the conversation myself” (Settings → Timing, limits and behavior) and automatic new random chats for each app (Apps → app; mark the New chat button). Both stay off until you turn them on. Every new person still gets the one-time AI note when replies are sent automatically. Disable this module to hide them again.",
+      "description": "For anonymous chat apps such as RandoChat: adds “Start the conversation myself” (Settings → Timing, limits and behavior) and automatic new random chats for each app (Apps → the app; mark the “New chat” button). Both stay off until you turn them on. Every new person still gets the one-time AI note when replies are sent automatically. Disabling the module hides them again.",
       "types": [
         "automation"
       ],
       "conflicts": [],
       "exclusiveGroups": [],
       "file": "modules/stranger-chats.mamod",
-      "sha256": "88025311039683b88d7f6b97f15ed2eaf4542612bd30aff18c161bb205f134f0"
+      "sha256": "256c5adbe274221bba7b9ae9dc32ed5b990301e9d126a266bbd2d6a37e81ae70",
+      "icon": "user",
+      "translations": {
+        "sl": {
+          "name": "Klepeti z neznanci",
+          "description": "Za anonimne klepetalnice, kot je RandoChat: doda »Začni pogovor sam« (Nastavitve → Časi, omejitve in obnašanje) in samodejne nove naključne klepete za vsako aplikacijo (Aplikacije → aplikacija; označi gumb »Nov klepet«). Oboje ostane izklopljeno, dokler ne vklopiš. Vsaka nova oseba ob samodejnem pošiljanju še vedno enkrat dobi obvestilo o AI. Ko modul onemogočiš, se spet skrijeta."
+        },
+        "de": {
+          "name": "Chats mit Fremden",
+          "description": "Für anonyme Chat-Apps wie RandoChat: fügt „Gespräch selbst beginnen“ (Einstellungen → Zeiten, Limits und Verhalten) und automatische neue Zufallschats für jede App hinzu (Apps → App; markiere die Taste „Neuer Chat“). Beides bleibt aus, bis du es einschaltest. Jede neue Person erhält beim automatischen Senden weiterhin einmal den KI-Hinweis. Deaktivierst du das Modul, ist beides wieder ausgeblendet."
+        },
+        "hr": {
+          "name": "Razgovori sa strancima",
+          "description": "Za anonimne aplikacije za razgovor poput RandoChata: dodaje „Sam započni razgovor” (Postavke → Vrijeme, ograničenja i ponašanje) i automatske nove nasumične razgovore za svaku aplikaciju (Aplikacije → aplikacija; označi gumb „Novi razgovor”). Oboje ostaje isključeno dok ne uključiš. Svaka nova osoba pri automatskom slanju i dalje jednom dobije napomenu o AI-u. Kad onemogućiš modul, opet se skrivaju."
+        },
+        "it": {
+          "name": "Chat con sconosciuti",
+          "description": "Per le app di chat anonime come RandoChat: aggiunge «Inizia io la conversazione» (Impostazioni → Tempi, limiti e comportamento) e nuove chat casuali automatiche per ogni app (App → app; segna il pulsante «Nuova chat»). Restano spenti finché non li attivi. Ogni nuova persona riceve comunque una volta la nota sull'IA quando le risposte vengono inviate automaticamente. Disattivando il modulo si nascondono di nuovo."
+        },
+        "es": {
+          "name": "Chats con desconocidos",
+          "description": "Para apps de chat anónimo como RandoChat: añade «Empezar yo la conversación» (Ajustes → Tiempos, límites y comportamiento) y chats aleatorios nuevos automáticos para cada app (Apps → la app; marca el botón «Chat nuevo»). Ambos siguen desactivados hasta que los actives. Cada persona nueva sigue recibiendo una vez la nota de IA cuando las respuestas se envían automáticamente. Al desactivar el módulo se ocultan de nuevo."
+        }
+      }
     }
   ]
 }
