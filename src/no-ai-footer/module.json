@@ -2,15 +2,38 @@
   "format": 1,
   "id": "no-ai-footer",
   "name": "No AI footer",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
-  "description": "Omits the automatic AI-assistance footer from replies sent through notifications or an open chat. Requires Messages AI 0.46.0 or newer. Disable this module to restore the default footer for conversations that have not received it. Does not enable sending or change saved disclosure history.",
+  "description": "Leaves the automatic note about AI help out of replies sent through notifications or in an open chat. Disable the module to bring the note back for people who haven't received it yet. It doesn't turn on sending and doesn't change who was already told.",
   "homepage": "https://github.com/TilenInter/messages-ai-modules",
+  "icon": "document",
   "minAppVersion": 56,
   "compatibility": {
     "conflicts": [],
     "exclusiveGroups": ["reply.disclosure"]
+  },
+  "translations": {
+    "sl": {
+      "name": "Brez opombe o AI",
+      "description": "Iz odgovorov, poslanih prek obvestil ali v odprtem pogovoru, izpusti samodejno opombo o pomoči AI. Ko modul onemogočiš, se opomba vrne za osebe, ki je še niso dobile. Ne vklopi pošiljanja in ne spremeni, kdo je obvestilo že dobil."
+    },
+    "de": {
+      "name": "Kein KI-Hinweis",
+      "description": "Lässt den automatischen Hinweis auf KI-Hilfe in Antworten weg, die über Benachrichtigungen oder in einem geöffneten Chat gesendet werden. Deaktivierst du das Modul, kommt der Hinweis für Personen zurück, die ihn noch nicht erhalten haben. Es schaltet das Senden nicht ein und ändert nicht, wer schon informiert wurde."
+    },
+    "hr": {
+      "name": "Bez napomene o AI-u",
+      "description": "Iz odgovora poslanih putem obavijesti ili u otvorenom razgovoru izostavlja automatsku napomenu o pomoći AI-a. Kad onemogućiš modul, napomena se vraća za osobe koje je još nisu dobile. Ne uključuje slanje i ne mijenja tko je već obaviješten."
+    },
+    "it": {
+      "name": "Senza nota IA",
+      "description": "Omette la nota automatica sull'aiuto dell'IA dalle risposte inviate dalle notifiche o in una chat aperta. Disattivando il modulo la nota torna per le persone che non l'hanno ancora ricevuta. Non attiva l'invio e non cambia chi è già stato informato."
+    },
+    "es": {
+      "name": "Sin nota de IA",
+      "description": "Omite la nota automática sobre la ayuda de la IA en las respuestas enviadas desde notificaciones o en un chat abierto. Al desactivar el módulo, la nota vuelve para las personas que aún no la han recibido. No activa el envío ni cambia a quién ya se informó."
+    }
   },
   "settings": {
     "ai_reply_note": false

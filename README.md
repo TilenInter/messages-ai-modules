@@ -6,11 +6,11 @@ A module is **data that the app reads**, never executable Android code. Scripts 
 
 ## Install a module
 
-In the app: **Settings → Modules → Community modules**, pick one and confirm. Or download a `.mamod` file from [`modules/`](modules) and use **Import from file**. Modules signed by the Messages AI developer show **Verified**. Other modules can be installed after a warning.
+In the app: **Settings → Modules → Community modules**, pick one and confirm. Or download a `.mamod` file from [`modules/`](modules) and use **Import from file**. Modules signed by the Messages AI developer show **Verified**. Other modules can be installed after a warning. Since app 0.73.0 the list shows **Update to …** when a newer version of an installed module is published, and every module's name and description appear in the app's language (English, Slovenian, German, Croatian, Italian and Spanish).
 
 **Write your own:** the [module author guide](GUIDE.md) ([slovensko](VODNIK.sl.md)) describes every section and setting. Community modules can use everything the official modules use – the signature only changes the warning before installing, never what a module may do.
 
-All bundled modules declare their compatibility (version 1.1.0 for Messages AI 0.46.0+; the 0.50.0 feature modules and Automatic sending 1.2.0 need app code 61+, SMS import needs code 66+). All 17 modules were checked with Messages AI 0.72.0 (code 83): every published file installs as signed, both scripts run on the app's Rhino 1.9 sandbox, and every text, colour and setting a module changes still exists – the app's `CommunityModulesTest` repeats this with each release. Alternative modules share an exclusive group; enabling one automatically turns off the incompatible one and the app shows what changed.
+All bundled modules declare their compatibility (the modules first made for Messages AI 0.46.0 need app code 56+, the 0.50.0 feature modules and Automatic sending need code 61+, SMS import needs code 66+). Since the 0.73.0 versions (1.2.0 for the 0.46.0 modules and Friendly wording, 1.3.0 for Automatic sending, 1.1.0 for the 0.50.0 feature modules and SMS import) every module has an icon and its name and description in all six app languages; older apps still install them and show English. Friendly wording changes the Home texts in all six languages, No work talk recognizes work words and urgent messages in all six, and More messaging apps uses the app's own translated tip. All 17 modules were checked with Messages AI 0.73.0 (code 84): every published file installs as signed, both scripts run on the app's Rhino 1.9 sandbox, every text, colour and setting a module changes still exists, and the installed list, the community list and the changed Home texts fit in every language on a narrow screen with large text – the app's `CommunityModulesTest` and `ModuleScreensTest` repeat this with each release. Alternative modules share an exclusive group; enabling one automatically turns off the incompatible one and the app shows what changed.
 
 
 ## External automation modules — Messages AI 0.33.0/code 43+
@@ -122,7 +122,9 @@ Categories: `question`, `info`, `howAreYou`, `confused`, `request`, `greeting`, 
 | `rules` | `forbidden` and `allowed` text added to the user's rules, and `words` added to the forbidden words. |
 | `topics` | Conversation topics added to the user's list. |
 | `interventionPhrases` | Words that make the app hand the chat over to the user. |
-| `apps` | Messaging apps added to **Apps**: `package`, `name`, `mode` (`NOTIFICATION` or `SCREEN`), `tip`. Built-in apps can't be replaced. |
+| `apps` | Messaging apps added to **Apps**: `package`, `name`, `mode` (`NOTIFICATION` or `SCREEN`), optional `tip`. Built-in apps can't be replaced. |
+| `icon` | The card icon, one of the app's outline icons (since app 0.73.0; see the [guide](GUIDE.md#2-package-format)). |
+| `translations` | `name`, `description` and app `tips` by language: `{"sl": {"name": "…", "description": "…"}}` (since app 0.73.0). Older apps show the English fields. |
 | `strings` | Texts of the app by language: `{"en": {"home_master": "Auto-reply"}, "fr": {...}}`. Replace texts in an existing language or translate the app into a new one (since app 0.29.0). |
 | `languages` | Names of new languages, in that language: `{"fr": "Français"}`. The language appears in **Settings → Languages → App language**. |
 | `theme` | Colours for light and dark mode: `{"name": "Ocean", "light": {"ios_bg": "#EEF4FA"}, "dark": {...}}` (since app 0.29.0). |

@@ -2,14 +2,37 @@
   "format": 1,
   "id": "automatic-send",
   "name": "Automatic sending",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
-  "description": "Adds automatic sending of replies in enabled messaging apps, including screen and notification replies. Replies are sent only after you choose Send and confirm the warning once (installing is not a confirmation); each person once gets a short note that an AI assistant helps you write, and you can keep review-first for single people. This and Automatic drafts are alternative reply modes; enabling either one turns the other off.",
+  "description": "Adds automatic sending of replies in the messaging apps you turned on. Nothing is sent until you choose Send on Home and confirm the warning once – installing isn't enough. Each person once gets a short note that an AI assistant helps you write, and you can keep Review first for single people. It can't be on together with Automatic drafts.",
+  "icon": "send",
   "minAppVersion": 61,
   "compatibility": {
     "conflicts": ["automatic-drafts"],
     "exclusiveGroups": ["automation.reply-mode"]
+  },
+  "translations": {
+    "sl": {
+      "name": "Samodejno pošiljanje",
+      "description": "Doda samodejno pošiljanje odgovorov v aplikacijah, ki si jih vklopil. Nič se ne pošlje, dokler na zaslonu Domov ne izbereš Pošlji in enkrat potrdiš opozorila – sama namestitev ni dovolj. Vsaka oseba enkrat dobi kratko obvestilo, da ti pri pisanju pomaga AI pomočnik, za posamezne osebe pa lahko ostane Najprej preglej. Ne more biti vklopljen hkrati s Samodejnimi osnutki."
+    },
+    "de": {
+      "name": "Automatisch senden",
+      "description": "Fügt das automatische Senden von Antworten in den Messenger-Apps hinzu, die du eingeschaltet hast. Nichts wird gesendet, bis du auf Start „Senden“ wählst und die Warnung einmal bestätigst – die Installation allein reicht nicht. Jede Person erhält einmal einen kurzen Hinweis, dass dir ein KI-Assistent beim Schreiben hilft, und für einzelne Personen kannst du „Zuerst prüfen“ behalten. Kann nicht zusammen mit „Automatische Entwürfe“ an sein."
+    },
+    "hr": {
+      "name": "Automatsko slanje",
+      "description": "Dodaje automatsko slanje odgovora u aplikacijama za poruke koje si uključio. Ništa se ne šalje dok na Početnoj ne odabereš Pošalji i jednom ne potvrdiš upozorenje – sama instalacija nije dovoljna. Svaka osoba jednom dobije kratku napomenu da ti AI asistent pomaže pisati, a za pojedine osobe možeš zadržati Prvo pregledaj. Ne može biti uključen zajedno s Automatskim nacrtima."
+    },
+    "it": {
+      "name": "Invio automatico",
+      "description": "Aggiunge l'invio automatico delle risposte nelle app di messaggistica che hai attivato. Non viene inviato nulla finché nella Home non scegli Invia e confermi l'avviso una volta: l'installazione da sola non basta. Ogni persona riceve una sola volta una breve nota che un assistente IA ti aiuta a scrivere, e per singole persone puoi mantenere Prima controlla. Non può essere attivo insieme a Bozze automatiche."
+    },
+    "es": {
+      "name": "Envío automático",
+      "description": "Añade el envío automático de respuestas en las apps de mensajería que activaste. No se envía nada hasta que en Inicio eliges Enviar y confirmas el aviso una vez: instalarlo no basta. Cada persona recibe una sola vez una breve nota de que un asistente de IA te ayuda a escribir, y para personas concretas puedes mantener Revisar primero. No puede estar activo junto con Borradores automáticos."
+    }
   },
   "settings": {
     "on_screen_auto": true,

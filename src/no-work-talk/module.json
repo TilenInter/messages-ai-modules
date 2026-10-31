@@ -2,14 +2,37 @@
   "format": 1,
   "id": "no-work-talk",
   "name": "No work talk",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
-  "description": "Keeps private chats private: no talk about work, and a chat that turns urgent is handed to you.",
+  "description": "Keeps private chats private: replies don't talk about work, and a chat about meetings, deadlines, invoices or clients, or one that turns urgent, is handed to you.",
+  "icon": "lock",
   "minAppVersion": 56,
   "compatibility": {
     "conflicts": [],
     "exclusiveGroups": []
+  },
+  "translations": {
+    "sl": {
+      "name": "Brez pogovorov o službi",
+      "description": "Zasebni pogovori ostanejo zasebni: odgovori ne govorijo o službi, pogovor o sestankih, rokih, računih ali strankah ali tak, ki postane nujen, pa se preda tebi."
+    },
+    "de": {
+      "name": "Keine Arbeitsgespräche",
+      "description": "Private Chats bleiben privat: Antworten sprechen nicht über die Arbeit, und ein Chat über Meetings, Fristen, Rechnungen oder Kunden oder einer, der dringend wird, wird an dich übergeben."
+    },
+    "hr": {
+      "name": "Bez razgovora o poslu",
+      "description": "Privatni razgovori ostaju privatni: odgovori ne govore o poslu, a razgovor o sastancima, rokovima, računima ili klijentima, ili onaj koji postane hitan, predaje se tebi."
+    },
+    "it": {
+      "name": "Niente lavoro",
+      "description": "Le chat private restano private: le risposte non parlano di lavoro e una chat su riunioni, scadenze, fatture o clienti, o che diventa urgente, passa a te."
+    },
+    "es": {
+      "name": "Sin hablar de trabajo",
+      "description": "Los chats privados siguen siendo privados: las respuestas no hablan de trabajo, y un chat sobre reuniones, plazos, facturas o clientes, o que se vuelve urgente, pasa a ti."
+    }
   },
   "rules": {
     "forbidden": "Don't talk about work, the office, colleagues, clients or deadlines. If they bring it up, say you'll talk about it later."
@@ -22,6 +45,14 @@
   "interventionPhrases": [
     "urgent",
     "asap",
-    "nujno"
+    "nujno",
+    "čim prej",
+    "dringend",
+    "so schnell wie möglich",
+    "hitno",
+    "što prije",
+    "urgente",
+    "il prima possibile",
+    "lo antes posible"
   ]
 }

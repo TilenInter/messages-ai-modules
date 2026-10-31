@@ -2,14 +2,37 @@
   "format": 1,
   "id": "group-chats",
   "name": "Group chats",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
-  "description": "Adds “Also reply in groups” (Settings → Timing, limits and behavior) and the “Skip group chats” switch for each app. Group chats stay skipped until you turn it on; everyone in a group reads the replies, so turn it on only for groups that expect it. Disable this module to hide it again.",
+  "description": "Adds “Also reply in groups” (Settings → Timing, limits and behavior) and the “Skip group chats” switch for each app. Group chats stay skipped until you turn it on. Everyone in a group reads the replies, so turn it on only for groups that expect it. Disabling the module hides it again.",
+  "icon": "people",
   "minAppVersion": 61,
   "compatibility": {
     "conflicts": [],
     "exclusiveGroups": []
+  },
+  "translations": {
+    "sl": {
+      "name": "Skupinski pogovori",
+      "description": "Doda »Odgovarjaj tudi v skupinah« (Nastavitve → Časi, omejitve in obnašanje) in stikalo »Preskoči skupinske pogovore« za vsako aplikacijo. Skupinski pogovori se preskakujejo, dokler tega ne vklopiš. Odgovore v skupini preberejo vsi, zato ga vklopi le za skupine, ki to pričakujejo. Ko modul onemogočiš, se spet skrije."
+    },
+    "de": {
+      "name": "Gruppenchats",
+      "description": "Fügt „Auch in Gruppen antworten“ (Einstellungen → Zeiten, Limits und Verhalten) und den Schalter „Gruppenchats überspringen“ für jede App hinzu. Gruppenchats werden übersprungen, bis du es einschaltest. Alle in einer Gruppe lesen die Antworten – schalte es also nur für Gruppen ein, die das erwarten. Deaktivierst du das Modul, ist es wieder ausgeblendet."
+    },
+    "hr": {
+      "name": "Grupni razgovori",
+      "description": "Dodaje „Odgovaraj i u grupama” (Postavke → Vrijeme, ograničenja i ponašanje) i prekidač „Preskoči grupne razgovore” za svaku aplikaciju. Grupni razgovori se preskaču dok to ne uključiš. Odgovore u grupi čitaju svi, pa ga uključi samo za grupe koje to očekuju. Kad onemogućiš modul, opet se skrije."
+    },
+    "it": {
+      "name": "Chat di gruppo",
+      "description": "Aggiunge «Rispondi anche nei gruppi» (Impostazioni → Tempi, limiti e comportamento) e l'interruttore «Salta le chat di gruppo» per ogni app. Le chat di gruppo vengono saltate finché non lo attivi. Tutti nel gruppo leggono le risposte, quindi attivalo solo per i gruppi che se lo aspettano. Disattivando il modulo si nasconde di nuovo."
+    },
+    "es": {
+      "name": "Chats de grupo",
+      "description": "Añade «Responder también en grupos» (Ajustes → Tiempos, límites y comportamiento) y el interruptor «Omitir chats de grupo» para cada app. Los chats de grupo se omiten hasta que lo actives. Todos en el grupo leen las respuestas, así que actívalo solo para grupos que lo esperan. Al desactivar el módulo se oculta de nuevo."
+    }
   },
   "settings": {
     "group_chats": true

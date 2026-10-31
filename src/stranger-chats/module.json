@@ -2,14 +2,37 @@
   "format": 1,
   "id": "stranger-chats",
   "name": "Stranger chats",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
-  "description": "For anonymous chat apps such as RandoChat: adds “Start the conversation myself” (Settings → Timing, limits and behavior) and automatic new random chats for each app (Apps → app; mark the New chat button). Both stay off until you turn them on. Every new person still gets the one-time AI note when replies are sent automatically. Disable this module to hide them again.",
+  "description": "For anonymous chat apps such as RandoChat: adds “Start the conversation myself” (Settings → Timing, limits and behavior) and automatic new random chats for each app (Apps → the app; mark the “New chat” button). Both stay off until you turn them on. Every new person still gets the one-time AI note when replies are sent automatically. Disabling the module hides them again.",
+  "icon": "user",
   "minAppVersion": 61,
   "compatibility": {
     "conflicts": [],
     "exclusiveGroups": []
+  },
+  "translations": {
+    "sl": {
+      "name": "Klepeti z neznanci",
+      "description": "Za anonimne klepetalnice, kot je RandoChat: doda »Začni pogovor sam« (Nastavitve → Časi, omejitve in obnašanje) in samodejne nove naključne klepete za vsako aplikacijo (Aplikacije → aplikacija; označi gumb »Nov klepet«). Oboje ostane izklopljeno, dokler ne vklopiš. Vsaka nova oseba ob samodejnem pošiljanju še vedno enkrat dobi obvestilo o AI. Ko modul onemogočiš, se spet skrijeta."
+    },
+    "de": {
+      "name": "Chats mit Fremden",
+      "description": "Für anonyme Chat-Apps wie RandoChat: fügt „Gespräch selbst beginnen“ (Einstellungen → Zeiten, Limits und Verhalten) und automatische neue Zufallschats für jede App hinzu (Apps → App; markiere die Taste „Neuer Chat“). Beides bleibt aus, bis du es einschaltest. Jede neue Person erhält beim automatischen Senden weiterhin einmal den KI-Hinweis. Deaktivierst du das Modul, ist beides wieder ausgeblendet."
+    },
+    "hr": {
+      "name": "Razgovori sa strancima",
+      "description": "Za anonimne aplikacije za razgovor poput RandoChata: dodaje „Sam započni razgovor” (Postavke → Vrijeme, ograničenja i ponašanje) i automatske nove nasumične razgovore za svaku aplikaciju (Aplikacije → aplikacija; označi gumb „Novi razgovor”). Oboje ostaje isključeno dok ne uključiš. Svaka nova osoba pri automatskom slanju i dalje jednom dobije napomenu o AI-u. Kad onemogućiš modul, opet se skrivaju."
+    },
+    "it": {
+      "name": "Chat con sconosciuti",
+      "description": "Per le app di chat anonime come RandoChat: aggiunge «Inizia io la conversazione» (Impostazioni → Tempi, limiti e comportamento) e nuove chat casuali automatiche per ogni app (App → app; segna il pulsante «Nuova chat»). Restano spenti finché non li attivi. Ogni nuova persona riceve comunque una volta la nota sull'IA quando le risposte vengono inviate automaticamente. Disattivando il modulo si nascondono di nuovo."
+    },
+    "es": {
+      "name": "Chats con desconocidos",
+      "description": "Para apps de chat anónimo como RandoChat: añade «Empezar yo la conversación» (Ajustes → Tiempos, límites y comportamiento) y chats aleatorios nuevos automáticos para cada app (Apps → la app; marca el botón «Chat nuevo»). Ambos siguen desactivados hasta que los actives. Cada persona nueva sigue recibiendo una vez la nota de IA cuando las respuestas se envían automáticamente. Al desactivar el módulo se ocultan de nuevo."
+    }
   },
   "settings": {
     "openers": true,

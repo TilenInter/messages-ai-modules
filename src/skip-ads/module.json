@@ -2,14 +2,37 @@
   "format": 1,
   "id": "skip-ads",
   "name": "Skip ads during Auto",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
-  "description": "Lets screen Auto close or skip ads in the apps where you turn on “Skip ads” (Apps → app) and mark an optional Close ad button. It waits for countdowns, never taps the advertiser and, on rewarded ads, continues the video to keep the reward. Without this module Auto waits until you close an ad yourself.",
+  "description": "Lets Auto on the screen close or skip ads in apps where you turn on “Skip ads once the button is enabled” (Apps → the app). You can also mark the “Close ad” button. It waits for countdowns, never taps the advertiser and keeps rewarded videos going so you keep the reward. Without this module Auto waits until you close an ad yourself.",
+  "icon": "activity",
   "minAppVersion": 61,
   "compatibility": {
     "conflicts": [],
     "exclusiveGroups": []
+  },
+  "translations": {
+    "sl": {
+      "name": "Preskakovanje oglasov med Auto",
+      "description": "Auto na zaslonu lahko zapre ali preskoči oglase v aplikacijah, kjer vklopiš »Preskoči oglase, ko je gumb omogočen« (Aplikacije → aplikacija). Označiš lahko tudi gumb »Zapri oglas«. Počaka na odštevanje, nikoli ne tapne oglaševalca in pri oglasih z nagrado pusti video teči, da nagrado obdržiš. Brez tega modula Auto počaka, da oglas zapreš sam."
+    },
+    "de": {
+      "name": "Werbung bei Auto überspringen",
+      "description": "Lässt Auto auf dem Bildschirm Werbung in Apps schließen oder überspringen, in denen du „Werbung überspringen, sobald die Taste aktiv ist“ einschaltest (Apps → App). Du kannst auch die Taste „Werbung schließen“ markieren. Wartet Countdowns ab, tippt nie auf den Werbetreibenden und lässt Videos mit Belohnung weiterlaufen, damit du sie behältst. Ohne dieses Modul wartet Auto, bis du die Werbung selbst schließt."
+    },
+    "hr": {
+      "name": "Preskakanje oglasa tijekom Auto",
+      "description": "Auto na zaslonu može zatvoriti ili preskočiti oglase u aplikacijama u kojima uključiš „Preskoči oglase kad je gumb omogućen” (Aplikacije → aplikacija). Možeš označiti i gumb „Zatvori oglas”. Čeka odbrojavanje, nikad ne dodiruje oglašivača i kod oglasa s nagradom pušta video da teče kako bi zadržao nagradu. Bez ovog modula Auto čeka da oglas zatvoriš sam."
+    },
+    "it": {
+      "name": "Salta annunci durante Auto",
+      "description": "Permette ad Auto sullo schermo di chiudere o saltare gli annunci nelle app in cui attivi «Salta gli annunci quando il pulsante è attivo» (App → app). Puoi anche segnare il pulsante «Chiudi annuncio». Aspetta i conti alla rovescia, non tocca mai l'inserzionista e negli annunci con premio lascia andare il video, così tieni il premio. Senza questo modulo Auto aspetta che chiuda tu l'annuncio."
+    },
+    "es": {
+      "name": "Saltar anuncios en Auto",
+      "description": "Permite que Auto en la pantalla cierre u omita anuncios en las apps donde actives «Saltar anuncios cuando el botón esté activo» (Apps → la app). También puedes marcar el botón «Cerrar anuncio». Espera las cuentas atrás, nunca toca al anunciante y en los anuncios con recompensa deja seguir el vídeo para que conserves la recompensa. Sin este módulo, Auto espera a que cierres tú el anuncio."
+    }
   },
   "settings": {
     "skip_ads": true

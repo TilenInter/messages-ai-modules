@@ -2,14 +2,37 @@
   "format": 1,
   "id": "follow-ups",
   "name": "Follow-ups",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
-  "description": "Adds “If they don't reply” to Settings: when your message is the last one and the person doesn't answer, the app can write a short follow-up (at most 3; it waits longer if they haven't seen your message). It stays off until you turn it on there, and you can turn it off for a single person. Disable this module to hide it again; your choices are kept.",
+  "description": "Adds “If they don't reply” to Settings. When your message is the last one and the person doesn't answer, the app can write a short follow-up – at most 3, and it waits longer if they haven't seen your message. It stays off until you turn it on, and you can turn it off for one person. Disabling the module hides it again; your choices are kept.",
+  "icon": "clock",
   "minAppVersion": 61,
   "compatibility": {
     "conflicts": [],
     "exclusiveGroups": []
+  },
+  "translations": {
+    "sl": {
+      "name": "Ponovna sporočila",
+      "description": "V Nastavitve doda »Če oseba ne odpiše«. Ko je tvoje sporočilo zadnje in oseba ne odgovori, lahko aplikacija napiše kratko ponovno sporočilo – največ 3, in počaka dlje, če tvojega sporočila še ni videla. Ostane izklopljeno, dokler ga ne vklopiš, za posamezno osebo pa ga lahko izklopiš. Ko modul onemogočiš, se spet skrije; tvoje izbire ostanejo."
+    },
+    "de": {
+      "name": "Nachfassen",
+      "description": "Fügt „Wenn sie nicht antworten“ zu den Einstellungen hinzu. Ist deine Nachricht die letzte und die Person antwortet nicht, kann die App kurz nachfassen – höchstens 3-mal, und sie wartet länger, wenn die Person deine Nachricht noch nicht gesehen hat. Bleibt aus, bis du es einschaltest, und lässt sich für einzelne Personen ausschalten. Deaktivierst du das Modul, ist es wieder ausgeblendet; deine Auswahl bleibt."
+    },
+    "hr": {
+      "name": "Ponovne poruke",
+      "description": "U Postavke dodaje „Ako ne odgovore”. Kad je tvoja poruka posljednja, a osoba ne odgovori, aplikacija može napisati kratku ponovnu poruku – najviše 3, i čeka dulje ako osoba još nije vidjela tvoju poruku. Ostaje isključeno dok ga ne uključiš, a za pojedinu osobu možeš ga isključiti. Kad onemogućiš modul, opet se skrije; tvoji odabiri ostaju."
+    },
+    "it": {
+      "name": "Solleciti",
+      "description": "Aggiunge «Se non rispondono» alle Impostazioni. Quando il tuo messaggio è l'ultimo e la persona non risponde, l'app può scrivere un breve sollecito: al massimo 3, e aspetta di più se non ha ancora visto il tuo messaggio. Resta spento finché non lo attivi e puoi spegnerlo per una singola persona. Disattivando il modulo si nasconde di nuovo; le tue scelte restano."
+    },
+    "es": {
+      "name": "Seguimientos",
+      "description": "Añade «Si no responden» a Ajustes. Cuando tu mensaje es el último y la persona no contesta, la app puede escribir un breve seguimiento: como máximo 3, y espera más si aún no ha visto tu mensaje. Sigue desactivado hasta que lo actives y puedes desactivarlo para una persona concreta. Al desactivar el módulo se oculta de nuevo; tus elecciones se conservan."
+    }
   },
   "settings": {
     "followups": true

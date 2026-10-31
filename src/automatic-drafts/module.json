@@ -2,14 +2,37 @@
   "format": 1,
   "id": "automatic-drafts",
   "name": "Automatic drafts",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
-  "description": "Automatically writes drafts in enabled messaging apps. You send them yourself. This and Automatic sending are alternative reply modes; enabling either one turns the other off.",
+  "description": "Writes a draft reply by itself in the messaging apps you turned on. Nothing is sent: you read the draft and send it yourself. It can't be on together with Automatic sending – turning one on turns the other off.",
+  "icon": "pen",
   "minAppVersion": 56,
   "compatibility": {
     "conflicts": ["automatic-send"],
     "exclusiveGroups": ["automation.reply-mode"]
+  },
+  "translations": {
+    "sl": {
+      "name": "Samodejni osnutki",
+      "description": "V aplikacijah, ki si jih vklopil, sam napiše osnutek odgovora. Nič se ne pošlje: osnutek prebereš in ga pošlješ sam. Ne more biti vklopljen hkrati s Samodejnim pošiljanjem – ko vklopiš enega, se drugi izklopi."
+    },
+    "de": {
+      "name": "Automatische Entwürfe",
+      "description": "Schreibt in den Messenger-Apps, die du eingeschaltet hast, selbst einen Antwortentwurf. Nichts wird gesendet: Du liest den Entwurf und sendest ihn selbst. Kann nicht zusammen mit „Automatisch senden“ an sein – schaltest du eines ein, geht das andere aus."
+    },
+    "hr": {
+      "name": "Automatski nacrti",
+      "description": "U aplikacijama za poruke koje si uključio sam napiše nacrt odgovora. Ništa se ne šalje: nacrt pročitaš i pošalješ sam. Ne može biti uključen zajedno s Automatskim slanjem – kad uključiš jedno, drugo se isključi."
+    },
+    "it": {
+      "name": "Bozze automatiche",
+      "description": "Nelle app di messaggistica che hai attivato scrive da solo una bozza di risposta. Non viene inviato nulla: leggi la bozza e la invii tu. Non può essere attivo insieme a Invio automatico: attivandone uno, l'altro si spegne."
+    },
+    "es": {
+      "name": "Borradores automáticos",
+      "description": "En las apps de mensajería que activaste escribe solo un borrador de respuesta. No se envía nada: lees el borrador y lo envías tú. No puede estar activo junto con Envío automático: al activar uno, el otro se desactiva."
+    }
   },
   "settings": {
     "on_screen_auto": true,

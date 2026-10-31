@@ -2,14 +2,37 @@
   "format": 1,
   "id": "sms-import",
   "name": "SMS import",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
-  "description": "Adds “SMS import” to Learning: goes through all SMS chats on the phone (and the text of 1-to-1 MMS) and saves every person with their name from your contacts, together with your earlier messages. You choose whether to save everyone from your contacts or only chats you wrote in, and whether new SMS are imported automatically every few hours. Bank notices, codes, short numbers and group MMS are skipped. Nothing is read until you allow SMS access and confirm what is saved. GitHub version of the app only (the Google Play version doesn't read SMS). Disable this module to hide it again; saved people stay.",
+  "description": "Adds “SMS import” to Learning. It goes through the SMS chats on your phone (and the text of 1-to-1 MMS) and saves each person with their name from your contacts, together with your earlier messages. You choose whether to save everyone from your contacts or only chats you wrote in, and whether new SMS are imported every few hours. Bank notices, codes, short numbers and group MMS are skipped. Nothing is read until you allow SMS access and confirm. Only in the GitHub version of the app.",
+  "icon": "download",
   "minAppVersion": 66,
   "compatibility": {
     "conflicts": [],
     "exclusiveGroups": []
+  },
+  "translations": {
+    "sl": {
+      "name": "Uvoz SMS",
+      "description": "V Učenje doda »Uvoz SMS«. Gre čez pogovore SMS na telefonu (in besedilo MMS med dvema osebama) in shrani vsako osebo z imenom iz imenika skupaj s tvojimi prejšnjimi sporočili. Izbereš, ali shrani vse iz imenika ali samo pogovore, v katerih si pisal, in ali se novi SMS uvozijo vsakih nekaj ur. Bančna obvestila, kode, kratke številke in skupinski MMS se preskočijo. Nič se ne prebere, dokler ne dovoliš dostopa do SMS in potrdiš. Samo v različici aplikacije z GitHuba."
+    },
+    "de": {
+      "name": "SMS-Import",
+      "description": "Fügt „SMS-Import“ zu Lernen hinzu. Er geht die SMS-Chats auf deinem Handy durch (und den Text von MMS zwischen zwei Personen) und speichert jede Person mit ihrem Namen aus deinen Kontakten samt deinen früheren Nachrichten. Du wählst, ob alle Kontakte oder nur Chats, in denen du geschrieben hast, gespeichert werden und ob neue SMS alle paar Stunden importiert werden. Bankmitteilungen, Codes, Kurznummern und Gruppen-MMS werden übersprungen. Nichts wird gelesen, bevor du den SMS-Zugriff erlaubst und bestätigst. Nur in der GitHub-Version."
+    },
+    "hr": {
+      "name": "Uvoz SMS-ova",
+      "description": "U Učenje dodaje „Uvoz SMS-ova”. Prolazi kroz SMS razgovore na telefonu (i tekst MMS-ova između dvije osobe) i sprema svaku osobu s imenom iz imenika zajedno s tvojim ranijim porukama. Biraš hoće li se spremiti svi iz imenika ili samo razgovori u kojima si pisao te hoće li se novi SMS-ovi uvoziti svakih nekoliko sati. Obavijesti banaka, kodovi, kratki brojevi i grupni MMS-ovi se preskaču. Ništa se ne čita dok ne dopustiš pristup SMS-ovima i ne potvrdiš. Samo u GitHub verziji aplikacije."
+    },
+    "it": {
+      "name": "Importazione SMS",
+      "description": "Aggiunge «Importazione SMS» ad Apprendimento. Scorre le chat SMS del telefono (e il testo degli MMS tra due persone) e salva ogni persona con il nome dei tuoi contatti insieme ai tuoi messaggi precedenti. Scegli se salvare tutti i contatti o solo le chat in cui hai scritto e se importare i nuovi SMS ogni poche ore. Avvisi bancari, codici, numeri brevi e MMS di gruppo vengono saltati. Non viene letto nulla finché non consenti l'accesso agli SMS e confermi. Solo nella versione dell'app da GitHub."
+    },
+    "es": {
+      "name": "Importación de SMS",
+      "description": "Añade «Importación de SMS» a Aprendizaje. Recorre los chats SMS del teléfono (y el texto de los MMS entre dos personas) y guarda a cada persona con su nombre de tus contactos junto con tus mensajes anteriores. Eliges si guardar a todos tus contactos o solo los chats en los que escribiste, y si los SMS nuevos se importan cada pocas horas. Se omiten avisos bancarios, códigos, números cortos y MMS de grupo. No se lee nada hasta que permitas el acceso a los SMS y confirmes. Solo en la versión de la app de GitHub."
+    }
   },
   "settings": {
     "sms_import": true

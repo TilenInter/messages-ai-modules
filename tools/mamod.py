@@ -23,7 +23,16 @@ from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import ec
 
 ID = re.compile(r"^[a-z0-9][a-z0-9._-]{2,63}$")
+LANG = re.compile(r"^[a-z]{2,3}$")
+PKG = re.compile(r"^[A-Za-z][A-Za-z0-9_]*(\.[A-Za-z][A-Za-z0-9_]*)+$")
 FIXED_TIME = (2026, 1, 1, 0, 0, 0)
+# Longest texts packing accepts: names and tips are cut by the app beyond this, descriptions are kept short enough for
+# a readable card (the app shows up to 1,000 characters since 0.73.0, 600 before).
+MAX_NAME, MAX_DESCRIPTION, MAX_TIP = 60, 600, 300
+# Icon names the app knows (ModuleIcons.NAMES in Messages AI 0.73+); older versions ignore "icon".
+ICONS = {"activity", "bell", "book", "brain", "chat", "check", "clock", "cpu", "document", "download", "flask", "globe",
+         "grid", "heart", "info", "lightbulb", "lock", "palette", "pen", "people", "phone", "rules", "scales", "search",
+         "send", "settings", "shield", "sliders", "sparkles", "upload", "user"}
 
 
 def sha(data: bytes) -> str:
@@ -49,7 +58,34 @@ def check_manifest(data: bytes) -> dict:
             f"compatibility.{field} contains an invalid id"
     assert m.get("id") not in compatibility.get("conflicts", []), "a module cannot conflict with itself"
     assert len(data) <= 256 * 1024, "module.json is larger than 256 KB"
+    check_texts(m)
     return m
+
+
+def check_texts(m: dict):
+    """Names, descriptions and tips must fit what the app shows (nothing is cut), in English and every translation."""
+    def fits(label, value, limit):
+        assert isinstance(value, str), f"{label} must be text"
+        assert len(value.strip()) <= limit, f"{label} has {len(value.strip())} characters; the app shows at most {limit}"
+    fits("name", m.get("name", ""), MAX_NAME)
+    fits("description", m.get("description", ""), MAX_DESCRIPTION)
+    for app in m.get("apps", []):
+        fits(f"apps.{app.get('package')}.tip", app.get("tip", ""), MAX_TIP)
+    if "icon" in m:
+        assert m["icon"] in ICONS, f"icon must be one of: {', '.join(sorted(ICONS))}"
+    translations = m.get("translations", {})
+    assert isinstance(translations, dict), "translations must be an object: language → {name, description, tips}"
+    packages = {app.get("package") for app in m.get("apps", [])}
+    for lang, t in translations.items():
+        assert LANG.fullmatch(lang), f"translations: {lang!r} is not a language code like sl or de"
+        assert isinstance(t, dict), f"translations.{lang} must be an object"
+        unknown = set(t) - {"name", "description", "tips"}
+        assert not unknown, f"translations.{lang}: unknown fields {sorted(unknown)}"
+        fits(f"translations.{lang}.name", t.get("name", ""), MAX_NAME)
+        fits(f"translations.{lang}.description", t.get("description", ""), MAX_DESCRIPTION)
+        for pkg, tip in t.get("tips", {}).items():
+            assert PKG.fullmatch(pkg) and pkg in packages, f"translations.{lang}.tips: {pkg} is not one of the module's apps"
+            fits(f"translations.{lang}.tips.{pkg}", tip, MAX_TIP)
 
 
 def keygen(path):
@@ -166,13 +202,20 @@ def index(folder, out):
         m = verify(f, quiet=True)
         with zipfile.ZipFile(f) as z:
             types = module_types(m, "script.js" in z.namelist())
-        entries.append({
+        entry = {
             "id": m["id"], "name": m["name"], "version": m.get("version", ""), "author": m.get("author", ""),
             "description": m.get("description", ""), "types": types,
             "conflicts": m.get("compatibility", {}).get("conflicts", []),
             "exclusiveGroups": m.get("compatibility", {}).get("exclusiveGroups", []),
             "file": f"modules/{f.name}", "sha256": sha(f.read_bytes()),
-        })
+        }
+        # 0.73: the catalog shows each module's icon and its name and description in the app's language.
+        if m.get("icon"):
+            entry["icon"] = m["icon"]
+        translations = {lang: {k: t[k] for k in ("name", "description") if t.get(k)} for lang, t in m.get("translations", {}).items()}
+        if any(translations.values()):
+            entry["translations"] = {lang: t for lang, t in translations.items() if t}
+        entries.append(entry)
     Path(out).write_text(json.dumps({"format": 1, "modules": entries}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"index: {len(entries)} module(s) -> {out}")
 

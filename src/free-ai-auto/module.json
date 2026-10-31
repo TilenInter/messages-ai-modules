@@ -2,15 +2,38 @@
   "format": 1,
   "id": "free-ai-auto",
   "name": "Free AI (automatic)",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
-  "description": "Writes replies with free AI providers and switches to the next one automatically when one runs out of free quota, is rate-limited or does not answer. OVHcloud and Pollinations work without a key; Gemini, Groq, Mistral, OpenRouter, NVIDIA, GitHub Models, SambaNova, Cohere and LLM7 join once you add your own free key in AI models. Conversations are sent to these providers. Requires Messages AI 0.46.0 or newer.",
+  "description": "Writes replies with free AI services and moves to the next one by itself when one runs out of free use, is busy or doesn't answer. OVHcloud and Pollinations work without a key; Gemini, Groq, Mistral, OpenRouter, NVIDIA, GitHub Models, SambaNova, Cohere and LLM7 join once you add your own free key in “AI models”. Conversations are sent to these services.",
   "homepage": "https://github.com/TilenInter/messages-ai-modules",
+  "icon": "sparkles",
   "minAppVersion": 56,
   "compatibility": {
     "conflicts": [],
     "exclusiveGroups": ["ai.routing"]
+  },
+  "translations": {
+    "sl": {
+      "name": "Brezplačni AI (samodejno)",
+      "description": "Odgovore piše z brezplačnimi storitvami AI in sam preide na naslednjo, ko eni zmanjka brezplačne porabe, je zasedena ali ne odgovori. OVHcloud in Pollinations delujeta brez ključa; Gemini, Groq, Mistral, OpenRouter, NVIDIA, GitHub Models, SambaNova, Cohere in LLM7 se pridružijo, ko v »AI modeli« dodaš svoj brezplačni ključ. Pogovori se pošljejo tem storitvam."
+    },
+    "de": {
+      "name": "Kostenlose KI (automatisch)",
+      "description": "Schreibt Antworten mit kostenlosen KI-Diensten und wechselt selbst zum nächsten, wenn bei einem das Gratiskontingent aufgebraucht ist, er ausgelastet ist oder nicht antwortet. OVHcloud und Pollinations funktionieren ohne Schlüssel; Gemini, Groq, Mistral, OpenRouter, NVIDIA, GitHub Models, SambaNova, Cohere und LLM7 kommen hinzu, sobald du unter „KI-Modelle“ deinen eigenen kostenlosen Schlüssel einträgst. Unterhaltungen werden an diese Dienste gesendet."
+    },
+    "hr": {
+      "name": "Besplatni AI (automatski)",
+      "description": "Odgovore piše besplatnim AI uslugama i sam prelazi na sljedeću kad jednoj ponestane besplatne upotrebe, zauzeta je ili ne odgovara. OVHcloud i Pollinations rade bez ključa; Gemini, Groq, Mistral, OpenRouter, NVIDIA, GitHub Models, SambaNova, Cohere i LLM7 pridružuju se kad u „AI modeli” dodaš svoj besplatni ključ. Razgovori se šalju tim uslugama."
+    },
+    "it": {
+      "name": "IA gratuita (automatica)",
+      "description": "Scrive le risposte con servizi di IA gratuiti e passa da solo al successivo quando uno esaurisce l'uso gratuito, è occupato o non risponde. OVHcloud e Pollinations funzionano senza chiave; Gemini, Groq, Mistral, OpenRouter, NVIDIA, GitHub Models, SambaNova, Cohere e LLM7 si aggiungono quando inserisci la tua chiave gratuita in «Modelli IA». Le conversazioni vengono inviate a questi servizi."
+    },
+    "es": {
+      "name": "IA gratis (automática)",
+      "description": "Escribe las respuestas con servicios de IA gratuitos y pasa solo al siguiente cuando uno agota el uso gratuito, está saturado o no responde. OVHcloud y Pollinations funcionan sin clave; Gemini, Groq, Mistral, OpenRouter, NVIDIA, GitHub Models, SambaNova, Cohere y LLM7 se suman cuando añades tu propia clave gratuita en «Modelos de IA». Las conversaciones se envían a estos servicios."
+    }
   },
   "settings": {
     "free_ai": true
