@@ -187,7 +187,7 @@ Before the AI writes, the app reads each new message and works out what it needs
 - Up to 2,000 words per module, 40 characters each; codes are 2–3 lowercase letters. Several modules' words are combined.
 - The languages also appear in **Settings → Languages → Languages I speak**.
 
-See [More reply languages](src/more-languages/module.json) (Finnish, Hungarian, Romanian, Swedish) for a full example.
+See [More reply languages](src/more-languages/module.json) (Finnish, Hungarian, Romanian, Swedish, Danish, Norwegian, Estonian, Latvian, Lithuanian, Greek, Bulgarian) for a full example. Leave out short words that mean something common in another language – for example Danish *tak* (thanks) is Polish for *yes*, and Greek *πού* (where) loses its accent and becomes *που* (that).
 
 ## 7. Free AI
 
@@ -228,7 +228,12 @@ See [More reply languages](src/more-languages/module.json) (Finnish, Hungarian, 
 "theme": { "name": "Ocean", "light": { "ios_bg": "#EEF4FA", "ios_blue": "#0A6CBF" }, "dark": { "ios_bg": "#08131F" } }
 ```
 
-Themeable colours are listed in the [README](README.md#colour-themes). A mode whose text would be hard to read (WCAG 4.5:1 for text, 3:1 for secondary text and accents) is ignored.
+Themeable colours are listed in the [README](README.md#colour-themes). A mode whose text would be hard to read (WCAG 4.5:1 for text, 3:1 for secondary text and accents) is ignored – and `pack` refuses it, together with unknown colour names and values that aren't `#RRGGBB` or `#AARRGGBB`, so a theme never silently does nothing.
+
+- Set every colour you care about in **both** modes; a colour you leave out keeps the app's own colour in that mode. The bundled themes ([Ocean](src/ocean-theme/module.json), [Forest](src/forest-theme/module.json), [Sunset](src/sunset-theme/module.json), [Midnight](src/midnight-theme/module.json), [High contrast](src/high-contrast-theme/module.json)) set all 28 and are good starting points.
+- Aim higher than the minimum: the bundled themes keep `ios_label`, `ios_secondary`, `trust_text` and the status colours `ios_blue`, `ios_green`, `ios_red` and `ios_orange` at least 4.5:1 on `ios_card`, because the app also uses them for small text.
+- Use `"exclusiveGroups": ["visual.theme"]` so that turning your theme on turns the other theme off.
+- Since app 0.74.0 the card shows a preview of the light and dark mode – in the community list too, from the colours `index` copies into `index.json`.
 
 ## 11. Script hooks
 

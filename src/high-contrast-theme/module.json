@@ -1,0 +1,100 @@
+{
+  "format": 1,
+  "id": "high-contrast-theme",
+  "name": "High contrast",
+  "version": "1.0.0",
+  "author": "Messages AI",
+  "license": "CC0-1.0",
+  "description": "Easier to read: the strongest contrast between text and background, clear card borders, easy-to-see switches and stronger status colours, in light and dark mode.",
+  "icon": "palette",
+  "minAppVersion": 56,
+  "compatibility": {
+    "conflicts": [],
+    "exclusiveGroups": ["visual.theme"]
+  },
+  "translations": {
+    "sl": {
+      "name": "Visok kontrast",
+      "description": "Lažje branje: največji kontrast med besedilom in ozadjem, jasni robovi kartic, dobro vidna stikala in močnejše barve stanj, v svetlem in temnem načinu."
+    },
+    "de": {
+      "name": "Hoher Kontrast",
+      "description": "Leichter lesbar: stärkster Kontrast zwischen Text und Hintergrund, klare Kartenränder, gut sichtbare Schalter und kräftigere Statusfarben, im hellen und im dunklen Modus."
+    },
+    "hr": {
+      "name": "Visoki kontrast",
+      "description": "Lakše čitanje: najjači kontrast između teksta i pozadine, jasni rubovi kartica, dobro vidljivi prekidači i jače boje stanja, u svijetlom i tamnom načinu."
+    },
+    "it": {
+      "name": "Contrasto elevato",
+      "description": "Più leggibile: il massimo contrasto tra testo e sfondo, bordi delle schede netti, interruttori ben visibili e colori di stato più decisi, in modalità chiara e scura."
+    },
+    "es": {
+      "name": "Alto contraste",
+      "description": "Más legible: el mayor contraste entre texto y fondo, bordes de tarjeta claros, interruptores fáciles de ver y colores de estado más intensos, en modo claro y oscuro."
+    }
+  },
+  "theme": {
+    "name": "High contrast",
+    "light": {
+      "ios_bg": "#F2F2F2",
+      "ios_card": "#FFFFFF",
+      "ios_card_pressed": "#E0E0E0",
+      "ios_label": "#000000",
+      "ios_secondary": "#333333",
+      "ios_tertiary": "#595959",
+      "ios_separator": "#7A7A7A",
+      "ios_fill": "#E6E6E6",
+      "card_stroke": "#666666",
+      "segment_track": "#DADADA",
+      "nav_active": "#0039B3",
+      "switch_active": "#006B29",
+      "switch_inactive": "#767676",
+      "icon_ink": "#000000",
+      "action_fill": "#000000",
+      "action_text": "#FFFFFF",
+      "chevron": "#333333",
+      "trust_text": "#141414",
+      "ios_blue": "#0039B3",
+      "ios_green": "#006B29",
+      "ios_red": "#A8001C",
+      "ios_orange": "#8A3F00",
+      "ios_yellow": "#664E00",
+      "ios_purple": "#5A2A9E",
+      "ios_indigo": "#2B379E",
+      "ios_teal": "#005E68",
+      "ios_pink": "#990F55",
+      "ios_gray": "#474747"
+    },
+    "dark": {
+      "ios_bg": "#000000",
+      "ios_card": "#0A0A0A",
+      "ios_card_pressed": "#262626",
+      "ios_label": "#FFFFFF",
+      "ios_secondary": "#DADADA",
+      "ios_tertiary": "#ADADAD",
+      "ios_separator": "#8C8C8C",
+      "ios_fill": "#1F1F1F",
+      "card_stroke": "#BDBDBD",
+      "segment_track": "#1F1F1F",
+      "nav_active": "#8DB6FF",
+      "switch_active": "#63DD84",
+      "switch_inactive": "#8C8C8C",
+      "icon_ink": "#FFFFFF",
+      "action_fill": "#FFFFFF",
+      "action_text": "#000000",
+      "chevron": "#BDBDBD",
+      "trust_text": "#F2F2F2",
+      "ios_blue": "#8DB6FF",
+      "ios_green": "#6EE38E",
+      "ios_red": "#FF8F8F",
+      "ios_orange": "#FFB570",
+      "ios_yellow": "#FFE170",
+      "ios_purple": "#D4B3FF",
+      "ios_indigo": "#ABB8FF",
+      "ios_teal": "#62E0E0",
+      "ios_pink": "#FF9FCD",
+      "ios_gray": "#C7C7C7"
+    }
+  }
+}
