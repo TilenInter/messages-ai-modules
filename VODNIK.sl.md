@@ -124,7 +124,7 @@ Cel primer: [More reply languages](src/more-languages/module.json) (finščina, 
 
 ## 7. Brezplačni AI, aplikacije, besedila, teme in skripte
 
-Te razdelke podrobno opisujeta [GUIDE.md](GUIDE.md) in [README.md](README.md). Na kratko: brezplačni AI sme pošiljati samo na znane brezplačne strežnike HTTPS, ključ lastnika gre samo na strežnik, za katerega ga je shranil; prevod začneš z `python tools/mamod.py strings-template …`; besedila o privolitvah, zasebnosti in pogojih ostanejo v angleščini; tema z neberljivim besedilom se ne uporabi; skripte tečejo v zaprtem peskovniku (300 ms, brez omrežja in datotek), `beforePrompt` dobi `kind` `REPLY`, `FORCED`, `OPENER`, `FOLLOW_UP` ali `SUGGESTIONS`, `afterReply` pa vsak odgovor in vsak predlog.
+Te razdelke podrobno opisujeta [GUIDE.md](GUIDE.md) in [README.md](README.md). Na kratko: brezplačni AI sme pošiljati samo na znane brezplačne strežnike HTTPS, ključ lastnika gre samo na strežnik, za katerega ga je shranil; prevod začneš z `python tools/mamod.py strings-template …`; besedila o privolitvah, zasebnosti, pogojih in plačilih ter o tem, kaj slike, glasovna sporočila, pametna dejanja in poslovni način pošljejo kam, ostanejo v angleščini; tema z neberljivim besedilom se ne uporabi; skripte tečejo v zaprtem peskovniku (Mozilla Rhino 1.9 od aplikacije 0.72.0, ES6 – `let`/`const`, puščične funkcije, predloge nizov, `Map`/`Set`; 300 ms, brez omrežja in datotek), `beforePrompt` dobi `kind` `REPLY`, `FORCED`, `OPENER`, `FOLLOW_UP` ali `SUGGESTIONS`, `afterReply` pa vsak odgovor in vsak predlog.
 
 ## 8. Preizkus in oddaja
 

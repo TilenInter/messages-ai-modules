@@ -201,7 +201,7 @@ See [More reply languages](src/more-languages/module.json) (Finnish, Hungarian, 
 
 - `strings` replaces texts in an existing language or translates the app into a new one; `languages` names a new language (in that language) so it appears in **Settings → Languages → App language**. Up to 40 languages and 3,000 texts per language.
 - Start a translation from every English text: `python tools/mamod.py strings-template <messages-ai>/app/src/main/res/values/strings.xml fi src/finnish/strings.json` ([`templates/strings-en.json`](templates/strings-en.json) holds the current texts).
-- Keep placeholders (`%1$s`, `%2$d`) exactly; a text with different placeholders is ignored. Texts about consents, privacy, terms, reports, data export and modules stay in English.
+- Keep placeholders (`%1$s`, `%2$d`) exactly; a text with different placeholders is ignored. Texts about consents, privacy, terms, reports, data export, billing and modules – and what pictures, voice notes, smart actions and Business Mode send where – stay in English; `tools/mamod.py strings-template` leaves them out.
 
 ## 10. Colour themes
 
@@ -213,7 +213,7 @@ Themeable colours are listed in the [README](README.md#colour-themes). A mode wh
 
 ## 11. Script hooks
 
-`script.js` is plain JavaScript (Mozilla Rhino, ES6 subset) with no Java, network, files or timers, 300 ms per call. Errors and timeouts are ignored. All functions are optional.
+`script.js` is plain JavaScript (Mozilla Rhino 1.9 since app 0.72.0, interpreter mode: ES6 such as `let`/`const`, arrow functions, template strings, destructuring and `Map`/`Set`) with no Java, network, files or timers, 300 ms per call. Errors and timeouts are ignored. All functions are optional.
 
 ```js
 // Before a reply: "reply", "skip" or {handoff: "MONEY"} (PHOTO, MONEY, PERSONAL_DATA, CALL, THREAT, CUSTOM).

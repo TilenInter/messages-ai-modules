@@ -109,9 +109,10 @@ def verify(path, quiet=False):
 
 
 # Besedila, ki jih modul ne sme spremeniti (enako kot ModuleUi.LOCKED_TEXT v aplikaciji).
+# Same prefixes as ModuleUi.LOCKED_TEXT in the app (legal texts, consents, disclosures, what is sent where).
 LOCKED_TEXT = ("disclosure_", "auto_consent", "terms_", "account_privacy", "account_delete", "account_required", "protect_", "modules_",
-               "wipe_", "report_", "signin_privacy", "signin_terms", "send_changed", "mydata_", "oss_", "backup_", "privacy",
-               "sms_import_")
+               "wipe_", "report_", "signin_privacy", "signin_terms", "access_", "billing_", "developer_", "send_changed", "mydata_",
+               "oss_", "backup_", "privacy", "sms_import_", "picture_", "voice_", "smart_actions_", "approval_", "business_")
 
 
 def strings_template(strings_xml, lang, out):
