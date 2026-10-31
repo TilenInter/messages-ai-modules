@@ -56,7 +56,7 @@ Copy `modules/my-style.mamod` to the phone and choose **Settings → Modules →
 - Limits: 512 KB per file, 256 KB `module.json`, 64 KB `script.js`.
 - `id`: 3–64 characters `a-z 0-9 . _ -`, starting with a letter or digit. Installing a module with the same `id` updates it.
 - `format` must be `1`. `minAppVersion` is the app **versionCode** (0.46.0 = 56); older apps refuse the module.
-- `name`, `version`, `author`, `license`, `description`, `homepage` are shown to the user. The app shows at most 60 characters of `name` and 600 of `description` (300 of an app `tip`); `pack` refuses longer texts so nothing is ever cut off.
+- `name`, `version`, `author`, `license`, `description`, `homepage` are shown to the user. Keep `name` within 60 characters, `description` within 600 and an app `tip` within 300: `pack` refuses longer texts, so nothing is ever cut off (apps before 0.73.0 cut descriptions after 600 characters).
 - `icon` (since app 0.73.0) picks the card icon from the app's own outline icons: `activity`, `bell`, `book`, `brain`, `chat`, `check`, `clock`, `cpu`, `document`, `download`, `flask`, `globe`, `grid`, `heart`, `info`, `lightbulb`, `lock`, `palette`, `pen`, `people`, `phone`, `rules`, `scales`, `search`, `send`, `settings`, `shield`, `sliders`, `sparkles`, `upload`, `user`. Without it the app chooses one by what the module does.
 - `translations` (since app 0.73.0): the name, description and app tips in other languages – see [Translations](#translations). Older apps show the English fields.
 - Signature: ECDSA P-256 over `messages-ai-module-v1\n<sha256 module.json>\n<sha256 script.js>\n` (empty script = hash of nothing). `tools/mamod.py` does this for you.

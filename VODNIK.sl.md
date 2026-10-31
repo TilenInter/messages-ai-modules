@@ -55,7 +55,7 @@ Datoteko `.mamod` prenesi na telefon: **Nastavitve → Moduli → Uvozi iz datot
 - `.mamod` je ZIP z `module.json`, po želji `script.js` in `signature.json` (naredi ga `pack`). Druge datoteke (koda, knjižnice) so zavrnjene.
 - Omejitve: 512 KB na datoteko, 256 KB `module.json`, 64 KB `script.js`.
 - `id`: 3–64 znakov `a-z 0-9 . _ -`; modul z istim `id` posodobi prejšnjega. `format` je `1`, `minAppVersion` je **versionCode** aplikacije (0.46.0 = 56).
-- Aplikacija pokaže največ 60 znakov imena (`name`), 600 znakov opisa (`description`) in 300 znakov nasveta aplikacije (`tip`); `pack` daljših besedil ne sprejme, zato nič ni odrezano.
+- Ime (`name`) naj ima največ 60 znakov, opis (`description`) največ 600 in nasvet aplikacije (`tip`) največ 300; `pack` daljših besedil ne sprejme, zato nič ni odrezano (aplikacije pred 0.73.0 opis po 600 znakih odrežejo).
 - `icon` (od aplikacije 0.73.0) izbere ikono kartice med ikonami aplikacije: `activity`, `bell`, `book`, `brain`, `chat`, `check`, `clock`, `cpu`, `document`, `download`, `flask`, `globe`, `grid`, `heart`, `info`, `lightbulb`, `lock`, `palette`, `pen`, `people`, `phone`, `rules`, `scales`, `search`, `send`, `settings`, `shield`, `sliders`, `sparkles`, `upload`, `user`. Brez nje jo aplikacija izbere po tem, kaj modul dela.
 - `translations` (od aplikacije 0.73.0): ime, opis in nasveti aplikacij v drugih jezikih. Ime in opis napiši v angleščini, pod `translations` pa dodaj vse jezike aplikacije (sl, de, hr, it, es):
 

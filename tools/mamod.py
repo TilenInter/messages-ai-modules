@@ -26,7 +26,8 @@ ID = re.compile(r"^[a-z0-9][a-z0-9._-]{2,63}$")
 LANG = re.compile(r"^[a-z]{2,3}$")
 PKG = re.compile(r"^[A-Za-z][A-Za-z0-9_]*(\.[A-Za-z][A-Za-z0-9_]*)+$")
 FIXED_TIME = (2026, 1, 1, 0, 0, 0)
-# The app shows at most this many characters; longer texts would be cut, so packing refuses them.
+# Longest texts packing accepts: names and tips are cut by the app beyond this, descriptions are kept short enough for
+# a readable card (the app shows up to 1,000 characters since 0.73.0, 600 before).
 MAX_NAME, MAX_DESCRIPTION, MAX_TIP = 60, 600, 300
 # Icon names the app knows (ModuleIcons.NAMES in Messages AI 0.73+); older versions ignore "icon".
 ICONS = {"activity", "bell", "book", "brain", "chat", "check", "clock", "cpu", "document", "download", "flask", "globe",
