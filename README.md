@@ -12,6 +12,8 @@ In the app: **Settings → Modules → Community modules**, pick one and confirm
 
 All bundled modules declare their compatibility (the modules first made for Messages AI 0.46.0 need app code 56+, the 0.50.0 feature modules and Automatic sending need code 61+, SMS import needs code 66+). Since the 0.73.0 versions (1.2.0 for the 0.46.0 modules and Friendly wording, 1.3.0 for Automatic sending, 1.1.0 for the 0.50.0 feature modules and SMS import) every module has an icon and its name and description in all six app languages; older apps still install them and show English. Friendly wording changes the Home texts in all six languages, No work talk recognizes work words and urgent messages in all six, and More messaging apps uses the app's own translated tip. All 17 modules were checked with Messages AI 0.73.0 (code 84): every published file installs as signed, both scripts run on the app's Rhino 1.9 sandbox, every text, colour and setting a module changes still exists, and the installed list, the community list and the changed Home texts fit in every language on a narrow screen with large text – the app's `CommunityModulesTest` and `ModuleScreensTest` repeat this with each release. Alternative modules share an exclusive group; enabling one automatically turns off the incompatible one and the app shows what changed.
 
+**New with Messages AI 0.74.0:** four colour themes (Forest, Sunset, Midnight, High contrast), Ocean 1.3.0 with every colour, the Polite & formal reply style, More reply languages 1.3.0 (seven more languages) and More messaging apps 1.3.0 (four more apps). They are signed with the 0.74.0 release and then appear in the community list; until then their sources are in [`src/`](src). Since app 0.74.0 every theme shows a small preview of its light and dark mode on its card, also in the community list before installing.
+
 
 ## External automation modules — Messages AI 0.33.0/code 43+
 
@@ -95,6 +97,26 @@ Free plans have their own terms and some may use prompts to improve their models
 
 `free_ai: true` (or `"first"`) uses free routes before the owner's providers; `"backup"` uses them only after the owner's providers fail. `baseUrl` is an OpenAI-compatible HTTPS address without `/chat/completions`; only built-in known free-tier servers are accepted (`FreeAiCatalog.HOSTS` in the app), so a module can never send conversations to another server. `key: true` routes are skipped until the owner saves a key for a provider on the same server. Up to 60 routes.
 
+## Colour themes and reply styles — Messages AI 0.46.0/code 56+
+
+Only one colour theme and one reply style are on at a time (`visual.theme` and `reply.style` groups): turning one on turns the other one off.
+
+| Module | Look or style |
+|---|---|
+| [Ocean](src/ocean-theme) | Calm blue: backgrounds, cards, switches, icons and status colours in light and dark mode. |
+| [Forest](src/forest-theme) | Calm green, inspired by nature. |
+| [Sunset](src/sunset-theme) | Warm sand and terracotta tones. |
+| [Midnight](src/midnight-theme) | Pure black in dark mode (saves battery on OLED screens) with soft indigo accents; the same accents on white in light mode. |
+| [High contrast](src/high-contrast-theme) | The strongest contrast between text and background (at least 7:1), clear card borders, easy-to-see switches and stronger status colours. |
+| [Casual & short](src/casual-short) | Short, relaxed replies like quick texts between friends; no full stop at the end of a one-line reply. |
+| [Polite & formal](src/polite-formal) | Complete, polite sentences with the formal form of address (Sie, usted, Vi …), no emoji or slang; a reply starts with a capital letter and a one-line reply ends with a full stop. |
+
+Every theme sets all 28 themeable colours and keeps text, secondary text and the status colours at least 4.5:1 on cards in both modes – more than the app requires. Disable the module to return to the app's own colours or style.
+
+## More messaging apps — Messages AI 0.46.0/code 56+
+
+[More messaging apps](src/more-apps) adds Threema, Element, Session, Molly, Delta Chat, LINE and Samsung Messages to **Apps**. They reply through the **Reply** button in the app's notification (`NOTIFICATION` mode); you still turn each app on in **Apps**.
+
 ## Reply suggestions — Messages AI 0.46.0/code 56+
 
 [Reply suggestions](modules/reply-suggestions.mamod) shows three independent Apple-style bubbles above an open chat, without an enclosing panel. Drag the move control anywhere; the position is remembered per screen size and can be reset. Tap a bubble to use that reply, tap **↻** for three new ones, and **×** hides them until you open another chat. A reply is used only if the chat and its last messages are still the same and the text field is empty. Suggestions use your AI provider (or Free AI) and pass the same checks as every reply.
@@ -103,7 +125,7 @@ Its only setting is `reply_suggestions: true`.
 
 ## More reply languages — Messages AI 0.46.0/code 56+
 
-[More reply languages](modules/more-languages.mamod) teaches the reply logic Finnish, Hungarian, Romanian and Swedish: the app recognizes questions, requests, bad and good news, thanks and goodbyes in those languages and checks that a reply really answers them. The words apply only to chats in that language. Since 0.43.0 the app itself also understands French, Portuguese, Dutch, Polish, Czech, Slovak, Russian, Ukrainian, Serbian and Turkish, and treats a question mark in any script as a question.
+[More reply languages](modules/more-languages.mamod) teaches the reply logic Finnish, Hungarian, Romanian and Swedish, and since 1.3.0 also Danish, Norwegian, Estonian, Latvian, Lithuanian, Greek and Bulgarian: the app recognizes questions, requests, bad and good news, thanks and goodbyes in those languages and checks that a reply really answers them. The words apply only to chats in that language. Since 0.43.0 the app itself also understands French, Portuguese, Dutch, Polish, Czech, Slovak, Russian, Ukrainian, Serbian and Turkish, and treats a question mark in any script as a question.
 
 ### `replyLogic` in `module.json`
 
@@ -155,7 +177,9 @@ Put the result's `languages` and `strings` into your `module.json`. [`templates/
 
 Themeable colours: `ios_bg` (screen), `ios_card` (cards), `ios_card_pressed`, `ios_label` (text), `ios_secondary`, `ios_tertiary`, `ios_separator`, `ios_fill`, `card_stroke`, `action_fill` and `action_text` (main buttons), `switch_active`, `switch_inactive`, `nav_active` (selected tab), `icon_ink`, `chevron`, `segment_track`, `trust_text`, and the accents `ios_blue`, `ios_green`, `ios_red`, `ios_orange`, `ios_yellow`, `ios_purple`, `ios_indigo`, `ios_teal`, `ios_pink`, `ios_gray`. The Google sign-in button keeps Google's colours.
 
-A theme is used only if text stays readable (WCAG contrast): `ios_label` on `ios_bg` and `ios_card` at least 4.5:1, `action_text` on `action_fill` 4.5:1, `ios_secondary`, `nav_active` and `icon_ink` on `ios_card` 3:1. Otherwise the app ignores the theme for that mode. The floating panel keeps its own dark colours.
+A theme is used only if text stays readable (WCAG contrast): `ios_label` on `ios_bg` and `ios_card` at least 4.5:1, `action_text` on `action_fill` 4.5:1, `ios_secondary`, `nav_active` and `icon_ink` on `ios_card` 3:1. Otherwise the app ignores the theme for that mode. The floating panel keeps its own dark colours. `python tools/mamod.py pack` refuses a theme the app would ignore (an unknown colour name, a value that isn't `#RRGGBB` or `#AARRGGBB`, or a mode below these contrasts), so you find out before publishing.
+
+Since app 0.74.0 the module card shows a preview of the theme's light and dark mode, in the installed list and – from the colours `index` copies into `index.json` – in the community list before installing. A colour the theme leaves out appears in the app's own colour there, just as in the app.
 
 ## Script hooks (`script.js`)
 

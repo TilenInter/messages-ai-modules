@@ -33,6 +33,33 @@ MAX_NAME, MAX_DESCRIPTION, MAX_TIP = 60, 600, 300
 ICONS = {"activity", "bell", "book", "brain", "chat", "check", "clock", "cpu", "document", "download", "flask", "globe",
          "grid", "heart", "info", "lightbulb", "lock", "palette", "pen", "people", "phone", "rules", "scales", "search",
          "send", "settings", "shield", "sliders", "sparkles", "upload", "user"}
+# Colours a theme may change and the app's own palette for light and dark mode (ModuleUi.THEMEABLE and
+# res/values*/colors.xml in Messages AI). A colour a theme leaves out keeps the app's colour.
+BASE_THEME = {
+    "light": {
+        "ios_bg": "#F7F7F8", "ios_card": "#FFFFFF", "ios_card_pressed": "#EFEFF2", "ios_label": "#111114",
+        "ios_secondary": "#86868C", "ios_tertiary": "#B4B4BA", "ios_separator": "#E8E8EC", "ios_fill": "#EEEEF1",
+        "card_stroke": "#E9E9ED", "action_fill": "#1C1C1E", "action_text": "#FFFFFF", "switch_active": "#34C759",
+        "switch_inactive": "#E3E3E8", "nav_active": "#0A7AFF", "icon_ink": "#16182C", "chevron": "#A8A8AE",
+        "segment_track": "#EDEDF0", "trust_text": "#45454B", "ios_blue": "#4C6078", "ios_green": "#387568",
+        "ios_red": "#A34B50", "ios_orange": "#946A38", "ios_yellow": "#946A38", "ios_purple": "#686577",
+        "ios_indigo": "#5A6478", "ios_teal": "#4B736E", "ios_pink": "#866B75", "ios_gray": "#82868D",
+    },
+    "dark": {
+        "ios_bg": "#111214", "ios_card": "#1B1D20", "ios_card_pressed": "#292C30", "ios_label": "#F1F2F4",
+        "ios_secondary": "#A6ABB3", "ios_tertiary": "#737983", "ios_separator": "#303339", "ios_fill": "#282B30",
+        "card_stroke": "#303339", "action_fill": "#EBEDF0", "action_text": "#202124", "switch_active": "#30D158",
+        "switch_inactive": "#626469", "nav_active": "#93BDF2", "icon_ink": "#E8E9F3", "chevron": "#5E636B",
+        "segment_track": "#2A2D32", "trust_text": "#C9CBD0", "ios_blue": "#B2C3D8", "ios_green": "#93C3AF",
+        "ios_red": "#E29B9F", "ios_orange": "#CEB18B", "ios_yellow": "#CEB18B", "ios_purple": "#B7AEC8",
+        "ios_indigo": "#B1BDD2", "ios_teal": "#9DC2BC", "ios_pink": "#C9A9B5", "ios_gray": "#A1A6AF",
+    },
+}
+COLOR = re.compile(r"^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$")
+# Text/background pairs the app checks before it uses a theme (WCAG: text 4.5:1, secondary text and accents 3:1).
+# A mode that fails one is ignored by the app, so packing refuses it.
+THEME_CONTRAST = (("ios_label", "ios_bg", 4.5), ("ios_label", "ios_card", 4.5), ("ios_secondary", "ios_card", 3.0),
+                  ("action_text", "action_fill", 4.5), ("nav_active", "ios_card", 3.0), ("icon_ink", "ios_card", 3.0))
 
 
 def sha(data: bytes) -> str:
@@ -59,7 +86,52 @@ def check_manifest(data: bytes) -> dict:
     assert m.get("id") not in compatibility.get("conflicts", []), "a module cannot conflict with itself"
     assert len(data) <= 256 * 1024, "module.json is larger than 256 KB"
     check_texts(m)
+    check_theme(m)
     return m
+
+
+def luminance(color: str) -> float:
+    """WCAG relative luminance of #RRGGBB or #AARRGGBB (alpha ignored, like the app's check)."""
+    hex_ = color.lstrip("#")[-6:]
+    channels = []
+    for i in (0, 2, 4):
+        c = int(hex_[i:i + 2], 16) / 255
+        channels.append(c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4)
+    r, g, b = channels
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b
+
+
+def contrast(a: str, b: str) -> float:
+    la, lb = sorted((luminance(a), luminance(b)), reverse=True)
+    return (la + 0.05) / (lb + 0.05)
+
+
+def theme_palette(m: dict, mode: str) -> dict:
+    """The colours the app shows in light or dark mode with this theme: the theme's colours over the app's own."""
+    return {**BASE_THEME[mode], **(m.get("theme", {}).get(mode) or {})}
+
+
+def check_theme(m: dict):
+    """A theme only uses colours the app lets themes change, and every mode it sets stays readable (else the app ignores it)."""
+    theme = m.get("theme")
+    if theme is None:
+        return
+    assert isinstance(theme, dict), "theme must be an object: {name, light, dark}"
+    assert isinstance(theme.get("name", ""), str) and len(theme.get("name", "").strip()) <= 40, "theme.name: up to 40 characters"
+    assert theme.get("light") or theme.get("dark"), "theme needs light or dark colours"
+    for mode in ("light", "dark"):
+        colors = theme.get(mode) or {}
+        assert isinstance(colors, dict), f"theme.{mode} must be an object: colour name → #RRGGBB"
+        unknown = set(colors) - set(BASE_THEME[mode])
+        assert not unknown, f"theme.{mode}: the app can't change {sorted(unknown)}"
+        for name, value in colors.items():
+            assert isinstance(value, str) and COLOR.fullmatch(value), f"theme.{mode}.{name}: {value!r} is not #RRGGBB or #AARRGGBB"
+        if not colors:
+            continue
+        palette = theme_palette(m, mode)
+        for fg, bg, minimum in THEME_CONTRAST:
+            ratio = contrast(palette[fg], palette[bg])
+            assert ratio >= minimum, f"theme.{mode}: {fg} on {bg} has contrast {ratio:.2f}, the app needs {minimum} (it would ignore this mode)"
 
 
 def check_texts(m: dict):
@@ -215,6 +287,11 @@ def index(folder, out):
         translations = {lang: {k: t[k] for k in ("name", "description") if t.get(k)} for lang, t in m.get("translations", {}).items()}
         if any(translations.values()):
             entry["translations"] = {lang: t for lang, t in translations.items() if t}
+        # 0.74: a theme's colours, so the catalog can show what it looks like before it is installed.
+        if m.get("theme"):
+            theme = m["theme"]
+            entry["theme"] = {"name": theme.get("name", "").strip()}
+            entry["theme"].update({mode: theme[mode] for mode in ("light", "dark") if theme.get(mode)})
         entries.append(entry)
     Path(out).write_text(json.dumps({"format": 1, "modules": entries}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"index: {len(entries)} module(s) -> {out}")

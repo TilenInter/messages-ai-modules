@@ -1,0 +1,100 @@
+{
+  "format": 1,
+  "id": "midnight-theme",
+  "name": "Midnight",
+  "version": "1.0.0",
+  "author": "Messages AI",
+  "license": "CC0-1.0",
+  "description": "Pure black in dark mode, which saves battery on OLED screens, with soft indigo accents. Light mode gets the same accents on clean white.",
+  "icon": "palette",
+  "minAppVersion": 56,
+  "compatibility": {
+    "conflicts": [],
+    "exclusiveGroups": ["visual.theme"]
+  },
+  "translations": {
+    "sl": {
+      "name": "Polnoč",
+      "description": "Čisto črna v temnem načinu, ki na zaslonih OLED varčuje z baterijo, z mehkimi indigo poudarki. Svetli način dobi enake poudarke na čisti beli."
+    },
+    "de": {
+      "name": "Mitternacht",
+      "description": "Reines Schwarz im dunklen Modus, das auf OLED-Bildschirmen Akku spart, mit sanften Indigo-Akzenten. Der helle Modus bekommt dieselben Akzente auf klarem Weiß."
+    },
+    "hr": {
+      "name": "Ponoć",
+      "description": "Potpuno crna u tamnom načinu, koja na OLED zaslonima štedi bateriju, s mekim indigo naglascima. Svijetli način dobiva iste naglaske na čistoj bijeloj."
+    },
+    "it": {
+      "name": "Mezzanotte",
+      "description": "Nero puro nella modalità scura, che fa risparmiare batteria sugli schermi OLED, con morbidi accenti indaco. La modalità chiara ha gli stessi accenti su un bianco pulito."
+    },
+    "es": {
+      "name": "Medianoche",
+      "description": "Negro puro en el modo oscuro, que ahorra batería en pantallas OLED, con suaves acentos índigo. El modo claro tiene los mismos acentos sobre un blanco limpio."
+    }
+  },
+  "theme": {
+    "name": "Midnight",
+    "light": {
+      "ios_bg": "#F4F4F8",
+      "ios_card": "#FFFFFF",
+      "ios_card_pressed": "#ECECF3",
+      "ios_label": "#0E0E16",
+      "ios_secondary": "#676777",
+      "ios_tertiary": "#A8A8B6",
+      "ios_separator": "#E4E4EC",
+      "ios_fill": "#ECECF3",
+      "card_stroke": "#E3E3EB",
+      "segment_track": "#EAEAF1",
+      "nav_active": "#4A3FC9",
+      "switch_active": "#5B50E0",
+      "switch_inactive": "#DCDCE6",
+      "icon_ink": "#1E1B4B",
+      "action_fill": "#16142E",
+      "action_text": "#FFFFFF",
+      "chevron": "#A2A2B0",
+      "trust_text": "#3F3F52",
+      "ios_blue": "#2F5AB8",
+      "ios_green": "#21734F",
+      "ios_red": "#B4364A",
+      "ios_orange": "#9A5515",
+      "ios_yellow": "#806300",
+      "ios_purple": "#6A45B8",
+      "ios_indigo": "#4A3FC9",
+      "ios_teal": "#156C77",
+      "ios_pink": "#A63C78",
+      "ios_gray": "#6A6A7C"
+    },
+    "dark": {
+      "ios_bg": "#000000",
+      "ios_card": "#0F0F14",
+      "ios_card_pressed": "#1C1C24",
+      "ios_label": "#F4F4F8",
+      "ios_secondary": "#A3A3B2",
+      "ios_tertiary": "#6C6C7A",
+      "ios_separator": "#22222B",
+      "ios_fill": "#1A1A22",
+      "card_stroke": "#1F1F28",
+      "segment_track": "#16161D",
+      "nav_active": "#A9B1FF",
+      "switch_active": "#7C7FF2",
+      "switch_inactive": "#3A3A46",
+      "icon_ink": "#E6E6F0",
+      "action_fill": "#E6E6F0",
+      "action_text": "#000000",
+      "chevron": "#55555F",
+      "trust_text": "#D3D3DE",
+      "ios_blue": "#9CC2FF",
+      "ios_green": "#8EDFB2",
+      "ios_red": "#FFA3AE",
+      "ios_orange": "#FFBE85",
+      "ios_yellow": "#F5DC8A",
+      "ios_purple": "#C9B6FF",
+      "ios_indigo": "#A9B1FF",
+      "ios_teal": "#7FDCD3",
+      "ios_pink": "#F7AAD2",
+      "ios_gray": "#A3A3B2"
+    }
+  }
+}
