@@ -2,21 +2,74 @@
   "format": 1,
   "id": "friendly-wording",
   "name": "Friendly wording",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
-  "description": "Simpler, friendlier English words on Home: Auto-reply, Ask me first, Send right away.",
+  "description": "Simpler, friendlier words on Home in every app language: Auto-reply, Ask me first and Send now.",
+  "icon": "heart",
   "minAppVersion": 56,
   "compatibility": {
     "conflicts": [],
     "exclusiveGroups": ["ui.wording"]
   },
+  "translations": {
+    "sl": {
+      "name": "Prijaznejše besede",
+      "description": "Preprostejše, prijaznejše besede na zaslonu Domov v vseh jezikih aplikacije: Samodejno odpiši, Vprašaj me in Pošlji zdaj."
+    },
+    "de": {
+      "name": "Freundlichere Wörter",
+      "description": "Einfachere, freundlichere Wörter auf Start in allen Sprachen der App: Auto-Antwort, Erst fragen und Jetzt senden."
+    },
+    "hr": {
+      "name": "Prijaznije riječi",
+      "description": "Jednostavnije, prijaznije riječi na Početnoj na svim jezicima aplikacije: Auto-odgovor, Prvo pitaj i Pošalji sad."
+    },
+    "it": {
+      "name": "Parole più amichevoli",
+      "description": "Parole più semplici e amichevoli nella Home in tutte le lingue dell'app: Auto-risposta, Chiedi prima e Invia ora."
+    },
+    "es": {
+      "name": "Palabras más amables",
+      "description": "Palabras más sencillas y amables en Inicio en todos los idiomas de la app: Autorrespuesta, Pregúntame y Enviar ya."
+    }
+  },
   "strings": {
     "en": {
       "home_master": "Auto-reply",
       "design_review_first": "Ask me first",
-      "home_seg_send": "Send right away",
+      "home_seg_send": "Send now",
       "home_tagline": "Your words, a little faster."
+    },
+    "sl": {
+      "home_master": "Samodejno odpiši",
+      "design_review_first": "Vprašaj me",
+      "home_seg_send": "Pošlji zdaj",
+      "home_tagline": "Tvoje besede, malo hitreje."
+    },
+    "de": {
+      "home_master": "Auto-Antwort",
+      "design_review_first": "Erst fragen",
+      "home_seg_send": "Jetzt senden",
+      "home_tagline": "Deine Worte, nur etwas schneller."
+    },
+    "hr": {
+      "home_master": "Auto-odgovor",
+      "design_review_first": "Prvo pitaj",
+      "home_seg_send": "Pošalji sad",
+      "home_tagline": "Tvoje riječi, malo brže."
+    },
+    "it": {
+      "home_master": "Auto-risposta",
+      "design_review_first": "Chiedi prima",
+      "home_seg_send": "Invia ora",
+      "home_tagline": "Le tue parole, un po' più veloci."
+    },
+    "es": {
+      "home_master": "Autorrespuesta",
+      "design_review_first": "Pregúntame",
+      "home_seg_send": "Enviar ya",
+      "home_tagline": "Tus palabras, un poco más rápido."
     }
   }
 }

@@ -2,33 +2,53 @@
   "format": 1,
   "id": "more-apps",
   "name": "More messaging apps",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
-  "description": "Adds Threema, Element and Session to Apps. They reply through the notification's Reply button.",
+  "description": "Adds Threema, Element and Session to Apps. They reply through the Reply button in the notification.",
+  "icon": "grid",
   "minAppVersion": 56,
   "compatibility": {
     "conflicts": [],
     "exclusiveGroups": []
   },
+  "translations": {
+    "sl": {
+      "name": "Več aplikacij za sporočila",
+      "description": "Doda Threema, Element in Session med Aplikacije. Odgovarjajo prek gumba Odgovori v obvestilu."
+    },
+    "de": {
+      "name": "Weitere Messenger",
+      "description": "Fügt Threema, Element und Session zu Apps hinzu. Sie antworten über die Antworten-Taste in der Benachrichtigung."
+    },
+    "hr": {
+      "name": "Još aplikacija za poruke",
+      "description": "Dodaje Threemu, Element i Session u Aplikacije. Odgovaraju putem gumba Odgovori u obavijesti."
+    },
+    "it": {
+      "name": "Altre app di messaggistica",
+      "description": "Aggiunge Threema, Element e Session ad App. Rispondono tramite il pulsante Rispondi nella notifica."
+    },
+    "es": {
+      "name": "Más apps de mensajería",
+      "description": "Añade Threema, Element y Session a Apps. Responden con el botón Responder de la notificación."
+    }
+  },
   "apps": [
     {
       "package": "ch.threema.app",
       "name": "Threema",
-      "mode": "NOTIFICATION",
-      "tip": "Replying from the notification works."
+      "mode": "NOTIFICATION"
     },
     {
       "package": "im.vector.app",
       "name": "Element",
-      "mode": "NOTIFICATION",
-      "tip": "Replying from the notification works."
+      "mode": "NOTIFICATION"
     },
     {
       "package": "network.loki.messenger",
       "name": "Session",
-      "mode": "NOTIFICATION",
-      "tip": "Replying from the notification works."
+      "mode": "NOTIFICATION"
     }
   ]
 }

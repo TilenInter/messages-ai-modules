@@ -2,15 +2,38 @@
   "format": 1,
   "id": "more-languages",
   "name": "More reply languages",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
-  "description": "Teaches the reply logic Finnish, Hungarian, Romanian and Swedish: the app then recognizes questions, requests, bad and good news, thanks and goodbyes in these languages and checks that a reply really answers them, like it does for the built-in languages. The words apply only to chats in that language. Also an example for authors who want to add their own language. Requires Messages AI 0.46.0 or newer.",
+  "description": "Teaches the reply logic Finnish, Hungarian, Romanian and Swedish. The app then recognizes questions, requests, good and bad news, thanks and goodbyes in these languages and checks that a reply really answers them, like it does for the built-in languages. The words apply only to chats in that language. Also an example for authors who want to add their own language.",
   "homepage": "https://github.com/TilenInter/messages-ai-modules",
+  "icon": "globe",
   "minAppVersion": 56,
   "compatibility": {
     "conflicts": [],
     "exclusiveGroups": []
+  },
+  "translations": {
+    "sl": {
+      "name": "Več jezikov odgovorov",
+      "description": "Logiko odgovorov nauči finščine, madžarščine, romunščine in švedščine. Aplikacija nato v teh jezikih prepozna vprašanja, prošnje, dobre in slabe novice, zahvale in slovo ter preveri, ali odgovor nanje res odgovori – tako kot pri vgrajenih jezikih. Besede veljajo samo za pogovore v tem jeziku. Je tudi primer za avtorje, ki želijo dodati svoj jezik."
+    },
+    "de": {
+      "name": "Weitere Antwortsprachen",
+      "description": "Bringt der Antwortlogik Finnisch, Ungarisch, Rumänisch und Schwedisch bei. Die App erkennt dann in diesen Sprachen Fragen, Bitten, gute und schlechte Nachrichten, Dank und Abschiede und prüft, ob eine Antwort wirklich darauf eingeht – wie bei den eingebauten Sprachen. Die Wörter gelten nur für Chats in dieser Sprache. Auch ein Beispiel für alle, die eine eigene Sprache hinzufügen möchten."
+    },
+    "hr": {
+      "name": "Više jezika odgovora",
+      "description": "Logiku odgovora uči finski, mađarski, rumunjski i švedski. Aplikacija tada na tim jezicima prepoznaje pitanja, molbe, dobre i loše vijesti, zahvale i pozdrave na rastanku te provjerava odgovara li odgovor stvarno na njih – kao kod ugrađenih jezika. Riječi vrijede samo za razgovore na tom jeziku. Ujedno je primjer za autore koji žele dodati svoj jezik."
+    },
+    "it": {
+      "name": "Altre lingue di risposta",
+      "description": "Insegna alla logica delle risposte finlandese, ungherese, rumeno e svedese. L'app riconosce poi in queste lingue domande, richieste, notizie belle e brutte, ringraziamenti e saluti e controlla che una risposta risponda davvero, come per le lingue integrate. Le parole valgono solo per le chat in quella lingua. È anche un esempio per chi vuole aggiungere la propria lingua."
+    },
+    "es": {
+      "name": "Más idiomas de respuesta",
+      "description": "Enseña a la lógica de respuestas finés, húngaro, rumano y sueco. La app reconoce entonces en estos idiomas preguntas, peticiones, buenas y malas noticias, agradecimientos y despedidas, y comprueba que una respuesta de verdad las conteste, como con los idiomas integrados. Las palabras solo se aplican a los chats en ese idioma. También es un ejemplo para quien quiera añadir su propio idioma."
+    }
   },
   "replyLogic": {
     "fi": {

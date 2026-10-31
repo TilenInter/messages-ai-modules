@@ -55,6 +55,18 @@ Datoteko `.mamod` prenesi na telefon: **Nastavitve → Moduli → Uvozi iz datot
 - `.mamod` je ZIP z `module.json`, po želji `script.js` in `signature.json` (naredi ga `pack`). Druge datoteke (koda, knjižnice) so zavrnjene.
 - Omejitve: 512 KB na datoteko, 256 KB `module.json`, 64 KB `script.js`.
 - `id`: 3–64 znakov `a-z 0-9 . _ -`; modul z istim `id` posodobi prejšnjega. `format` je `1`, `minAppVersion` je **versionCode** aplikacije (0.46.0 = 56).
+- Aplikacija pokaže največ 60 znakov imena (`name`), 600 znakov opisa (`description`) in 300 znakov nasveta aplikacije (`tip`); `pack` daljših besedil ne sprejme, zato nič ni odrezano.
+- `icon` (od aplikacije 0.73.0) izbere ikono kartice med ikonami aplikacije: `activity`, `bell`, `book`, `brain`, `chat`, `check`, `clock`, `cpu`, `document`, `download`, `flask`, `globe`, `grid`, `heart`, `info`, `lightbulb`, `lock`, `palette`, `pen`, `people`, `phone`, `rules`, `scales`, `search`, `send`, `settings`, `shield`, `sliders`, `sparkles`, `upload`, `user`. Brez nje jo aplikacija izbere po tem, kaj modul dela.
+- `translations` (od aplikacije 0.73.0): ime, opis in nasveti aplikacij v drugih jezikih. Ime in opis napiši v angleščini, pod `translations` pa dodaj vse jezike aplikacije (sl, de, hr, it, es):
+
+```json
+"icon": "chat",
+"translations": {
+  "sl": { "name": "Moj slog", "description": "Kratki, topli odgovori z občasnim emojijem." }
+}
+```
+
+  Aplikacija pokaže besedilo v jeziku vmesnika, za manjkajoče polje ali jezik pa angleščino (tudi starejše različice). `index` prevode prepiše v `index.json`, zato je preveden tudi seznam skupnosti. Nasvete aplikacij prevedeš z `"tips": { "<paket>": "…" }`; brez `tip` aplikacija pokaže svoj prevedeni nasvet »Odgovarjanje iz obvestila deluje.«. Gumbe in zaslone poimenuj točno tako, kot jih aplikacija pokaže v tistem jeziku. Novejša `version` v seznamu pokaže **Posodobi na …**; posodobitev pusti modul izklopljen, če ga je lastnik izklopil.
 
 ## 3. Kaj lahko modul spremeni
 
@@ -128,7 +140,7 @@ Te razdelke podrobno opisujeta [GUIDE.md](GUIDE.md) in [README.md](README.md). N
 
 ## 8. Preizkus in oddaja
 
-1. `python tools/mamod.py verify modules/<id>.mamod`.
+1. `python tools/mamod.py verify modules/<id>.mamod` (oblika, velikost, podpis, dolžina besedil, ikona in prevodi).
 2. Uvozi na telefon in preberi povzetek zmožnosti.
 3. Preizkusi v **Test Chat** – nikoli na resničnih ljudeh.
 4. **Dnevnik → 📋 Kopiraj podroben dnevnik** pokaže vrstice `module` (nameščeni moduli, napake skript).

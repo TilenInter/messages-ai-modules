@@ -56,8 +56,27 @@ Copy `modules/my-style.mamod` to the phone and choose **Settings → Modules →
 - Limits: 512 KB per file, 256 KB `module.json`, 64 KB `script.js`.
 - `id`: 3–64 characters `a-z 0-9 . _ -`, starting with a letter or digit. Installing a module with the same `id` updates it.
 - `format` must be `1`. `minAppVersion` is the app **versionCode** (0.46.0 = 56); older apps refuse the module.
-- `name`, `version`, `author`, `license`, `description`, `homepage` are shown to the user.
+- `name`, `version`, `author`, `license`, `description`, `homepage` are shown to the user. The app shows at most 60 characters of `name` and 600 of `description` (300 of an app `tip`); `pack` refuses longer texts so nothing is ever cut off.
+- `icon` (since app 0.73.0) picks the card icon from the app's own outline icons: `activity`, `bell`, `book`, `brain`, `chat`, `check`, `clock`, `cpu`, `document`, `download`, `flask`, `globe`, `grid`, `heart`, `info`, `lightbulb`, `lock`, `palette`, `pen`, `people`, `phone`, `rules`, `scales`, `search`, `send`, `settings`, `shield`, `sliders`, `sparkles`, `upload`, `user`. Without it the app chooses one by what the module does.
+- `translations` (since app 0.73.0): the name, description and app tips in other languages – see [Translations](#translations). Older apps show the English fields.
 - Signature: ECDSA P-256 over `messages-ai-module-v1\n<sha256 module.json>\n<sha256 script.js>\n` (empty script = hash of nothing). `tools/mamod.py` does this for you.
+
+### Translations
+
+Write `name` and `description` in English and add every app language (sl, de, hr, it, es) under `translations`:
+
+```json
+"icon": "chat",
+"translations": {
+  "sl": { "name": "Moj slog", "description": "Kratki, topli odgovori z občasnim emojijem." },
+  "de": { "name": "Mein Stil", "description": "Kurze, herzliche Antworten mit gelegentlichem Emoji." }
+}
+```
+
+- The app shows the text in its interface language and falls back to English for a missing field or language. `index` copies the names and descriptions into `index.json`, so the community list is translated too.
+- `tips` translates the `tip` of your apps: `"sl": { "tips": { "org.example.chat": "Najprej odpri pogovor." } }`. Leave `tip` out when the app's own tip (“Replying from the notification works.”) fits – it is already translated.
+- Name buttons and screens exactly as the app shows them in that language (for example **Settings** → **Nastavitve**, **Einstellungen**, **Postavke**, **Impostazioni**, **Ajustes**).
+- A newer `version` in the list shows **Update to …** in **Community modules**; updating keeps the module off if the owner turned it off.
 
 ## 3. What a module can change
 
@@ -190,7 +209,7 @@ See [More reply languages](src/more-languages/module.json) (Finnish, Hungarian, 
 "apps": [ { "package": "org.example.chat", "name": "Example Chat", "mode": "SCREEN", "tip": "Open a chat first." } ]
 ```
 
-`mode` is `NOTIFICATION` (reply from notifications) or `SCREEN` (read and type in the open chat); `anonymous: true` treats every new partner as a new conversation (random-chat apps). Up to 50 apps; built-in apps can't be replaced. The user still enables each app in **Apps**.
+`mode` is `NOTIFICATION` (reply from notifications) or `SCREEN` (read and type in the open chat); `anonymous: true` treats every new partner as a new conversation (random-chat apps). Up to 50 apps; built-in apps can't be replaced. The user still enables each app in **Apps**. `tip` is optional (the app's translated “Replying from the notification works.” is used without it); translate your own tip under `translations.<language>.tips`.
 
 ## 9. App texts and new UI languages
 
@@ -234,7 +253,7 @@ A script can skip, hand over or change a reply, but the changed reply is checked
 
 ## 12. Test your module
 
-1. `python tools/mamod.py verify modules/<id>.mamod` – format, size, signature.
+1. `python tools/mamod.py verify modules/<id>.mamod` – format, size, signature, text lengths, icon and translations.
 2. Import it on the phone and read the install summary: every capability should be listed, locked settings appear as ignored.
 3. Try it in **Test Chat** (a separate fake chat app from the [releases](https://github.com/TilenInter/messages-ai/releases)) – never on real people while testing.
 4. **Log → 📋 Copy detailed log** shows `module` lines: installed modules, script errors and timeouts.

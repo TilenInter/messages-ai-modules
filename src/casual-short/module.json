@@ -2,14 +2,37 @@
   "format": 1,
   "id": "casual-short",
   "name": "Casual & short",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
-  "description": "Short, relaxed replies like quick texts between friends: very short messages, emoji now and then, no full stop at the end of a one-line reply.",
+  "description": "Short, relaxed replies like quick texts between friends: one short line, an emoji now and then and no full stop at the end of a one-line reply.",
+  "icon": "chat",
   "minAppVersion": 56,
   "compatibility": {
     "conflicts": [],
     "exclusiveGroups": ["reply.style"]
+  },
+  "translations": {
+    "sl": {
+      "name": "Sproščeno in kratko",
+      "description": "Kratki, sproščeni odgovori kot hitra sporočila med prijatelji: ena kratka vrstica, občasno emoji in brez pike na koncu enovrstičnega odgovora."
+    },
+    "de": {
+      "name": "Locker & kurz",
+      "description": "Kurze, lockere Antworten wie schnelle Nachrichten unter Freunden: eine kurze Zeile, ab und zu ein Emoji und kein Punkt am Ende einer einzeiligen Antwort."
+    },
+    "hr": {
+      "name": "Opušteno i kratko",
+      "description": "Kratki, opušteni odgovori poput brzih poruka među prijateljima: jedan kratak redak, povremeno emoji i bez točke na kraju odgovora u jednom retku."
+    },
+    "it": {
+      "name": "Informale e breve",
+      "description": "Risposte brevi e rilassate come messaggi veloci tra amici: una riga breve, ogni tanto un'emoji e niente punto alla fine di una risposta di una riga."
+    },
+    "es": {
+      "name": "Informal y breve",
+      "description": "Respuestas cortas y relajadas como mensajes rápidos entre amigos: una línea corta, algún emoji de vez en cuando y sin punto al final de una respuesta de una línea."
+    }
   },
   "settings": {
     "style_length": "very_short",

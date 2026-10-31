@@ -2,15 +2,38 @@
   "format": 1,
   "id": "reply-suggestions",
   "name": "Reply suggestions",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
-  "description": "Shows three movable Apple-style reply bubbles above an open chat without an enclosing panel. Their position is remembered and can be reset. Tap a bubble to use it, ↻ writes three new ones and × hides them until another chat opens.",
+  "description": "Shows three reply bubbles above an open chat, without a panel around them. You can move them and the place is remembered (and can be reset). Tap a bubble to use it; ↻ writes three new ones and × hides them until another chat opens.",
   "homepage": "https://github.com/TilenInter/messages-ai-modules",
+  "icon": "lightbulb",
   "minAppVersion": 56,
   "compatibility": {
     "conflicts": [],
     "exclusiveGroups": ["reply.overlay"]
+  },
+  "translations": {
+    "sl": {
+      "name": "Predlogi odgovorov",
+      "description": "Nad odprtim pogovorom pokaže tri mehurčke z odgovori, brez panela okoli njih. Lahko jih premakneš, mesto se zapomni (in ga lahko ponastaviš). Tapni mehurček, da ga uporabiš; ↻ napiše tri nove, × pa jih skrije, dokler se ne odpre drug pogovor."
+    },
+    "de": {
+      "name": "Antwortvorschläge",
+      "description": "Zeigt drei Antwortblasen über einem geöffneten Chat, ohne Panel drumherum. Du kannst sie verschieben, die Position wird gespeichert (und lässt sich zurücksetzen). Tippe auf eine Blase, um sie zu verwenden; ↻ schreibt drei neue und × blendet sie aus, bis ein anderer Chat geöffnet wird."
+    },
+    "hr": {
+      "name": "Prijedlozi odgovora",
+      "description": "Iznad otvorenog razgovora prikazuje tri mjehurića s odgovorima, bez panela oko njih. Možeš ih pomaknuti, mjesto se pamti (i može se vratiti). Dodirni mjehurić da ga upotrijebiš; ↻ piše tri nova, a × ih skriva dok se ne otvori drugi razgovor."
+    },
+    "it": {
+      "name": "Suggerimenti di risposta",
+      "description": "Mostra tre bolle di risposta sopra una chat aperta, senza un pannello intorno. Puoi spostarle e la posizione viene ricordata (e si può reimpostare). Tocca una bolla per usarla; ↻ ne scrive tre nuove e × le nasconde finché non si apre un'altra chat."
+    },
+    "es": {
+      "name": "Sugerencias de respuesta",
+      "description": "Muestra tres burbujas de respuesta sobre un chat abierto, sin un panel alrededor. Puedes moverlas y su posición se recuerda (y se puede restablecer). Toca una burbuja para usarla; ↻ escribe tres nuevas y × las oculta hasta que se abra otro chat."
+    }
   },
   "settings": {
     "reply_suggestions": true

@@ -2,14 +2,37 @@
   "format": 1,
   "id": "ocean-theme",
   "name": "Ocean",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
   "description": "A calm blue colour theme for light and dark mode.",
+  "icon": "palette",
   "minAppVersion": 56,
   "compatibility": {
     "conflicts": [],
     "exclusiveGroups": ["visual.theme"]
+  },
+  "translations": {
+    "sl": {
+      "name": "Ocean",
+      "description": "Umirjena modra barvna tema za svetli in temni način."
+    },
+    "de": {
+      "name": "Ozean",
+      "description": "Ein ruhiges blaues Farbschema für den hellen und den dunklen Modus."
+    },
+    "hr": {
+      "name": "Ocean",
+      "description": "Smirena plava tema boja za svijetli i tamni način."
+    },
+    "it": {
+      "name": "Oceano",
+      "description": "Un tema di colori blu e rilassante per la modalità chiara e scura."
+    },
+    "es": {
+      "name": "Océano",
+      "description": "Un tema de color azul y tranquilo para el modo claro y el oscuro."
+    }
   },
   "theme": {
     "name": "Ocean",

@@ -2,14 +2,37 @@
   "format": 1,
   "id": "google-ads-close",
   "name": "Close Google ads",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
-  "description": "Recognizes Google full-screen ads in other apps and presses an available Close or Skip control. Works independently of reply modules; does not press Install, advertiser links or reward-resume controls.",
+  "description": "Recognizes Google full-screen ads in other apps and taps their Close or Skip button. Works on its own, without reply modules. It never taps Install, the advertiser's links or buttons that continue a rewarded video.",
+  "icon": "shield",
   "minAppVersion": 56,
   "compatibility": {
     "conflicts": [],
     "exclusiveGroups": ["automation.ads"]
+  },
+  "translations": {
+    "sl": {
+      "name": "Zapiranje Googlovih oglasov",
+      "description": "V drugih aplikacijah prepozna Googlove celozaslonske oglase in pritisne njihov gumb Zapri ali Preskoči. Deluje samostojno, brez modulov za odgovarjanje. Nikoli ne pritisne Namesti, oglaševalčevih povezav ali gumbov, ki nadaljujejo video z nagrado."
+    },
+    "de": {
+      "name": "Google-Werbung schließen",
+      "description": "Erkennt Google-Vollbildwerbung in anderen Apps und tippt auf deren Schließen- oder Überspringen-Taste. Funktioniert eigenständig, ohne Antwortmodule. Tippt nie auf Installieren, Links des Werbetreibenden oder Tasten, die ein Video mit Belohnung fortsetzen."
+    },
+    "hr": {
+      "name": "Zatvaranje Googleovih oglasa",
+      "description": "U drugim aplikacijama prepoznaje Googleove oglase preko cijelog zaslona i dodiruje njihov gumb Zatvori ili Preskoči. Radi samostalno, bez modula za odgovaranje. Nikad ne dodiruje Instaliraj, poveznice oglašivača ni gumbe koji nastavljaju video s nagradom."
+    },
+    "it": {
+      "name": "Chiudi annunci Google",
+      "description": "Riconosce gli annunci Google a schermo intero nelle altre app e tocca il loro pulsante Chiudi o Salta. Funziona da solo, senza moduli di risposta. Non tocca mai Installa, i link dell'inserzionista o i pulsanti che riprendono un video con premio."
+    },
+    "es": {
+      "name": "Cerrar anuncios de Google",
+      "description": "Reconoce los anuncios de Google a pantalla completa en otras apps y toca su botón Cerrar u Omitir. Funciona por sí solo, sin módulos de respuesta. Nunca toca Instalar, los enlaces del anunciante ni los botones que reanudan un vídeo con recompensa."
+    }
   },
   "settings": {
     "dismiss_google_ads": true
