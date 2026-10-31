@@ -10,7 +10,7 @@ In the app: **Settings → Modules → Community modules**, pick one and confirm
 
 **Write your own:** the [module author guide](GUIDE.md) ([slovensko](VODNIK.sl.md)) describes every section and setting. Community modules can use everything the official modules use – the signature only changes the warning before installing, never what a module may do.
 
-All bundled modules declare their compatibility (version 1.1.0 for Messages AI 0.46.0+; the 0.50.0 feature modules and Automatic sending 1.2.0 need app code 61+, SMS import needs code 66+). Alternative modules share an exclusive group; enabling one automatically turns off the incompatible one and the app shows what changed.
+All bundled modules declare their compatibility (version 1.1.0 for Messages AI 0.46.0+; the 0.50.0 feature modules and Automatic sending 1.2.0 need app code 61+, SMS import needs code 66+). All 17 modules were checked with Messages AI 0.72.0 (code 83): every published file installs as signed, both scripts run on the app's Rhino 1.9 sandbox, and every text, colour and setting a module changes still exists – the app's `CommunityModulesTest` repeats this with each release. Alternative modules share an exclusive group; enabling one automatically turns off the incompatible one and the app shows what changed.
 
 
 ## External automation modules — Messages AI 0.33.0/code 43+
@@ -137,7 +137,7 @@ Categories: `question`, `info`, `howAreYou`, `confused`, `request`, `greeting`, 
 
 Account credentials, stored consent and disclosure history, provider keys, chat retention, diagnostics, SMS (including the owner's SMS import choices, `sms_import_*`) and personal profile/notes stay separate. Since app 0.33.0, modules can configure automatic drafting/sending, reply scope, local length/rate/gap limits, AI review/privacy processing and protective rules in either direction. Since 0.39.0, `ai_reply_note: false` omits the automatic AI footer. Since 0.40.0, `free_ai` with `freeAi.routes` sends replies to the listed known free-tier AI servers with automatic switching; keys stay with the owner. Since 0.43.0, `reply_suggestions: true` shows suggested replies that the owner sends with a tap, and `replyLogic` adds reply-logic words for any language. Runtime overrides disappear when a module is disabled; they do not rewrite saved preferences. Locked settings are ignored and listed in the existing install summary.
 
-Texts about consents, privacy, terms, data export, reports and modules themselves (keys starting with `disclosure_`, `auto_consent`, `terms_`, `account_privacy`, `account_delete`, `account_required`, `protect_`, `modules_`, `wipe_`, `report_`, `signin_privacy`, `signin_terms`, `send_changed`, `mydata_`, `oss_`, `backup_`, `privacy`, and since 0.55.0 `sms_import_`) can't be changed: in a new language they stay in English so they are always accurate. A text whose placeholders (`%1$s`, `%2$d` …) differ from the original is ignored.
+Texts about consents, privacy, terms, data export, reports and modules themselves (keys starting with `disclosure_`, `auto_consent`, `terms_`, `account_privacy`, `account_delete`, `account_required`, `protect_`, `modules_`, `wipe_`, `report_`, `signin_privacy`, `signin_terms`, `access_`, `billing_`, `developer_`, `send_changed`, `mydata_`, `oss_`, `backup_`, `privacy`, since 0.55.0 `sms_import_`, and what is sent where for pictures `picture_`, voice notes `voice_`, smart actions `smart_actions_`, sending results `approval_` and Business Mode `business_`) can't be changed: in a new language they stay in English so they are always accurate. A text whose placeholders (`%1$s`, `%2$d` …) differ from the original is ignored.
 
 ## Translations
 
@@ -157,7 +157,7 @@ A theme is used only if text stays readable (WCAG contrast): `ios_label` on `ios
 
 ## Script hooks (`script.js`)
 
-Plain JavaScript (ES6 subset, Mozilla Rhino). There is no `java`, `Packages`, network, files or timers. Each call has a 300 ms limit; errors and timeouts are ignored, and the app continues as if the script wasn't there. All functions are optional.
+Plain JavaScript (Mozilla Rhino 1.9 in interpreter mode since Messages AI 0.72.0: ES6 – `let`/`const`, arrow functions, template strings, destructuring, spread, `Map`/`Set` – and much of later JavaScript; E4X XML is gone). There is no `java`, `Packages`, network, files or timers. Each call has a 300 ms limit; errors and timeouts are ignored, and the app continues as if the script wasn't there. All functions are optional.
 
 ```js
 // Before a reply: return "reply", "skip" or {handoff: "CUSTOM"} (or PHOTO, MONEY, PERSONAL_DATA, CALL, THREAT).
