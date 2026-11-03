@@ -163,6 +163,108 @@
       }
     },
     {
+      "id": "forest-theme",
+      "name": "Forest",
+      "version": "1.0.0",
+      "author": "Messages AI",
+      "description": "A calm green colour theme inspired by nature, for light and dark mode – backgrounds, cards, switches, icons and status colours.",
+      "types": [
+        "appearance"
+      ],
+      "conflicts": [],
+      "exclusiveGroups": [
+        "visual.theme"
+      ],
+      "file": "modules/forest-theme.mamod",
+      "sha256": "4f0e5ea8d6ef31b5199779ccdc3695cefbd65d628667cf37a622cc4878cb69cb",
+      "icon": "palette",
+      "translations": {
+        "sl": {
+          "name": "Gozd",
+          "description": "Umirjena zelena barvna tema po navdihu narave za svetli in temni način – ozadja, kartice, stikala, ikone in barve stanj."
+        },
+        "de": {
+          "name": "Wald",
+          "description": "Ein ruhiges grünes Farbschema nach dem Vorbild der Natur für den hellen und den dunklen Modus – Hintergründe, Karten, Schalter, Symbole und Statusfarben."
+        },
+        "hr": {
+          "name": "Šuma",
+          "description": "Smirena zelena tema boja nadahnuta prirodom za svijetli i tamni način – pozadine, kartice, prekidači, ikone i boje stanja."
+        },
+        "it": {
+          "name": "Foresta",
+          "description": "Un tema di colori verde e rilassante ispirato alla natura per la modalità chiara e scura: sfondi, schede, interruttori, icone e colori di stato."
+        },
+        "es": {
+          "name": "Bosque",
+          "description": "Un tema de color verde y tranquilo inspirado en la naturaleza para el modo claro y el oscuro: fondos, tarjetas, interruptores, iconos y colores de estado."
+        }
+      },
+      "theme": {
+        "name": "Forest",
+        "light": {
+          "ios_bg": "#F1F5F0",
+          "ios_card": "#FFFFFF",
+          "ios_card_pressed": "#E6EEE4",
+          "ios_label": "#132017",
+          "ios_secondary": "#5A6A5D",
+          "ios_tertiary": "#9DAB9E",
+          "ios_separator": "#DCE5DA",
+          "ios_fill": "#E5EDE3",
+          "card_stroke": "#D7E1D4",
+          "segment_track": "#E2EAE0",
+          "nav_active": "#2C6A3D",
+          "switch_active": "#3B8A4E",
+          "switch_inactive": "#D2DCCF",
+          "icon_ink": "#1B3223",
+          "action_fill": "#1E3927",
+          "action_text": "#FFFFFF",
+          "chevron": "#96A597",
+          "trust_text": "#33463A",
+          "ios_blue": "#2D5F80",
+          "ios_green": "#2B7341",
+          "ios_red": "#A6433A",
+          "ios_orange": "#8E5B1A",
+          "ios_yellow": "#7A6511",
+          "ios_purple": "#695882",
+          "ios_indigo": "#465A83",
+          "ios_teal": "#2A7064",
+          "ios_pink": "#915367",
+          "ios_gray": "#68766A"
+        },
+        "dark": {
+          "ios_bg": "#0D1410",
+          "ios_card": "#161F19",
+          "ios_card_pressed": "#202B23",
+          "ios_label": "#E9F1EA",
+          "ios_secondary": "#A2B2A5",
+          "ios_tertiary": "#6E7F72",
+          "ios_separator": "#25322A",
+          "ios_fill": "#202B23",
+          "card_stroke": "#25322A",
+          "segment_track": "#202B23",
+          "nav_active": "#8ED09D",
+          "switch_active": "#5BBE73",
+          "switch_inactive": "#3F4E43",
+          "icon_ink": "#DBE9DE",
+          "action_fill": "#DBE9DE",
+          "action_text": "#0D1410",
+          "chevron": "#5E6F63",
+          "trust_text": "#C4D4C7",
+          "ios_blue": "#9DC4DF",
+          "ios_green": "#92D2A1",
+          "ios_red": "#EA9F95",
+          "ios_orange": "#E2BB84",
+          "ios_yellow": "#DBCA85",
+          "ios_purple": "#C1B3DB",
+          "ios_indigo": "#ADBDDF",
+          "ios_teal": "#8ECEC1",
+          "ios_pink": "#DCA9B9",
+          "ios_gray": "#9EADA1"
+        }
+      }
+    },
+    {
       "id": "free-ai-auto",
       "name": "Free AI (automatic)",
       "version": "1.2.0",
@@ -317,76 +419,280 @@
       }
     },
     {
+      "id": "high-contrast-theme",
+      "name": "High contrast",
+      "version": "1.0.0",
+      "author": "Messages AI",
+      "description": "Easier to read: the strongest contrast between text and background, clear card borders, easy-to-see switches and stronger status colours, in light and dark mode.",
+      "types": [
+        "appearance"
+      ],
+      "conflicts": [],
+      "exclusiveGroups": [
+        "visual.theme"
+      ],
+      "file": "modules/high-contrast-theme.mamod",
+      "sha256": "04cd05373d7ebc7e43745ab80576204dbf4212f57943e459df99a42112a34c89",
+      "icon": "palette",
+      "translations": {
+        "sl": {
+          "name": "Visok kontrast",
+          "description": "Lažje branje: največji kontrast med besedilom in ozadjem, jasni robovi kartic, dobro vidna stikala in močnejše barve stanj, v svetlem in temnem načinu."
+        },
+        "de": {
+          "name": "Hoher Kontrast",
+          "description": "Leichter lesbar: stärkster Kontrast zwischen Text und Hintergrund, klare Kartenränder, gut sichtbare Schalter und kräftigere Statusfarben, im hellen und im dunklen Modus."
+        },
+        "hr": {
+          "name": "Visoki kontrast",
+          "description": "Lakše čitanje: najjači kontrast između teksta i pozadine, jasni rubovi kartica, dobro vidljivi prekidači i jače boje stanja, u svijetlom i tamnom načinu."
+        },
+        "it": {
+          "name": "Contrasto elevato",
+          "description": "Più leggibile: il massimo contrasto tra testo e sfondo, bordi delle schede netti, interruttori ben visibili e colori di stato più decisi, in modalità chiara e scura."
+        },
+        "es": {
+          "name": "Alto contraste",
+          "description": "Más legible: el mayor contraste entre texto y fondo, bordes de tarjeta claros, interruptores fáciles de ver y colores de estado más intensos, en modo claro y oscuro."
+        }
+      },
+      "theme": {
+        "name": "High contrast",
+        "light": {
+          "ios_bg": "#F2F2F2",
+          "ios_card": "#FFFFFF",
+          "ios_card_pressed": "#E0E0E0",
+          "ios_label": "#000000",
+          "ios_secondary": "#333333",
+          "ios_tertiary": "#595959",
+          "ios_separator": "#7A7A7A",
+          "ios_fill": "#E6E6E6",
+          "card_stroke": "#666666",
+          "segment_track": "#DADADA",
+          "nav_active": "#0039B3",
+          "switch_active": "#006B29",
+          "switch_inactive": "#767676",
+          "icon_ink": "#000000",
+          "action_fill": "#000000",
+          "action_text": "#FFFFFF",
+          "chevron": "#333333",
+          "trust_text": "#141414",
+          "ios_blue": "#0039B3",
+          "ios_green": "#006B29",
+          "ios_red": "#A8001C",
+          "ios_orange": "#8A3F00",
+          "ios_yellow": "#664E00",
+          "ios_purple": "#5A2A9E",
+          "ios_indigo": "#2B379E",
+          "ios_teal": "#005E68",
+          "ios_pink": "#990F55",
+          "ios_gray": "#474747"
+        },
+        "dark": {
+          "ios_bg": "#000000",
+          "ios_card": "#0A0A0A",
+          "ios_card_pressed": "#262626",
+          "ios_label": "#FFFFFF",
+          "ios_secondary": "#DADADA",
+          "ios_tertiary": "#ADADAD",
+          "ios_separator": "#8C8C8C",
+          "ios_fill": "#1F1F1F",
+          "card_stroke": "#BDBDBD",
+          "segment_track": "#1F1F1F",
+          "nav_active": "#8DB6FF",
+          "switch_active": "#63DD84",
+          "switch_inactive": "#8C8C8C",
+          "icon_ink": "#FFFFFF",
+          "action_fill": "#FFFFFF",
+          "action_text": "#000000",
+          "chevron": "#BDBDBD",
+          "trust_text": "#F2F2F2",
+          "ios_blue": "#8DB6FF",
+          "ios_green": "#6EE38E",
+          "ios_red": "#FF8F8F",
+          "ios_orange": "#FFB570",
+          "ios_yellow": "#FFE170",
+          "ios_purple": "#D4B3FF",
+          "ios_indigo": "#ABB8FF",
+          "ios_teal": "#62E0E0",
+          "ios_pink": "#FF9FCD",
+          "ios_gray": "#C7C7C7"
+        }
+      }
+    },
+    {
+      "id": "midnight-theme",
+      "name": "Midnight",
+      "version": "1.0.0",
+      "author": "Messages AI",
+      "description": "Pure black in dark mode, which saves battery on OLED screens, with soft indigo accents. Light mode gets the same accents on clean white.",
+      "types": [
+        "appearance"
+      ],
+      "conflicts": [],
+      "exclusiveGroups": [
+        "visual.theme"
+      ],
+      "file": "modules/midnight-theme.mamod",
+      "sha256": "58ecda823f57afc4620dae0f379315b0a8cfdb1840bfe8a53e5291280addafe8",
+      "icon": "palette",
+      "translations": {
+        "sl": {
+          "name": "Polnoč",
+          "description": "Čisto črna v temnem načinu, ki na zaslonih OLED varčuje z baterijo, z mehkimi indigo poudarki. Svetli način dobi enake poudarke na čisti beli."
+        },
+        "de": {
+          "name": "Mitternacht",
+          "description": "Reines Schwarz im dunklen Modus, das auf OLED-Bildschirmen Akku spart, mit sanften Indigo-Akzenten. Der helle Modus bekommt dieselben Akzente auf klarem Weiß."
+        },
+        "hr": {
+          "name": "Ponoć",
+          "description": "Potpuno crna u tamnom načinu, koja na OLED zaslonima štedi bateriju, s mekim indigo naglascima. Svijetli način dobiva iste naglaske na čistoj bijeloj."
+        },
+        "it": {
+          "name": "Mezzanotte",
+          "description": "Nero puro nella modalità scura, che fa risparmiare batteria sugli schermi OLED, con morbidi accenti indaco. La modalità chiara ha gli stessi accenti su un bianco pulito."
+        },
+        "es": {
+          "name": "Medianoche",
+          "description": "Negro puro en el modo oscuro, que ahorra batería en pantallas OLED, con suaves acentos índigo. El modo claro tiene los mismos acentos sobre un blanco limpio."
+        }
+      },
+      "theme": {
+        "name": "Midnight",
+        "light": {
+          "ios_bg": "#F4F4F8",
+          "ios_card": "#FFFFFF",
+          "ios_card_pressed": "#ECECF3",
+          "ios_label": "#0E0E16",
+          "ios_secondary": "#676777",
+          "ios_tertiary": "#A8A8B6",
+          "ios_separator": "#E4E4EC",
+          "ios_fill": "#ECECF3",
+          "card_stroke": "#E3E3EB",
+          "segment_track": "#EAEAF1",
+          "nav_active": "#4A3FC9",
+          "switch_active": "#5B50E0",
+          "switch_inactive": "#DCDCE6",
+          "icon_ink": "#1E1B4B",
+          "action_fill": "#16142E",
+          "action_text": "#FFFFFF",
+          "chevron": "#A2A2B0",
+          "trust_text": "#3F3F52",
+          "ios_blue": "#2F5AB8",
+          "ios_green": "#21734F",
+          "ios_red": "#B4364A",
+          "ios_orange": "#9A5515",
+          "ios_yellow": "#806300",
+          "ios_purple": "#6A45B8",
+          "ios_indigo": "#4A3FC9",
+          "ios_teal": "#156C77",
+          "ios_pink": "#A63C78",
+          "ios_gray": "#6A6A7C"
+        },
+        "dark": {
+          "ios_bg": "#000000",
+          "ios_card": "#0F0F14",
+          "ios_card_pressed": "#1C1C24",
+          "ios_label": "#F4F4F8",
+          "ios_secondary": "#A3A3B2",
+          "ios_tertiary": "#6C6C7A",
+          "ios_separator": "#22222B",
+          "ios_fill": "#1A1A22",
+          "card_stroke": "#1F1F28",
+          "segment_track": "#16161D",
+          "nav_active": "#A9B1FF",
+          "switch_active": "#7C7FF2",
+          "switch_inactive": "#3A3A46",
+          "icon_ink": "#E6E6F0",
+          "action_fill": "#E6E6F0",
+          "action_text": "#000000",
+          "chevron": "#55555F",
+          "trust_text": "#D3D3DE",
+          "ios_blue": "#9CC2FF",
+          "ios_green": "#8EDFB2",
+          "ios_red": "#FFA3AE",
+          "ios_orange": "#FFBE85",
+          "ios_yellow": "#F5DC8A",
+          "ios_purple": "#C9B6FF",
+          "ios_indigo": "#A9B1FF",
+          "ios_teal": "#7FDCD3",
+          "ios_pink": "#F7AAD2",
+          "ios_gray": "#A3A3B2"
+        }
+      }
+    },
+    {
       "id": "more-apps",
       "name": "More messaging apps",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "author": "Messages AI",
-      "description": "Adds Threema, Element and Session to Apps. They reply through the Reply button in the notification.",
+      "description": "Adds Threema, Element, Session, Molly, Delta Chat, LINE and Samsung Messages to Apps. They reply through the Reply button in the notification.",
       "types": [
         "apps"
       ],
       "conflicts": [],
       "exclusiveGroups": [],
       "file": "modules/more-apps.mamod",
-      "sha256": "df394d668c7fbfc574e79090ce358d5f5491cade0dd8c73aba03c3dc1cebe936",
+      "sha256": "d72e5ac9db93ed8fe9c226811f58448c0e4b5d072f8d83dd3559ded72a8f2cf6",
       "icon": "grid",
       "translations": {
         "sl": {
           "name": "Več aplikacij za sporočila",
-          "description": "Doda Threema, Element in Session med Aplikacije. Odgovarjajo prek gumba Odgovori v obvestilu."
+          "description": "Doda Threema, Element, Session, Molly, Delta Chat, LINE in Samsung Messages med Aplikacije. Odgovarjajo prek gumba Odgovori v obvestilu."
         },
         "de": {
           "name": "Weitere Messenger",
-          "description": "Fügt Threema, Element und Session zu Apps hinzu. Sie antworten über die Antworten-Taste in der Benachrichtigung."
+          "description": "Fügt Threema, Element, Session, Molly, Delta Chat, LINE und Samsung Messages zu Apps hinzu. Sie antworten über die Antworten-Taste in der Benachrichtigung."
         },
         "hr": {
           "name": "Još aplikacija za poruke",
-          "description": "Dodaje Threemu, Element i Session u Aplikacije. Odgovaraju putem gumba Odgovori u obavijesti."
+          "description": "Dodaje Threemu, Element, Session, Molly, Delta Chat, LINE i Samsung Messages u Aplikacije. Odgovaraju putem gumba Odgovori u obavijesti."
         },
         "it": {
           "name": "Altre app di messaggistica",
-          "description": "Aggiunge Threema, Element e Session ad App. Rispondono tramite il pulsante Rispondi nella notifica."
+          "description": "Aggiunge Threema, Element, Session, Molly, Delta Chat, LINE e Samsung Messages ad App. Rispondono tramite il pulsante Rispondi nella notifica."
         },
         "es": {
           "name": "Más apps de mensajería",
-          "description": "Añade Threema, Element y Session a Apps. Responden con el botón Responder de la notificación."
+          "description": "Añade Threema, Element, Session, Molly, Delta Chat, LINE y Samsung Messages a Apps. Responden con el botón Responder de la notificación."
         }
       }
     },
     {
       "id": "more-languages",
       "name": "More reply languages",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "author": "Messages AI",
-      "description": "Teaches the reply logic Finnish, Hungarian, Romanian and Swedish. The app then recognizes questions, requests, good and bad news, thanks and goodbyes in these languages and checks that a reply really answers them, like it does for the built-in languages. The words apply only to chats in that language. Also an example for authors who want to add their own language.",
+      "description": "Teaches the reply logic Finnish, Hungarian, Romanian, Swedish, Danish, Norwegian, Estonian, Latvian, Lithuanian, Greek and Bulgarian. The app then recognizes questions, requests, good and bad news, thanks and goodbyes in these languages and checks that a reply really answers them, like it does for the built-in languages. The words apply only to chats in that language. Also an example for authors who want to add their own language.",
       "types": [
         "ai"
       ],
       "conflicts": [],
       "exclusiveGroups": [],
       "file": "modules/more-languages.mamod",
-      "sha256": "8390688480c81c141e8eab32582557f7b41b9bb7ca958f6ced24db9755c5bc84",
+      "sha256": "fc3ebf11fe1aa8852a61d75ca142f011782ee376e29a88eb18501ad4c3a39b1a",
       "icon": "globe",
       "translations": {
         "sl": {
           "name": "Več jezikov odgovorov",
-          "description": "Logiko odgovorov nauči finščine, madžarščine, romunščine in švedščine. Aplikacija nato v teh jezikih prepozna vprašanja, prošnje, dobre in slabe novice, zahvale in slovo ter preveri, ali odgovor nanje res odgovori – tako kot pri vgrajenih jezikih. Besede veljajo samo za pogovore v tem jeziku. Je tudi primer za avtorje, ki želijo dodati svoj jezik."
+          "description": "Logiko odgovorov nauči finščine, madžarščine, romunščine, švedščine, danščine, norveščine, estonščine, latvijščine, litovščine, grščine in bolgarščine. Aplikacija nato v teh jezikih prepozna vprašanja, prošnje, dobre in slabe novice, zahvale in slovo ter preveri, ali odgovor nanje res odgovori – tako kot pri vgrajenih jezikih. Besede veljajo samo za pogovore v tem jeziku. Je tudi primer za avtorje, ki želijo dodati svoj jezik."
         },
         "de": {
           "name": "Weitere Antwortsprachen",
-          "description": "Bringt der Antwortlogik Finnisch, Ungarisch, Rumänisch und Schwedisch bei. Die App erkennt dann in diesen Sprachen Fragen, Bitten, gute und schlechte Nachrichten, Dank und Abschiede und prüft, ob eine Antwort wirklich darauf eingeht – wie bei den eingebauten Sprachen. Die Wörter gelten nur für Chats in dieser Sprache. Auch ein Beispiel für alle, die eine eigene Sprache hinzufügen möchten."
+          "description": "Bringt der Antwortlogik Finnisch, Ungarisch, Rumänisch, Schwedisch, Dänisch, Norwegisch, Estnisch, Lettisch, Litauisch, Griechisch und Bulgarisch bei. Die App erkennt dann in diesen Sprachen Fragen, Bitten, gute und schlechte Nachrichten, Dank und Abschiede und prüft, ob eine Antwort wirklich darauf eingeht – wie bei den eingebauten Sprachen. Die Wörter gelten nur für Chats in dieser Sprache. Auch ein Beispiel für alle, die eine eigene Sprache hinzufügen möchten."
         },
         "hr": {
           "name": "Više jezika odgovora",
-          "description": "Logiku odgovora uči finski, mađarski, rumunjski i švedski. Aplikacija tada na tim jezicima prepoznaje pitanja, molbe, dobre i loše vijesti, zahvale i pozdrave na rastanku te provjerava odgovara li odgovor stvarno na njih – kao kod ugrađenih jezika. Riječi vrijede samo za razgovore na tom jeziku. Ujedno je primjer za autore koji žele dodati svoj jezik."
+          "description": "Logiku odgovora uči finski, mađarski, rumunjski, švedski, danski, norveški, estonski, latvijski, litavski, grčki i bugarski. Aplikacija tada na tim jezicima prepoznaje pitanja, molbe, dobre i loše vijesti, zahvale i pozdrave na rastanku te provjerava odgovara li odgovor stvarno na njih – kao kod ugrađenih jezika. Riječi vrijede samo za razgovore na tom jeziku. Ujedno je primjer za autore koji žele dodati svoj jezik."
         },
         "it": {
           "name": "Altre lingue di risposta",
-          "description": "Insegna alla logica delle risposte finlandese, ungherese, rumeno e svedese. L'app riconosce poi in queste lingue domande, richieste, notizie belle e brutte, ringraziamenti e saluti e controlla che una risposta risponda davvero, come per le lingue integrate. Le parole valgono solo per le chat in quella lingua. È anche un esempio per chi vuole aggiungere la propria lingua."
+          "description": "Insegna alla logica delle risposte finlandese, ungherese, rumeno, svedese, danese, norvegese, estone, lettone, lituano, greco e bulgaro. L'app riconosce poi in queste lingue domande, richieste, notizie belle e brutte, ringraziamenti e saluti e controlla che una risposta risponda davvero, come per le lingue integrate. Le parole valgono solo per le chat in quella lingua. È anche un esempio per chi vuole aggiungere la propria lingua."
         },
         "es": {
           "name": "Más idiomas de respuesta",
-          "description": "Enseña a la lógica de respuestas finés, húngaro, rumano y sueco. La app reconoce entonces en estos idiomas preguntas, peticiones, buenas y malas noticias, agradecimientos y despedidas, y comprueba que una respuesta de verdad las conteste, como con los idiomas integrados. Las palabras solo se aplican a los chats en ese idioma. También es un ejemplo para quien quiera añadir su propio idioma."
+          "description": "Enseña a la lógica de respuestas finés, húngaro, rumano, sueco, danés, noruego, estonio, letón, lituano, griego y búlgaro. La app reconoce entonces en estos idiomas preguntas, peticiones, buenas y malas noticias, agradecimientos y despedidas, y comprueba que una respuesta de verdad las conteste, como con los idiomas integrados. Las palabras solo se aplican a los chats en ese idioma. También es un ejemplo para quien quiera añadir su propio idioma."
         }
       }
     },
@@ -470,9 +776,9 @@
     {
       "id": "ocean-theme",
       "name": "Ocean",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "author": "Messages AI",
-      "description": "A calm blue colour theme for light and dark mode.",
+      "description": "A calm blue colour theme for light and dark mode – backgrounds, cards, switches, icons and status colours.",
       "types": [
         "appearance"
       ],
@@ -481,28 +787,131 @@
         "visual.theme"
       ],
       "file": "modules/ocean-theme.mamod",
-      "sha256": "cf95cc00efb8ea1954e67435881197479a4134a53690d06a5099b12fe7d79f93",
+      "sha256": "c2221c9e9337ee7674340eb77874cf3395b8f25e93083adc043e856294fd791d",
       "icon": "palette",
       "translations": {
         "sl": {
           "name": "Ocean",
-          "description": "Umirjena modra barvna tema za svetli in temni način."
+          "description": "Umirjena modra barvna tema za svetli in temni način – ozadja, kartice, stikala, ikone in barve stanj."
         },
         "de": {
           "name": "Ozean",
-          "description": "Ein ruhiges blaues Farbschema für den hellen und den dunklen Modus."
+          "description": "Ein ruhiges blaues Farbschema für den hellen und den dunklen Modus – Hintergründe, Karten, Schalter, Symbole und Statusfarben."
         },
         "hr": {
           "name": "Ocean",
-          "description": "Smirena plava tema boja za svijetli i tamni način."
+          "description": "Smirena plava tema boja za svijetli i tamni način – pozadine, kartice, prekidači, ikone i boje stanja."
         },
         "it": {
           "name": "Oceano",
-          "description": "Un tema di colori blu e rilassante per la modalità chiara e scura."
+          "description": "Un tema di colori blu e rilassante per la modalità chiara e scura: sfondi, schede, interruttori, icone e colori di stato."
         },
         "es": {
           "name": "Océano",
-          "description": "Un tema de color azul y tranquilo para el modo claro y el oscuro."
+          "description": "Un tema de color azul y tranquilo para el modo claro y el oscuro: fondos, tarjetas, interruptores, iconos y colores de estado."
+        }
+      },
+      "theme": {
+        "name": "Ocean",
+        "light": {
+          "ios_bg": "#EEF4FA",
+          "ios_card": "#FFFFFF",
+          "ios_card_pressed": "#E4EDF7",
+          "ios_label": "#0B1B2B",
+          "ios_secondary": "#56677A",
+          "ios_tertiary": "#9AA8B8",
+          "ios_separator": "#DCE6F1",
+          "ios_fill": "#E3ECF6",
+          "card_stroke": "#D9E4EF",
+          "segment_track": "#E1EAF4",
+          "nav_active": "#0057B8",
+          "switch_active": "#1E7BE0",
+          "switch_inactive": "#D3DFEB",
+          "icon_ink": "#0B2545",
+          "action_fill": "#0B2545",
+          "action_text": "#FFFFFF",
+          "chevron": "#93A3B5",
+          "trust_text": "#2E4157",
+          "ios_blue": "#0A63B0",
+          "ios_green": "#1D6F5F",
+          "ios_red": "#B03A48",
+          "ios_orange": "#975A16",
+          "ios_yellow": "#8A6500",
+          "ios_purple": "#5D55A6",
+          "ios_indigo": "#3A55A4",
+          "ios_teal": "#136B78",
+          "ios_pink": "#9E3F6C",
+          "ios_gray": "#5F7185"
+        },
+        "dark": {
+          "ios_bg": "#06121F",
+          "ios_card": "#0E1E30",
+          "ios_card_pressed": "#16283C",
+          "ios_label": "#EAF2FB",
+          "ios_secondary": "#9FB2C7",
+          "ios_tertiary": "#6D8197",
+          "ios_separator": "#1E3247",
+          "ios_fill": "#16283C",
+          "card_stroke": "#1E3247",
+          "segment_track": "#16283C",
+          "nav_active": "#6CB4FF",
+          "switch_active": "#3D9BFF",
+          "switch_inactive": "#34495F",
+          "icon_ink": "#D7E6F5",
+          "action_fill": "#D7E6F5",
+          "action_text": "#06121F",
+          "chevron": "#5F7790",
+          "trust_text": "#C3D4E6",
+          "ios_blue": "#7DBBFF",
+          "ios_green": "#7DD3BF",
+          "ios_red": "#FF9BA5",
+          "ios_orange": "#F3B77A",
+          "ios_yellow": "#EBD37E",
+          "ios_purple": "#BBB5FF",
+          "ios_indigo": "#A2B6FF",
+          "ios_teal": "#7BD1DA",
+          "ios_pink": "#F3A8C8",
+          "ios_gray": "#93A7BC"
+        }
+      }
+    },
+    {
+      "id": "polite-formal",
+      "name": "Polite & formal",
+      "version": "1.0.0",
+      "author": "Messages AI",
+      "description": "Polite, well-written replies for people you don't know well: complete sentences with a capital letter and a full stop, the formal form of address (Sie, usted, Vi …) and no emoji or slang. Turning it on turns off Casual & short.",
+      "types": [
+        "ai",
+        "apps"
+      ],
+      "conflicts": [],
+      "exclusiveGroups": [
+        "reply.style"
+      ],
+      "file": "modules/polite-formal.mamod",
+      "sha256": "75ca879556f21720b59d71c27ad7d69193f1f506e86960355472270028710ba2",
+      "icon": "book",
+      "translations": {
+        "sl": {
+          "name": "Vljudno in formalno",
+          "description": "Vljudni, lepo napisani odgovori za ljudi, ki jih ne poznaš dobro: celi stavki z veliko začetnico in piko, vikanje (Sie, usted, Vi …) ter brez emojijev in slenga. Ko ga vklopiš, se izklopi Sproščeno in kratko."
+        },
+        "de": {
+          "name": "Höflich & förmlich",
+          "description": "Höfliche, sorgfältig geschriebene Antworten für Menschen, die du nicht gut kennst: ganze Sätze mit Großbuchstaben und Punkt, die Anrede mit Sie (usted, Vi …) und keine Emojis oder Umgangssprache. Beim Einschalten wird Locker & kurz ausgeschaltet."
+        },
+        "hr": {
+          "name": "Pristojno i službeno",
+          "description": "Pristojni, uredno napisani odgovori za ljude koje ne poznaješ dobro: cijele rečenice s velikim početnim slovom i točkom, persiranje (Sie, usted, Vi …) te bez emojija i slenga. Kad ga uključiš, isključuje se Opušteno i kratko."
+        },
+        "it": {
+          "name": "Cortese e formale",
+          "description": "Risposte cortesi e ben scritte per le persone che non conosci bene: frasi complete con la maiuscola e il punto, il Lei (Sie, usted, Vi …) e niente emoji o slang. Attivandolo si disattiva Informale e breve."
+        },
+        "es": {
+          "name": "Cortés y formal",
+          "description": "Respuestas corteses y bien escritas para personas que no conoces bien: frases completas con mayúscula y punto, el trato de usted (Sie, Vi …) y sin emojis ni jerga. Al activarlo se desactiva Informal y breve."
         }
       }
     },
@@ -653,6 +1062,108 @@
         "es": {
           "name": "Chats con desconocidos",
           "description": "Para apps de chat anónimo como RandoChat: añade «Empezar yo la conversación» (Ajustes → Tiempos, límites y comportamiento) y chats aleatorios nuevos automáticos para cada app (Apps → la app; marca el botón «Chat nuevo»). Ambos siguen desactivados hasta que los actives. Cada persona nueva sigue recibiendo una vez la nota de IA cuando las respuestas se envían automáticamente. Al desactivar el módulo se ocultan de nuevo."
+        }
+      }
+    },
+    {
+      "id": "sunset-theme",
+      "name": "Sunset",
+      "version": "1.0.0",
+      "author": "Messages AI",
+      "description": "A warm colour theme in sand and terracotta tones, for light and dark mode – backgrounds, cards, switches, icons and status colours.",
+      "types": [
+        "appearance"
+      ],
+      "conflicts": [],
+      "exclusiveGroups": [
+        "visual.theme"
+      ],
+      "file": "modules/sunset-theme.mamod",
+      "sha256": "09458b412425ff5026433f13311f219d81436f6e474cb70b59b54b5a01ec9f72",
+      "icon": "palette",
+      "translations": {
+        "sl": {
+          "name": "Sončni zahod",
+          "description": "Topla barvna tema v odtenkih peska in terakote za svetli in temni način – ozadja, kartice, stikala, ikone in barve stanj."
+        },
+        "de": {
+          "name": "Sonnenuntergang",
+          "description": "Ein warmes Farbschema in Sand- und Terrakottatönen für den hellen und den dunklen Modus – Hintergründe, Karten, Schalter, Symbole und Statusfarben."
+        },
+        "hr": {
+          "name": "Zalazak sunca",
+          "description": "Topla tema boja u nijansama pijeska i terakote za svijetli i tamni način – pozadine, kartice, prekidači, ikone i boje stanja."
+        },
+        "it": {
+          "name": "Tramonto",
+          "description": "Un tema di colori caldo nei toni della sabbia e della terracotta per la modalità chiara e scura: sfondi, schede, interruttori, icone e colori di stato."
+        },
+        "es": {
+          "name": "Atardecer",
+          "description": "Un tema de color cálido en tonos arena y terracota para el modo claro y el oscuro: fondos, tarjetas, interruptores, iconos y colores de estado."
+        }
+      },
+      "theme": {
+        "name": "Sunset",
+        "light": {
+          "ios_bg": "#FBF5EF",
+          "ios_card": "#FFFFFF",
+          "ios_card_pressed": "#F5EAE0",
+          "ios_label": "#2A1810",
+          "ios_secondary": "#7A6357",
+          "ios_tertiary": "#B8A598",
+          "ios_separator": "#EEE1D5",
+          "ios_fill": "#F4E9DF",
+          "card_stroke": "#ECDDD0",
+          "segment_track": "#F2E6DB",
+          "nav_active": "#AE4024",
+          "switch_active": "#D4602F",
+          "switch_inactive": "#E7DACE",
+          "icon_ink": "#4A2416",
+          "action_fill": "#4A2416",
+          "action_text": "#FFFFFF",
+          "chevron": "#B29F92",
+          "trust_text": "#5A4136",
+          "ios_blue": "#3E6287",
+          "ios_green": "#4A7537",
+          "ios_red": "#B03838",
+          "ios_orange": "#A3501D",
+          "ios_yellow": "#86650B",
+          "ios_purple": "#774C7B",
+          "ios_indigo": "#585285",
+          "ios_teal": "#3A7066",
+          "ios_pink": "#A14668",
+          "ios_gray": "#827065"
+        },
+        "dark": {
+          "ios_bg": "#17100C",
+          "ios_card": "#221813",
+          "ios_card_pressed": "#2E211A",
+          "ios_label": "#F7ECE4",
+          "ios_secondary": "#BFA99B",
+          "ios_tertiary": "#86705F",
+          "ios_separator": "#362820",
+          "ios_fill": "#2E211A",
+          "card_stroke": "#362820",
+          "segment_track": "#2E211A",
+          "nav_active": "#FFA581",
+          "switch_active": "#F07A4E",
+          "switch_inactive": "#5A483D",
+          "icon_ink": "#F5DFD2",
+          "action_fill": "#F5DFD2",
+          "action_text": "#17100C",
+          "chevron": "#6F5C50",
+          "trust_text": "#E0CCBF",
+          "ios_blue": "#A9C4E2",
+          "ios_green": "#B2D39A",
+          "ios_red": "#F4A09A",
+          "ios_orange": "#F6B585",
+          "ios_yellow": "#E9CF83",
+          "ios_purple": "#D7B2D8",
+          "ios_indigo": "#BDB8E4",
+          "ios_teal": "#9BCFC4",
+          "ios_pink": "#F0A9C0",
+          "ios_gray": "#B3A398"
         }
       }
     }
