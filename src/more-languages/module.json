@@ -2,10 +2,10 @@
   "format": 1,
   "id": "more-languages",
   "name": "More reply languages",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
-  "description": "Teaches the reply logic Finnish, Hungarian, Romanian and Swedish. The app then recognizes questions, requests, good and bad news, thanks and goodbyes in these languages and checks that a reply really answers them, like it does for the built-in languages. The words apply only to chats in that language. Also an example for authors who want to add their own language.",
+  "description": "Teaches the reply logic Finnish, Hungarian, Romanian, Swedish, Danish, Norwegian, Estonian, Latvian, Lithuanian, Greek and Bulgarian. The app then recognizes questions, requests, good and bad news, thanks and goodbyes in these languages and checks that a reply really answers them, like it does for the built-in languages. The words apply only to chats in that language. Also an example for authors who want to add their own language.",
   "homepage": "https://github.com/TilenInter/messages-ai-modules",
   "icon": "globe",
   "minAppVersion": 56,
@@ -16,23 +16,23 @@
   "translations": {
     "sl": {
       "name": "Več jezikov odgovorov",
-      "description": "Logiko odgovorov nauči finščine, madžarščine, romunščine in švedščine. Aplikacija nato v teh jezikih prepozna vprašanja, prošnje, dobre in slabe novice, zahvale in slovo ter preveri, ali odgovor nanje res odgovori – tako kot pri vgrajenih jezikih. Besede veljajo samo za pogovore v tem jeziku. Je tudi primer za avtorje, ki želijo dodati svoj jezik."
+      "description": "Logiko odgovorov nauči finščine, madžarščine, romunščine, švedščine, danščine, norveščine, estonščine, latvijščine, litovščine, grščine in bolgarščine. Aplikacija nato v teh jezikih prepozna vprašanja, prošnje, dobre in slabe novice, zahvale in slovo ter preveri, ali odgovor nanje res odgovori – tako kot pri vgrajenih jezikih. Besede veljajo samo za pogovore v tem jeziku. Je tudi primer za avtorje, ki želijo dodati svoj jezik."
     },
     "de": {
       "name": "Weitere Antwortsprachen",
-      "description": "Bringt der Antwortlogik Finnisch, Ungarisch, Rumänisch und Schwedisch bei. Die App erkennt dann in diesen Sprachen Fragen, Bitten, gute und schlechte Nachrichten, Dank und Abschiede und prüft, ob eine Antwort wirklich darauf eingeht – wie bei den eingebauten Sprachen. Die Wörter gelten nur für Chats in dieser Sprache. Auch ein Beispiel für alle, die eine eigene Sprache hinzufügen möchten."
+      "description": "Bringt der Antwortlogik Finnisch, Ungarisch, Rumänisch, Schwedisch, Dänisch, Norwegisch, Estnisch, Lettisch, Litauisch, Griechisch und Bulgarisch bei. Die App erkennt dann in diesen Sprachen Fragen, Bitten, gute und schlechte Nachrichten, Dank und Abschiede und prüft, ob eine Antwort wirklich darauf eingeht – wie bei den eingebauten Sprachen. Die Wörter gelten nur für Chats in dieser Sprache. Auch ein Beispiel für alle, die eine eigene Sprache hinzufügen möchten."
     },
     "hr": {
       "name": "Više jezika odgovora",
-      "description": "Logiku odgovora uči finski, mađarski, rumunjski i švedski. Aplikacija tada na tim jezicima prepoznaje pitanja, molbe, dobre i loše vijesti, zahvale i pozdrave na rastanku te provjerava odgovara li odgovor stvarno na njih – kao kod ugrađenih jezika. Riječi vrijede samo za razgovore na tom jeziku. Ujedno je primjer za autore koji žele dodati svoj jezik."
+      "description": "Logiku odgovora uči finski, mađarski, rumunjski, švedski, danski, norveški, estonski, latvijski, litavski, grčki i bugarski. Aplikacija tada na tim jezicima prepoznaje pitanja, molbe, dobre i loše vijesti, zahvale i pozdrave na rastanku te provjerava odgovara li odgovor stvarno na njih – kao kod ugrađenih jezika. Riječi vrijede samo za razgovore na tom jeziku. Ujedno je primjer za autore koji žele dodati svoj jezik."
     },
     "it": {
       "name": "Altre lingue di risposta",
-      "description": "Insegna alla logica delle risposte finlandese, ungherese, rumeno e svedese. L'app riconosce poi in queste lingue domande, richieste, notizie belle e brutte, ringraziamenti e saluti e controlla che una risposta risponda davvero, come per le lingue integrate. Le parole valgono solo per le chat in quella lingua. È anche un esempio per chi vuole aggiungere la propria lingua."
+      "description": "Insegna alla logica delle risposte finlandese, ungherese, rumeno, svedese, danese, norvegese, estone, lettone, lituano, greco e bulgaro. L'app riconosce poi in queste lingue domande, richieste, notizie belle e brutte, ringraziamenti e saluti e controlla che una risposta risponda davvero, come per le lingue integrate. Le parole valgono solo per le chat in quella lingua. È anche un esempio per chi vuole aggiungere la propria lingua."
     },
     "es": {
       "name": "Más idiomas de respuesta",
-      "description": "Enseña a la lógica de respuestas finés, húngaro, rumano y sueco. La app reconoce entonces en estos idiomas preguntas, peticiones, buenas y malas noticias, agradecimientos y despedidas, y comprueba que una respuesta de verdad las conteste, como con los idiomas integrados. Las palabras solo se aplican a los chats en ese idioma. También es un ejemplo para quien quiera añadir su propio idioma."
+      "description": "Enseña a la lógica de respuestas finés, húngaro, rumano, sueco, danés, noruego, estonio, letón, lituano, griego y búlgaro. La app reconoce entonces en estos idiomas preguntas, peticiones, buenas y malas noticias, agradecimientos y despedidas, y comprueba que una respuesta de verdad las conteste, como con los idiomas integrados. Las palabras solo se aplican a los chats en ese idioma. También es un ejemplo para quien quiera añadir su propio idioma."
     }
   },
   "replyLogic": {
@@ -435,6 +435,751 @@
         "visst",
         "absolut",
         "japp"
+      ]
+    },
+    "da": {
+      "question": [
+        "hvornår",
+        "hvor er",
+        "hvorhen",
+        "hvorfor",
+        "hvem",
+        "hvor meget",
+        "hvor mange",
+        "hvilken",
+        "hvilket",
+        "hvilke",
+        "hvad tid",
+        "hvor længe",
+        "hvad koster"
+      ],
+      "info": [
+        "hvornår",
+        "hvor er",
+        "hvorhen",
+        "hvorfor",
+        "hvem",
+        "hvor meget",
+        "hvor mange",
+        "hvilken",
+        "hvilket",
+        "hvilke",
+        "hvad tid",
+        "hvor længe",
+        "hvad koster"
+      ],
+      "howAreYou": [
+        "hvordan har du det",
+        "hvordan går det",
+        "går det godt",
+        "hvordan gik det",
+        "hvordan var det",
+        "hvad så"
+      ],
+      "confused": [
+        "jeg forstår ikke",
+        "hvad mener du",
+        "hvordan mener du"
+      ],
+      "request": [
+        "vær sød at",
+        "kan du",
+        "kunne du",
+        "send mig",
+        "ring til mig",
+        "sig til"
+      ],
+      "greeting": [
+        "hej",
+        "hejsa",
+        "godmorgen",
+        "god morgen",
+        "goddag",
+        "godaften",
+        "hallo"
+      ],
+      "thanks": [
+        "mange tak",
+        "tusind tak",
+        "tak skal du have",
+        "tak for det"
+      ],
+      "apology": [
+        "undskyld",
+        "beklager",
+        "jeg er ked af det"
+      ],
+      "bad": [
+        "jeg er syg",
+        "jeg er træt",
+        "dårlig dag",
+        "på hospitalet",
+        "på sygehuset",
+        "gik bort",
+        "er død"
+      ],
+      "good": [
+        "jeg bestod",
+        "fik jobbet",
+        "vi vandt",
+        "vi er blevet forlovet",
+        "endelig"
+      ],
+      "goodbye": [
+        "godnat",
+        "god nat",
+        "farvel",
+        "vi ses",
+        "sov godt",
+        "snakkes"
+      ],
+      "filler": [
+        "nej",
+        "okay",
+        "fint",
+        "selvfølgelig",
+        "klart",
+        "jep"
+      ]
+    },
+    "no": {
+      "question": [
+        "når",
+        "hvor er",
+        "hvorfor",
+        "hvem",
+        "hvor mye",
+        "hvor mange",
+        "hvilken",
+        "hvilket",
+        "hvilke",
+        "hva tid",
+        "hvor lenge",
+        "hva koster"
+      ],
+      "info": [
+        "når",
+        "hvor er",
+        "hvorfor",
+        "hvem",
+        "hvor mye",
+        "hvor mange",
+        "hvilken",
+        "hvilket",
+        "hvilke",
+        "hva tid",
+        "hvor lenge",
+        "hva koster"
+      ],
+      "howAreYou": [
+        "hvordan har du det",
+        "hvordan går det",
+        "går det bra",
+        "hvordan gikk det",
+        "hvordan var det",
+        "hva skjer"
+      ],
+      "confused": [
+        "jeg forstår ikke",
+        "hva mener du",
+        "hvordan mener du"
+      ],
+      "request": [
+        "vær så snill",
+        "kan du",
+        "kunne du",
+        "send meg",
+        "ring meg",
+        "si ifra"
+      ],
+      "greeting": [
+        "hei",
+        "heisann",
+        "hallo",
+        "god morgen",
+        "god dag",
+        "god kveld"
+      ],
+      "thanks": [
+        "takk",
+        "tusen takk",
+        "mange takk",
+        "takk skal du ha"
+      ],
+      "apology": [
+        "unnskyld",
+        "beklager",
+        "jeg beklager"
+      ],
+      "bad": [
+        "jeg er syk",
+        "jeg er sliten",
+        "dårlig dag",
+        "på sykehuset",
+        "gikk bort",
+        "er død"
+      ],
+      "good": [
+        "jeg besto",
+        "fikk jobben",
+        "vi vant",
+        "vi har forlovet oss",
+        "endelig"
+      ],
+      "goodbye": [
+        "god natt",
+        "ha det",
+        "ha det bra",
+        "vi ses",
+        "sov godt",
+        "snakkes"
+      ],
+      "filler": [
+        "nei",
+        "okei",
+        "greit",
+        "fint",
+        "selvfølgelig",
+        "klart",
+        "jepp"
+      ]
+    },
+    "et": {
+      "question": [
+        "millal",
+        "kus",
+        "kuhu",
+        "kust",
+        "miks",
+        "kes",
+        "kui palju",
+        "mitu",
+        "milline",
+        "mis kell",
+        "kui kaua",
+        "kas sa",
+        "kas te",
+        "kas"
+      ],
+      "info": [
+        "millal",
+        "kus",
+        "kuhu",
+        "kust",
+        "miks",
+        "kes",
+        "kui palju",
+        "mitu",
+        "milline",
+        "mis kell",
+        "kui kaua",
+        "mis maksab"
+      ],
+      "howAreYou": [
+        "kuidas läheb",
+        "kuidas sul läheb",
+        "kuidas sa end tunned",
+        "mis teed",
+        "kuidas oli",
+        "kuidas läks"
+      ],
+      "confused": [
+        "ma ei saa aru",
+        "mida sa mõtled",
+        "kuidas nii"
+      ],
+      "request": [
+        "palun",
+        "kas saaksid",
+        "kas sa saad",
+        "saada mulle",
+        "helista mulle",
+        "anna teada"
+      ],
+      "greeting": [
+        "tere",
+        "tervist",
+        "tsau",
+        "tere hommikust",
+        "hommikust",
+        "tere õhtust"
+      ],
+      "thanks": [
+        "aitäh",
+        "suur aitäh",
+        "tänan",
+        "tänud"
+      ],
+      "apology": [
+        "vabandust",
+        "vabanda",
+        "andestust"
+      ],
+      "bad": [
+        "ma olen haige",
+        "olen haige",
+        "suri",
+        "olen kurb",
+        "olen väsinud",
+        "halb päev",
+        "haiglas"
+      ],
+      "good": [
+        "sain hakkama",
+        "sain tööle",
+        "võitsime",
+        "kihlusime",
+        "lõpuks ometi"
+      ],
+      "goodbye": [
+        "head ööd",
+        "head aega",
+        "nägemist",
+        "kohtumiseni",
+        "näeme",
+        "hiljem räägime"
+      ],
+      "filler": [
+        "jah",
+        "jaa",
+        "okei",
+        "hea",
+        "selge",
+        "muidugi",
+        "ei"
+      ]
+    },
+    "lv": {
+      "question": [
+        "kad",
+        "kur",
+        "kurp",
+        "kāpēc",
+        "cik",
+        "kurš",
+        "kura",
+        "cikos",
+        "cik ilgi",
+        "kas notika",
+        "vai tu",
+        "vai jūs",
+        "vai tev",
+        "vai varēsi"
+      ],
+      "info": [
+        "kad",
+        "kur",
+        "kurp",
+        "kāpēc",
+        "cik",
+        "kurš",
+        "kura",
+        "cikos",
+        "cik ilgi",
+        "cik maksā"
+      ],
+      "howAreYou": [
+        "kā tev iet",
+        "kā iet",
+        "kā tu jūties",
+        "kā klājas",
+        "kā gāja",
+        "kā bija"
+      ],
+      "confused": [
+        "es nesaprotu",
+        "ko tu domā",
+        "kā tā"
+      ],
+      "request": [
+        "lūdzu",
+        "vai vari",
+        "vai varētu",
+        "atsūti man",
+        "piezvani man",
+        "pasaki"
+      ],
+      "greeting": [
+        "sveiks",
+        "sveika",
+        "sveiki",
+        "čau",
+        "labrīt",
+        "labdien",
+        "labvakar"
+      ],
+      "thanks": [
+        "paldies",
+        "liels paldies",
+        "paldies tev"
+      ],
+      "apology": [
+        "piedod",
+        "atvaino",
+        "atvainojos",
+        "man žēl"
+      ],
+      "bad": [
+        "esmu slims",
+        "esmu slima",
+        "nomira",
+        "esmu bēdīgs",
+        "esmu noguris",
+        "esmu nogurusi",
+        "slikta diena",
+        "slimnīcā"
+      ],
+      "good": [
+        "man izdevās",
+        "nokārtoju",
+        "dabūju darbu",
+        "mēs uzvarējām",
+        "saderinājāmies",
+        "beidzot"
+      ],
+      "goodbye": [
+        "ar labu nakti",
+        "arlabunakti",
+        "uz redzēšanos",
+        "atā",
+        "tiksimies",
+        "līdz vēlākam"
+      ],
+      "filler": [
+        "jā",
+        "labi",
+        "skaidrs",
+        "protams",
+        "okei",
+        "nē"
+      ]
+    },
+    "lt": {
+      "question": [
+        "kada",
+        "kur",
+        "kodėl",
+        "kiek",
+        "kuris",
+        "kuri",
+        "kelintą",
+        "kiek laiko",
+        "kas nutiko",
+        "ar tu",
+        "ar jūs",
+        "ar gali",
+        "ar galite"
+      ],
+      "info": [
+        "kada",
+        "kur",
+        "kodėl",
+        "kiek",
+        "kuris",
+        "kuri",
+        "kelintą",
+        "kiek laiko",
+        "kiek kainuoja",
+        "kokiu laiku"
+      ],
+      "howAreYou": [
+        "kaip sekasi",
+        "kaip laikaisi",
+        "kaip gyveni",
+        "kaip praėjo",
+        "kaip buvo",
+        "kaip tu"
+      ],
+      "confused": [
+        "nesuprantu",
+        "ką turi omeny",
+        "ką turi omenyje",
+        "kaip suprasti"
+      ],
+      "request": [
+        "prašau",
+        "gal galėtum",
+        "ar galėtum",
+        "atsiųsk man",
+        "paskambink man",
+        "pasakyk"
+      ],
+      "greeting": [
+        "labas",
+        "sveikas",
+        "sveika",
+        "sveiki",
+        "labas rytas",
+        "laba diena",
+        "labas vakaras"
+      ],
+      "thanks": [
+        "ačiū",
+        "labai ačiū",
+        "dėkoju",
+        "dėkui"
+      ],
+      "apology": [
+        "atsiprašau",
+        "atleisk",
+        "atleiskite"
+      ],
+      "bad": [
+        "aš sergu",
+        "sergu",
+        "mirė",
+        "liūdna",
+        "esu pavargęs",
+        "esu pavargusi",
+        "bloga diena",
+        "ligoninėje"
+      ],
+      "good": [
+        "pavyko",
+        "išlaikiau",
+        "gavau darbą",
+        "laimėjome",
+        "susižadėjome",
+        "pagaliau"
+      ],
+      "goodbye": [
+        "labanakt",
+        "labos nakties",
+        "viso gero",
+        "iki pasimatymo",
+        "iki rytojaus",
+        "iki greito",
+        "pasimatysim"
+      ],
+      "filler": [
+        "taip",
+        "gerai",
+        "aišku",
+        "žinoma",
+        "okei",
+        "ne"
+      ]
+    },
+    "el": {
+      "question": [
+        "πότε θα",
+        "πότε είναι",
+        "πού είσαι",
+        "πού είναι",
+        "πού θα",
+        "ποιος",
+        "ποια",
+        "ποιο",
+        "πόσα",
+        "πόσο κοστίζει",
+        "τι ώρα",
+        "πόση ώρα",
+        "μήπως",
+        "θα έρθεις",
+        "μπορείς"
+      ],
+      "info": [
+        "πότε θα",
+        "πότε είναι",
+        "πού είσαι",
+        "πού είναι",
+        "πού θα",
+        "γιατί",
+        "ποιος",
+        "ποια",
+        "ποιο",
+        "πόσα",
+        "πόσο κοστίζει",
+        "τι ώρα",
+        "πόση ώρα"
+      ],
+      "howAreYou": [
+        "τι κάνεις",
+        "πώς είσαι",
+        "πώς πας",
+        "τι γίνεται",
+        "πώς πήγε",
+        "πώς ήταν"
+      ],
+      "confused": [
+        "δεν καταλαβαίνω",
+        "δεν κατάλαβα",
+        "τι εννοείς"
+      ],
+      "request": [
+        "σε παρακαλώ",
+        "μπορείς να",
+        "θα μπορούσες",
+        "στείλε μου",
+        "πάρε με τηλέφωνο",
+        "πες μου"
+      ],
+      "greeting": [
+        "γεια",
+        "γεια σου",
+        "γεια σας",
+        "καλημέρα",
+        "καλησπέρα",
+        "χαίρετε"
+      ],
+      "thanks": [
+        "ευχαριστώ",
+        "ευχαριστώ πολύ",
+        "σε ευχαριστώ",
+        "ευχαριστούμε"
+      ],
+      "apology": [
+        "συγγνώμη",
+        "συγνώμη",
+        "λυπάμαι",
+        "με συγχωρείς"
+      ],
+      "bad": [
+        "είμαι άρρωστος",
+        "είμαι άρρωστη",
+        "πέθανε",
+        "είμαι στενοχωρημένος",
+        "είμαι στενοχωρημένη",
+        "είμαι κουρασμένος",
+        "είμαι κουρασμένη",
+        "κακή μέρα",
+        "στο νοσοκομείο"
+      ],
+      "good": [
+        "τα κατάφερα",
+        "πέρασα τις εξετάσεις",
+        "πήρα τη δουλειά",
+        "κερδίσαμε",
+        "αρραβωνιαστήκαμε",
+        "επιτέλους"
+      ],
+      "laugh": [
+        "χαχα",
+        "χαχαχα",
+        "χαχαχαχα",
+        "χεχε"
+      ],
+      "goodbye": [
+        "καληνύχτα",
+        "καλό βράδυ",
+        "αντίο",
+        "τα λέμε",
+        "θα τα πούμε"
+      ],
+      "filler": [
+        "ναι",
+        "οκ",
+        "εντάξει",
+        "βέβαια",
+        "σίγουρα",
+        "όχι",
+        "καλά"
+      ]
+    },
+    "bg": {
+      "question": [
+        "кога",
+        "къде",
+        "защо",
+        "кой",
+        "коя",
+        "кое",
+        "колко",
+        "колко струва",
+        "в колко часа",
+        "колко време",
+        "ще дойдеш"
+      ],
+      "info": [
+        "кога",
+        "къде",
+        "защо",
+        "кой",
+        "коя",
+        "кое",
+        "колко",
+        "колко струва",
+        "в колко часа",
+        "колко време"
+      ],
+      "howAreYou": [
+        "как си",
+        "как сте",
+        "какво правиш",
+        "как мина",
+        "как беше",
+        "как върви"
+      ],
+      "confused": [
+        "не разбирам",
+        "какво имаш предвид",
+        "как така"
+      ],
+      "request": [
+        "моля",
+        "моля те",
+        "може ли",
+        "би ли могъл",
+        "би ли могла",
+        "прати ми",
+        "обади ми се",
+        "кажи ми"
+      ],
+      "greeting": [
+        "здравей",
+        "здравейте",
+        "здрасти",
+        "добро утро",
+        "добър ден",
+        "добър вечер"
+      ],
+      "thanks": [
+        "благодаря",
+        "благодаря ти",
+        "много благодаря",
+        "мерси"
+      ],
+      "apology": [
+        "съжалявам",
+        "извинявай",
+        "извинете",
+        "прости ми"
+      ],
+      "bad": [
+        "болен съм",
+        "болна съм",
+        "почина",
+        "тъжен съм",
+        "тъжна съм",
+        "уморен съм",
+        "уморена съм",
+        "лош ден",
+        "в болница"
+      ],
+      "good": [
+        "успях",
+        "издържах изпита",
+        "взех изпита",
+        "получих работата",
+        "спечелихме",
+        "сгодихме се",
+        "най-накрая"
+      ],
+      "goodbye": [
+        "лека нощ",
+        "довиждане",
+        "чао",
+        "до скоро",
+        "ще се видим",
+        "ще се чуем"
+      ],
+      "filler": [
+        "да",
+        "добре",
+        "окей",
+        "разбира се",
+        "ясно",
+        "не"
       ]
     }
   }

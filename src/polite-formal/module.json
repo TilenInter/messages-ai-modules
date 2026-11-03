@@ -1,0 +1,44 @@
+{
+  "format": 1,
+  "id": "polite-formal",
+  "name": "Polite & formal",
+  "version": "1.0.0",
+  "author": "Messages AI",
+  "license": "CC0-1.0",
+  "description": "Polite, well-written replies for people you don't know well: complete sentences with a capital letter and a full stop, the formal form of address (Sie, usted, Vi …) and no emoji or slang. Turning it on turns off Casual & short.",
+  "icon": "book",
+  "minAppVersion": 56,
+  "compatibility": {
+    "conflicts": [],
+    "exclusiveGroups": ["reply.style"]
+  },
+  "translations": {
+    "sl": {
+      "name": "Vljudno in formalno",
+      "description": "Vljudni, lepo napisani odgovori za ljudi, ki jih ne poznaš dobro: celi stavki z veliko začetnico in piko, vikanje (Sie, usted, Vi …) ter brez emojijev in slenga. Ko ga vklopiš, se izklopi Sproščeno in kratko."
+    },
+    "de": {
+      "name": "Höflich & förmlich",
+      "description": "Höfliche, sorgfältig geschriebene Antworten für Menschen, die du nicht gut kennst: ganze Sätze mit Großbuchstaben und Punkt, die Anrede mit Sie (usted, Vi …) und keine Emojis oder Umgangssprache. Beim Einschalten wird Locker & kurz ausgeschaltet."
+    },
+    "hr": {
+      "name": "Pristojno i službeno",
+      "description": "Pristojni, uredno napisani odgovori za ljude koje ne poznaješ dobro: cijele rečenice s velikim početnim slovom i točkom, persiranje (Sie, usted, Vi …) te bez emojija i slenga. Kad ga uključiš, isključuje se Opušteno i kratko."
+    },
+    "it": {
+      "name": "Cortese e formale",
+      "description": "Risposte cortesi e ben scritte per le persone che non conosci bene: frasi complete con la maiuscola e il punto, il Lei (Sie, usted, Vi …) e niente emoji o slang. Attivandolo si disattiva Informale e breve."
+    },
+    "es": {
+      "name": "Cortés y formal",
+      "description": "Respuestas corteses y bien escritas para personas que no conoces bien: frases completas con mayúscula y punto, el trato de usted (Sie, Vi …) y sin emojis ni jerga. Al activarlo se desactiva Informal y breve."
+    }
+  },
+  "settings": {
+    "style_address": "vi",
+    "style_emoji": "never",
+    "style_lowercase": false,
+    "split_messages": false
+  },
+  "prompt": "Write politely and formally, like a courteous message to someone you don't know well: complete sentences with correct capitalization and punctuation, no slang, abbreviations or emoji. Use the formal form of address where the language has one. Stay warm and brief; add a greeting or sign-off only when the conversation calls for one."
+}

@@ -1,0 +1,100 @@
+{
+  "format": 1,
+  "id": "sunset-theme",
+  "name": "Sunset",
+  "version": "1.0.0",
+  "author": "Messages AI",
+  "license": "CC0-1.0",
+  "description": "A warm colour theme in sand and terracotta tones, for light and dark mode – backgrounds, cards, switches, icons and status colours.",
+  "icon": "palette",
+  "minAppVersion": 56,
+  "compatibility": {
+    "conflicts": [],
+    "exclusiveGroups": ["visual.theme"]
+  },
+  "translations": {
+    "sl": {
+      "name": "Sončni zahod",
+      "description": "Topla barvna tema v odtenkih peska in terakote za svetli in temni način – ozadja, kartice, stikala, ikone in barve stanj."
+    },
+    "de": {
+      "name": "Sonnenuntergang",
+      "description": "Ein warmes Farbschema in Sand- und Terrakottatönen für den hellen und den dunklen Modus – Hintergründe, Karten, Schalter, Symbole und Statusfarben."
+    },
+    "hr": {
+      "name": "Zalazak sunca",
+      "description": "Topla tema boja u nijansama pijeska i terakote za svijetli i tamni način – pozadine, kartice, prekidači, ikone i boje stanja."
+    },
+    "it": {
+      "name": "Tramonto",
+      "description": "Un tema di colori caldo nei toni della sabbia e della terracotta per la modalità chiara e scura: sfondi, schede, interruttori, icone e colori di stato."
+    },
+    "es": {
+      "name": "Atardecer",
+      "description": "Un tema de color cálido en tonos arena y terracota para el modo claro y el oscuro: fondos, tarjetas, interruptores, iconos y colores de estado."
+    }
+  },
+  "theme": {
+    "name": "Sunset",
+    "light": {
+      "ios_bg": "#FBF5EF",
+      "ios_card": "#FFFFFF",
+      "ios_card_pressed": "#F5EAE0",
+      "ios_label": "#2A1810",
+      "ios_secondary": "#7A6357",
+      "ios_tertiary": "#B8A598",
+      "ios_separator": "#EEE1D5",
+      "ios_fill": "#F4E9DF",
+      "card_stroke": "#ECDDD0",
+      "segment_track": "#F2E6DB",
+      "nav_active": "#AE4024",
+      "switch_active": "#D4602F",
+      "switch_inactive": "#E7DACE",
+      "icon_ink": "#4A2416",
+      "action_fill": "#4A2416",
+      "action_text": "#FFFFFF",
+      "chevron": "#B29F92",
+      "trust_text": "#5A4136",
+      "ios_blue": "#3E6287",
+      "ios_green": "#4A7537",
+      "ios_red": "#B03838",
+      "ios_orange": "#A3501D",
+      "ios_yellow": "#86650B",
+      "ios_purple": "#774C7B",
+      "ios_indigo": "#585285",
+      "ios_teal": "#3A7066",
+      "ios_pink": "#A14668",
+      "ios_gray": "#827065"
+    },
+    "dark": {
+      "ios_bg": "#17100C",
+      "ios_card": "#221813",
+      "ios_card_pressed": "#2E211A",
+      "ios_label": "#F7ECE4",
+      "ios_secondary": "#BFA99B",
+      "ios_tertiary": "#86705F",
+      "ios_separator": "#362820",
+      "ios_fill": "#2E211A",
+      "card_stroke": "#362820",
+      "segment_track": "#2E211A",
+      "nav_active": "#FFA581",
+      "switch_active": "#F07A4E",
+      "switch_inactive": "#5A483D",
+      "icon_ink": "#F5DFD2",
+      "action_fill": "#F5DFD2",
+      "action_text": "#17100C",
+      "chevron": "#6F5C50",
+      "trust_text": "#E0CCBF",
+      "ios_blue": "#A9C4E2",
+      "ios_green": "#B2D39A",
+      "ios_red": "#F4A09A",
+      "ios_orange": "#F6B585",
+      "ios_yellow": "#E9CF83",
+      "ios_purple": "#D7B2D8",
+      "ios_indigo": "#BDB8E4",
+      "ios_teal": "#9BCFC4",
+      "ios_pink": "#F0A9C0",
+      "ios_gray": "#B3A398"
+    }
+  }
+}

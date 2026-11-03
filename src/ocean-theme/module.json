@@ -2,10 +2,10 @@
   "format": 1,
   "id": "ocean-theme",
   "name": "Ocean",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "author": "Messages AI",
   "license": "CC0-1.0",
-  "description": "A calm blue colour theme for light and dark mode.",
+  "description": "A calm blue colour theme for light and dark mode – backgrounds, cards, switches, icons and status colours.",
   "icon": "palette",
   "minAppVersion": 56,
   "compatibility": {
@@ -15,23 +15,23 @@
   "translations": {
     "sl": {
       "name": "Ocean",
-      "description": "Umirjena modra barvna tema za svetli in temni način."
+      "description": "Umirjena modra barvna tema za svetli in temni način – ozadja, kartice, stikala, ikone in barve stanj."
     },
     "de": {
       "name": "Ozean",
-      "description": "Ein ruhiges blaues Farbschema für den hellen und den dunklen Modus."
+      "description": "Ein ruhiges blaues Farbschema für den hellen und den dunklen Modus – Hintergründe, Karten, Schalter, Symbole und Statusfarben."
     },
     "hr": {
       "name": "Ocean",
-      "description": "Smirena plava tema boja za svijetli i tamni način."
+      "description": "Smirena plava tema boja za svijetli i tamni način – pozadine, kartice, prekidači, ikone i boje stanja."
     },
     "it": {
       "name": "Oceano",
-      "description": "Un tema di colori blu e rilassante per la modalità chiara e scura."
+      "description": "Un tema di colori blu e rilassante per la modalità chiara e scura: sfondi, schede, interruttori, icone e colori di stato."
     },
     "es": {
       "name": "Océano",
-      "description": "Un tema de color azul y tranquilo para el modo claro y el oscuro."
+      "description": "Un tema de color azul y tranquilo para el modo claro y el oscuro: fondos, tarjetas, interruptores, iconos y colores de estado."
     }
   },
   "theme": {
@@ -45,14 +45,26 @@
       "ios_tertiary": "#9AA8B8",
       "ios_separator": "#DCE6F1",
       "ios_fill": "#E3ECF6",
+      "card_stroke": "#D9E4EF",
       "segment_track": "#E1EAF4",
       "nav_active": "#0057B8",
       "switch_active": "#1E7BE0",
+      "switch_inactive": "#D3DFEB",
       "icon_ink": "#0B2545",
       "action_fill": "#0B2545",
       "action_text": "#FFFFFF",
       "chevron": "#93A3B5",
-      "trust_text": "#2E4157"
+      "trust_text": "#2E4157",
+      "ios_blue": "#0A63B0",
+      "ios_green": "#1D6F5F",
+      "ios_red": "#B03A48",
+      "ios_orange": "#975A16",
+      "ios_yellow": "#8A6500",
+      "ios_purple": "#5D55A6",
+      "ios_indigo": "#3A55A4",
+      "ios_teal": "#136B78",
+      "ios_pink": "#9E3F6C",
+      "ios_gray": "#5F7185"
     },
     "dark": {
       "ios_bg": "#06121F",
@@ -63,15 +75,26 @@
       "ios_tertiary": "#6D8197",
       "ios_separator": "#1E3247",
       "ios_fill": "#16283C",
-      "segment_track": "#16283C",
       "card_stroke": "#1E3247",
+      "segment_track": "#16283C",
       "nav_active": "#6CB4FF",
       "switch_active": "#3D9BFF",
+      "switch_inactive": "#34495F",
       "icon_ink": "#D7E6F5",
       "action_fill": "#D7E6F5",
       "action_text": "#06121F",
       "chevron": "#5F7790",
-      "trust_text": "#C3D4E6"
+      "trust_text": "#C3D4E6",
+      "ios_blue": "#7DBBFF",
+      "ios_green": "#7DD3BF",
+      "ios_red": "#FF9BA5",
+      "ios_orange": "#F3B77A",
+      "ios_yellow": "#EBD37E",
+      "ios_purple": "#BBB5FF",
+      "ios_indigo": "#A2B6FF",
+      "ios_teal": "#7BD1DA",
+      "ios_pink": "#F3A8C8",
+      "ios_gray": "#93A7BC"
     }
   }
 }

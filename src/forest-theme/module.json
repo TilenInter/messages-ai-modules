@@ -1,0 +1,100 @@
+{
+  "format": 1,
+  "id": "forest-theme",
+  "name": "Forest",
+  "version": "1.0.0",
+  "author": "Messages AI",
+  "license": "CC0-1.0",
+  "description": "A calm green colour theme inspired by nature, for light and dark mode – backgrounds, cards, switches, icons and status colours.",
+  "icon": "palette",
+  "minAppVersion": 56,
+  "compatibility": {
+    "conflicts": [],
+    "exclusiveGroups": ["visual.theme"]
+  },
+  "translations": {
+    "sl": {
+      "name": "Gozd",
+      "description": "Umirjena zelena barvna tema po navdihu narave za svetli in temni način – ozadja, kartice, stikala, ikone in barve stanj."
+    },
+    "de": {
+      "name": "Wald",
+      "description": "Ein ruhiges grünes Farbschema nach dem Vorbild der Natur für den hellen und den dunklen Modus – Hintergründe, Karten, Schalter, Symbole und Statusfarben."
+    },
+    "hr": {
+      "name": "Šuma",
+      "description": "Smirena zelena tema boja nadahnuta prirodom za svijetli i tamni način – pozadine, kartice, prekidači, ikone i boje stanja."
+    },
+    "it": {
+      "name": "Foresta",
+      "description": "Un tema di colori verde e rilassante ispirato alla natura per la modalità chiara e scura: sfondi, schede, interruttori, icone e colori di stato."
+    },
+    "es": {
+      "name": "Bosque",
+      "description": "Un tema de color verde y tranquilo inspirado en la naturaleza para el modo claro y el oscuro: fondos, tarjetas, interruptores, iconos y colores de estado."
+    }
+  },
+  "theme": {
+    "name": "Forest",
+    "light": {
+      "ios_bg": "#F1F5F0",
+      "ios_card": "#FFFFFF",
+      "ios_card_pressed": "#E6EEE4",
+      "ios_label": "#132017",
+      "ios_secondary": "#5A6A5D",
+      "ios_tertiary": "#9DAB9E",
+      "ios_separator": "#DCE5DA",
+      "ios_fill": "#E5EDE3",
+      "card_stroke": "#D7E1D4",
+      "segment_track": "#E2EAE0",
+      "nav_active": "#2C6A3D",
+      "switch_active": "#3B8A4E",
+      "switch_inactive": "#D2DCCF",
+      "icon_ink": "#1B3223",
+      "action_fill": "#1E3927",
+      "action_text": "#FFFFFF",
+      "chevron": "#96A597",
+      "trust_text": "#33463A",
+      "ios_blue": "#2D5F80",
+      "ios_green": "#2B7341",
+      "ios_red": "#A6433A",
+      "ios_orange": "#8E5B1A",
+      "ios_yellow": "#7A6511",
+      "ios_purple": "#695882",
+      "ios_indigo": "#465A83",
+      "ios_teal": "#2A7064",
+      "ios_pink": "#915367",
+      "ios_gray": "#68766A"
+    },
+    "dark": {
+      "ios_bg": "#0D1410",
+      "ios_card": "#161F19",
+      "ios_card_pressed": "#202B23",
+      "ios_label": "#E9F1EA",
+      "ios_secondary": "#A2B2A5",
+      "ios_tertiary": "#6E7F72",
+      "ios_separator": "#25322A",
+      "ios_fill": "#202B23",
+      "card_stroke": "#25322A",
+      "segment_track": "#202B23",
+      "nav_active": "#8ED09D",
+      "switch_active": "#5BBE73",
+      "switch_inactive": "#3F4E43",
+      "icon_ink": "#DBE9DE",
+      "action_fill": "#DBE9DE",
+      "action_text": "#0D1410",
+      "chevron": "#5E6F63",
+      "trust_text": "#C4D4C7",
+      "ios_blue": "#9DC4DF",
+      "ios_green": "#92D2A1",
+      "ios_red": "#EA9F95",
+      "ios_orange": "#E2BB84",
+      "ios_yellow": "#DBCA85",
+      "ios_purple": "#C1B3DB",
+      "ios_indigo": "#ADBDDF",
+      "ios_teal": "#8ECEC1",
+      "ios_pink": "#DCA9B9",
+      "ios_gray": "#9EADA1"
+    }
+  }
+}
